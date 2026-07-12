@@ -1,125 +1,170 @@
 "use client";
 
-import { Reveal } from "../ui/Reveal";
-import { ArrowIcon, Button } from "../ui/Button";
-import { getAvailableCourse } from "@/lib/courses";
-import { OpenAI, Supabase, NextJsIcon, ClaudeIcon } from "@/components/ui/icons";
-import { Countdown } from "../ui/Countdown";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { site } from "@/lib/site";
 
-import { GradientField } from "../ui/GradientField";
+/** Dim, contained aurora ribbons — a whisper of green over mostly-black. */
+type Ribbon = {
+  base: number; amp: number; w1: number; w2: number; sp: number; ph: number; h: number;
+  col: [string, string, string, string, string]; a: number;
+};
+const RIBBONS: Ribbon[] = [
+  { base: 0.62, amp: 0.09, w1: 0.0045, w2: 0.013, sp: 0.05, ph: 0, h: 0.7,
+    col: ["rgba(16,185,129,0)", "rgba(16,185,129,.12)", "rgba(52,211,153,.20)", "rgba(110,231,183,.10)", "rgba(16,185,129,0)"], a: 0.5 },
+  { base: 0.70, amp: 0.11, w1: 0.0032, w2: 0.010, sp: -0.037, ph: 2.1, h: 0.8,
+    col: ["rgba(6,78,59,0)", "rgba(13,148,136,.10)", "rgba(45,212,191,.16)", "rgba(94,234,212,.10)", "rgba(6,78,59,0)"], a: 0.42 },
+  { base: 0.56, amp: 0.07, w1: 0.006, w2: 0.017, sp: 0.072, ph: 4.3, h: 0.55,
+    col: ["rgba(52,211,153,0)", "rgba(110,231,183,.12)", "rgba(52,211,153,.12)", "rgba(103,232,249,.08)", "rgba(52,211,153,0)"], a: 0.34 },
+];
+
+const BLOCKS = " ▁▂▃▄▅▆▇█";
+const WAVE_N = 41;
+
+function buildWave(wt: number): string {
+  let s = "";
+  for (let i = 0; i < WAVE_N; i++) {
+    const v = (Math.sin(i * 0.4 + wt) + Math.sin(i * 0.19 - wt * 1.4) * 0.6 + 1.6) / 3.2;
+    s += BLOCKS[Math.max(0, Math.min(8, Math.round(v * 8)))];
+  }
+  return s;
+}
 
 export function Hero() {
-  const featured = getAvailableCourse();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [wave, setWave] = useState(() => buildWave(0));
+
+  // ── aurora canvas ──
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+    let W = 0, H = 0, raf = 0, t = 0;
+    const size = () => {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    size();
+
+    const stars = () => {
+      ctx.save();
+      for (let i = 0; i < 80; i++) {
+        const sx = (i * 137.5) % W, sy = (i * 71.3) % (H * 0.9);
+        ctx.globalAlpha = 0.2 + 0.35 * Math.abs(Math.sin(i * 1.7 + t * 0.4));
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(sx, sy, 1, 1);
+      }
+      ctx.restore();
+    };
+
+    const ribbon = (r: Ribbon) => {
+      const step = 16, top: Array<[number, number]> = [], bot: Array<[number, number]> = [];
+      for (let px = -60; px <= W + 60; px += step) {
+        const y = r.base * H + Math.sin(px * r.w1 + t * r.sp) * r.amp * H +
+          Math.sin(px * r.w2 - t * r.sp * 1.7 + r.ph) * r.amp * H * 0.42;
+        top.push([px, y]); bot.push([px, y + r.h * H]);
+      }
+      ctx.beginPath();
+      ctx.moveTo(top[0][0], top[0][1]);
+      for (let i = 1; i < top.length; i++) ctx.lineTo(top[i][0], top[i][1]);
+      for (let j = bot.length - 1; j >= 0; j--) ctx.lineTo(bot[j][0], bot[j][1]);
+      ctx.closePath();
+      const g = ctx.createLinearGradient(0, r.base * H - r.amp * H, 0, r.base * H + r.h * H);
+      g.addColorStop(0, r.col[0]); g.addColorStop(0.12, r.col[1]); g.addColorStop(0.30, r.col[2]);
+      g.addColorStop(0.52, r.col[3]); g.addColorStop(1, r.col[4]);
+      ctx.globalAlpha = r.a * (0.84 + 0.16 * Math.sin(t * 0.3 + r.ph));
+      ctx.fillStyle = g; ctx.fill();
+    };
+
+    const sf = "filter" in ctx;
+    const frame = () => {
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = "#000"; ctx.fillRect(0, 0, W, H);
+      stars();
+      ctx.globalCompositeOperation = "lighter";
+      if (sf) ctx.filter = "blur(40px)";
+      for (const r of RIBBONS) ribbon(r);
+      if (sf) ctx.filter = "none";
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
+      t += 0.0026;
+      if (!reduce) raf = requestAnimationFrame(frame);
+    };
+    frame();
+
+    window.addEventListener("resize", size);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", size); };
+  }, []);
+
+  // ── ASCII waveform ripple ──
+  useEffect(() => {
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    let wt = 0;
+    const id = window.setInterval(() => { wt += 0.032; setWave(buildWave(wt)); }, 180);
+    return () => window.clearInterval(id);
+  }, []);
 
   return (
-    <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32">
-      <GradientField intensity={0.5} />
-      <div className="container-x relative">
-        
-        {/* Split Layout Container */}
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-8">
-          
-          {/* LEFT: Copy & CTA */}
-          <div className="flex flex-col justify-center text-left">
-            <Reveal>
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-widest text-white/80">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-pulse-ring rounded-full bg-white/50" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
-                </span>
-                เปิดรับรอบ กรกฎาคม 2026
-              </div>
-            </Reveal>
+    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-black">
+      <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden />
+      {/* vignette — sink the aurora into pure black */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ background: "radial-gradient(115% 85% at 50% 42%,transparent 8%,rgba(0,0,0,.72) 46%,#000 82%)" }}
+        aria-hidden
+      />
 
-            <div className="mt-8 font-display text-5xl font-bold leading-[1.15] tracking-tight text-white sm:text-6xl lg:text-7xl">
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } },
-                }}
-              >
-                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block mr-4">ลดเวลาทำงาน</motion.span>
-                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block mr-4">10</motion.span>
-                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block">เท่า</motion.span>
-                <br />
-                <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block mr-4">ด้วย</motion.span>
-                <motion.span variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-mint via-aurora-200 to-aurora-300 bg-[length:200%_auto] animate-aurora-shimmer">AI</motion.span>
-              </motion.div>
-            </div>
+      <h1 className="sr-only">DeCODE — {site.tagline}</h1>
 
-            <Reveal delay={0.16}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/60 md:text-xl">
-                เลิกทำงานซ้ำซาก เปลี่ยน Claude และ Automation เป็นผู้ช่วยส่วนตัวที่เก่งที่สุดของคุณ
-              </p>
-            </Reveal>
+      <div className="hero-glass relative z-10 mx-6 w-full max-w-[600px] overflow-hidden rounded-[28px] px-8 py-12 text-center sm:px-12 sm:py-14">
+        {/* HUD corner brackets */}
+        <span className="pointer-events-none absolute left-3.5 top-3.5 h-[18px] w-[18px] rounded-tl border-l border-t border-aurora-100/45" aria-hidden />
+        <span className="pointer-events-none absolute right-3.5 top-3.5 h-[18px] w-[18px] rounded-tr border-r border-t border-aurora-100/45" aria-hidden />
+        <span className="pointer-events-none absolute bottom-3.5 left-3.5 h-[18px] w-[18px] rounded-bl border-b border-l border-aurora-100/45" aria-hidden />
+        <span className="pointer-events-none absolute bottom-3.5 right-3.5 h-[18px] w-[18px] rounded-br border-b border-r border-aurora-100/45" aria-hidden />
 
-            <Reveal delay={0.24}>
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button href="/courses" variant="aurora" size="lg">
-                  ดูคอร์สทั้งหมด <ArrowIcon />
-                </Button>
-                <Button href="/concept" variant="ghost" size="lg" magnetic={false}>
-                  ทำไมต้อง DeCODE
-                </Button>
-              </div>
-            </Reveal>
+        {/* badge */}
+        <span className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-aurora-100/20 bg-aurora-200/[0.06] px-3.5 py-1.5 font-mono text-[10.5px] uppercase tracking-[0.2em] text-mint-soft">
+          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-mint shadow-[0_0_10px_2px_rgba(52,211,153,0.8)]" />
+          เปิดรับรอบ · กรกฎาคม 2026
+        </span>
 
-            {/* Tools Logos Section */}
-            <Reveal delay={0.32}>
-              <div className="mt-16 border-t border-white/10 pt-8">
-                <p className="mb-5 font-sans text-[0.65rem] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Powered by real-world tools
-                </p>
-                <div className="flex flex-wrap items-center gap-8 text-white/40">
-                  {/* Claude (Anthropic) */}
-                  <div className="flex items-center gap-2 text-white/80 transition-colors hover:text-white">
-                    <ClaudeIcon className="h-6 w-6" />
-                    <span className="font-sans text-sm font-bold tracking-tight">Claude</span>
-                  </div>
-                  {/* OpenAI */}
-                  <div className="flex items-center gap-2 text-white/80 transition-colors hover:text-white">
-                    <OpenAI className="h-6 w-6" />
-                    <span className="font-sans text-sm font-bold tracking-tight">OpenAI</span>
-                  </div>
-                  {/* Next.js */}
-                  <div className="flex items-center gap-2 text-white/80 transition-colors hover:text-white">
-                    <NextJsIcon className="h-5 w-16" />
-                  </div>
-                  {/* Supabase */}
-                  <div className="flex items-center gap-2 text-white/80 transition-colors hover:text-white">
-                    <Supabase className="h-6 w-6" />
-                    <span className="font-sans text-sm font-bold tracking-tight">Supabase</span>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* RIGHT: Instructor Poster */}
-          <div className="relative mt-8 lg:mt-0">
-            <Reveal delay={0.2} className="relative z-10 mx-auto w-full max-w-[460px]">
-              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-3xl bg-[#0a0a0a]">
-                <Image
-                  src="/hero-mockup.jpg"
-                  alt="DeCODE"
-                  fill
-                  priority
-                  className="object-cover object-center transition-transform duration-700 hover:scale-105"
-                />
-                
-                {/* Poster Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-8 flex justify-end">
-                  {/* We can put something else here if needed, or leave it empty so the team image shines */}
-                </div>
-              </div>
-            </Reveal>
-          </div>
+        {/* institute designation */}
+        <div className="mb-3.5 flex items-center justify-center gap-3 font-mono text-[11px] uppercase tracking-[0.42em] text-aurora-100">
+          <span className="h-px w-8 bg-gradient-to-r from-transparent to-aurora-100/50" />
+          AI Institute
+          <span className="h-px w-8 bg-gradient-to-l from-transparent to-aurora-100/50" />
         </div>
 
+        {/* wordmark */}
+        <div className="font-display text-[clamp(3.6rem,2.6rem+6.5vw,7.5rem)] font-bold leading-none tracking-[-0.05em] text-[#f2f7f5]" aria-hidden>
+          De<span className="hero-flow">CO</span>DE
+        </div>
+
+        <div className="mt-4 text-[15px] font-medium tracking-[0.02em] text-[#c5d6d1]">
+          {site.tagline}
+        </div>
+
+        {/* ASCII aurora waveform */}
+        <div className="hero-wave mx-auto mb-1 mt-5 overflow-hidden whitespace-nowrap font-mono text-[15px] leading-none tracking-[1px]" aria-hidden>
+          {wave}
+        </div>
+
+        <p className="mx-auto mt-[18px] max-w-[40ch] text-[clamp(0.95rem,0.9rem+0.35vw,1.12rem)] leading-relaxed text-[#8ea39d]">
+          เปลี่ยน Claude และ Automation ให้เป็นผู้ช่วยที่เก่งที่สุดของคุณ — เรียน onsite ลงมือทำจริง ได้ระบบกลับไปใช้ทันที
+        </p>
+
+        {/* terminal prompt */}
+        <div className="mt-6 font-mono text-[11.5px] uppercase tracking-[0.16em] text-aurora-100/70">
+          &gt; learn · build · automate
+          <span className="hero-cursor ml-1 inline-block h-[14px] w-2 translate-y-[2px] bg-mint align-middle" />
+        </div>
+        <div className="mt-4 font-mono text-[9.5px] uppercase tracking-[0.24em] text-accent-soft/55">
+          EST · 2026 — Bangkok · 13.75°N 100.50°E
+        </div>
       </div>
     </section>
   );

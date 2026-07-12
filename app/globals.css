@@ -122,6 +122,63 @@
   }
 }
 
+/* ── Hero: liquid-glass institute panel ── */
+@layer components {
+  .hero-glass {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
+    box-shadow: 0 8px 60px -12px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+  }
+  /* slow glass sheen */
+  .hero-glass::before {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -30%;
+    width: 80%;
+    height: 220%;
+    background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: rotate(8deg);
+    animation: hero-sheen 18s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes hero-sheen {
+    0%, 45% { transform: translateX(-40%) rotate(8deg); }
+    75%, 100% { transform: translateX(180%) rotate(8deg); }
+  }
+  /* flowing teal gradient text (wordmark "CO" + ASCII waveform) */
+  .hero-flow {
+    background: linear-gradient(120deg, #6ee7b7 0%, #34d399 35%, #10b981 70%, #5eead4 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: hero-flow 14s ease-in-out infinite;
+  }
+  .hero-wave {
+    background: linear-gradient(90deg, #10b981, #34d399, #6ee7b7, #5eead4, #34d399, #10b981);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: hero-flow 16s linear infinite;
+  }
+  @keyframes hero-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .hero-cursor {
+    animation: hero-blink 1.6s steps(1) infinite;
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.7);
+  }
+  @keyframes hero-blink {
+    0%, 55% { opacity: 1; }
+    56%, 100% { opacity: 0; }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
