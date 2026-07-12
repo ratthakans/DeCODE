@@ -35,7 +35,7 @@ export function CourseCard({ course }: { course: Course }) {
       onMouseMove={handleMouseMove}
       whileHover={{ y: -6, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 shadow-sm aspect-[4/5] sm:aspect-[1/1.414] cursor-pointer"
+      className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-100 shadow-sm aspect-[4/5] sm:aspect-[1/1.414] cursor-pointer"
       onClick={() => router.push(`/courses/${course.slug}`)}
     >
       {/* Spotlight Effect */}

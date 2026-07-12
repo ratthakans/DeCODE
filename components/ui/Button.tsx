@@ -17,7 +17,7 @@ const sizes = {
 
 const variants: Record<Variant, string> = {
   aurora: "bg-[linear-gradient(110deg,#12A594,30%,#2DD4BF,50%,#7FF3DC,70%,#12A594)] bg-[length:200%_100%] animate-shimmer text-[#022b26] font-semibold shadow-lg shadow-aurora-300/25 hover:shadow-aurora-200/40 hover:-translate-y-0.5",
-  teal: "bg-neutral-800 text-white hover:bg-neutral-700", // Flat dark secondary button
+  teal: "bg-ink-200 text-white hover:bg-ink-300", // Flat dark secondary button
   ghost: "bg-transparent text-white hover:bg-white/5 border border-white/10",
   outline: "bg-transparent text-white/70 border border-white/20 hover:border-white/50 hover:bg-white/5",
 };

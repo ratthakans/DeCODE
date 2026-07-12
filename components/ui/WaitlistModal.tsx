@@ -51,7 +51,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 shadow-2xl pointer-events-auto"
+              className="w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-ink-100 shadow-2xl pointer-events-auto"
             >
               <div className="p-8">
                 <h3 className="font-display text-2xl font-semibold text-white mb-2">

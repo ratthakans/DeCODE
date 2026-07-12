@@ -14,7 +14,7 @@ export function CourseSyllabus({ course }: { course: Course }) {
           <Reveal key={day.day} delay={di * 0.06}>
             <div className="relative group">
               {/* Timeline dot */}
-              <div className="absolute -left-[37px] md:-left-[45px] top-1 h-4 w-4 rounded-full bg-neutral-900 border-2 border-white/20 transition-colors group-hover:border-mint group-hover:shadow-[0_0_12px_rgba(45,212,191,0.5)]" />
+              <div className="absolute -left-[37px] md:-left-[45px] top-1 h-4 w-4 rounded-full bg-ink-100 border-2 border-white/20 transition-colors group-hover:border-mint group-hover:shadow-[0_0_12px_rgba(45,212,191,0.5)]" />
               
               <div className="flex flex-col gap-4">
                 <div className="shrink-0">

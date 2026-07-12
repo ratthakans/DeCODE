@@ -57,7 +57,7 @@ export default function CourseDetailPage({
       {/* bottom CTA */}
       <section className="container-x py-16">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-neutral-900 px-6 py-14 text-center">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink-100 px-6 py-14 text-center">
             <div className="relative mx-auto max-w-xl">
               <h2 className="font-display text-fluid-xl font-bold text-white">
                 {available ? "พร้อมจองที่นั่งแล้ว?" : "อยากรู้ก่อนใครเมื่อเปิด?"}

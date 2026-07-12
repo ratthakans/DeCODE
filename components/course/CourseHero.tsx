@@ -100,7 +100,7 @@ export function CourseHero({
           {/* sticky booking card */}
           <Reveal delay={0.14} direction="left">
             <aside className="lg:sticky lg:top-24">
-              <div className="overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/50 shadow-sm backdrop-blur">
+              <div className="overflow-hidden rounded-3xl border border-white/10 bg-ink-100/50 shadow-sm backdrop-blur">
                 <CourseArt course={course} className="h-28 w-full" />
                 <div className="p-6">
                   <div className="mb-5 flex items-center gap-3">
