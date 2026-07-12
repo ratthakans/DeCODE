@@ -24,7 +24,7 @@ function Row({
       <span className="shrink-0 text-white/45">{label}</span>
       <span
         className={`text-right ${
-          highlight ? "font-medium text-lime" : "text-white/80"
+          highlight ? "font-medium text-mint" : "text-white/80"
         }`}
       >
         {value}
@@ -50,7 +50,7 @@ export function CourseHero({
         <Reveal>
           <Link
             href="/courses"
-            className="group inline-flex items-center gap-2 text-sm text-white/50 transition-colors hover:text-teal-100"
+            className="group inline-flex items-center gap-2 text-sm text-white/50 transition-colors hover:text-mint"
           >
             <ArrowIcon className="rotate-180 transition-transform group-hover:-translate-x-1" />
             คอร์สทั้งหมด
@@ -73,7 +73,7 @@ export function CourseHero({
               </h1>
             </Reveal>
             <Reveal delay={0.16}>
-              <p className="mt-5 max-w-xl text-fluid-base leading-relaxed text-teal-50/80">
+              <p className="mt-5 max-w-xl text-fluid-base leading-relaxed text-white/65">
                 {course.subtitle}
               </p>
             </Reveal>
@@ -142,7 +142,7 @@ export function CourseHero({
 
                   {available && course.launchDate && (
                     <div className="mb-5">
-                      <p className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-teal-300/80">
+                      <p className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-mint/80">
                         เริ่มเรียนใน
                       </p>
                       <Countdown iso={course.launchDate} />

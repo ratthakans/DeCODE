@@ -34,7 +34,7 @@ export interface Course {
   category: string;
   tags: string[];
   coverImage: string;
-  accent: "teal" | "cyan" | "emerald" | "violet" | "amber" | "rose";
+  accent: "teal" | "neutral";
   businessType: BusinessType;
   outcomes: string[];
   bonuses: string[];
@@ -142,7 +142,7 @@ export const courses: Course[] = [
     category: "Coding & Deployment",
     tags: ["React", "Supabase", "GitHub Actions", "Railway", "CI/CD"],
     coverImage: "/courses/10x.jpg",
-    accent: "cyan",
+    accent: "neutral",
     businessType: "b2c",
     outcomes: [
       "สั่ง AI ประกอบ UI, เชื่อม Database, และ Deploy จบใน 20 นาที",
@@ -197,7 +197,7 @@ export const courses: Course[] = [
     category: "Creative & Front-End",
     tags: ["GSAP", "Framer Motion", "Three.js", "Awwwards", "Typography"],
     coverImage: "/courses/aesthetic.jpg",
-    accent: "violet",
+    accent: "neutral",
     businessType: "b2c",
     outcomes: [
       "บรีฟ AI ให้เขียนเว็บที่ไม่เหมือน Template สำเร็จรูป",
@@ -252,7 +252,7 @@ export const courses: Course[] = [
     category: "บริหาร & ระบบอัตโนมัติ",
     tags: ["Claude Projects", "n8n", "ClickUp", "Delegation", "SMEMOVE"],
     coverImage: "/courses/coworker.jpg",
-    accent: "emerald",
+    accent: "neutral",
     businessType: "b2c",
     outcomes: [
       "เซต Claude เป็นเลขาที่ไม่มีวันลาพักร้อน",
@@ -307,7 +307,7 @@ export const courses: Course[] = [
     category: "Creative Direction",
     tags: ["Art Direction", "XML Prompt", "Gamma", "Pitching", "Agency Workflow"],
     coverImage: "/courses/godmode.jpg",
-    accent: "rose",
+    accent: "neutral",
     businessType: "b2c",
     outcomes: [
       "แปลงความรู้สึกทางอาร์ตให้เป็นคำสั่งที่ AI ทำงานต่อได้",
@@ -362,7 +362,7 @@ export const courses: Course[] = [
     category: "Full-Stack & SaaS",
     tags: ["Supabase", "Stripe", "GitHub Actions", "Railway", "SaaS"],
     coverImage: "/courses/startup.jpg",
-    accent: "amber",
+    accent: "neutral",
     businessType: "b2c",
     outcomes: [
       "สร้าง Web App ตั้งแต่หน้าบ้านยันหลังบ้านด้วยตัวคนเดียว",
@@ -418,7 +418,7 @@ export const courses: Course[] = [
     category: "AI Deep Tech",
     tags: ["Prompt Engineering", "Context Window", "API", "Function Calling"],
     coverImage: "/courses/deepcore.jpg",
-    accent: "cyan",
+    accent: "neutral",
     businessType: "b2c",
     outcomes: [
       "คุม Context Window ได้อยู่หมัด ยัดข้อมูลเยอะแค่ไหนก็ไม่หลอน",

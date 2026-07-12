@@ -1,4 +1,4 @@
-/** DeCODE wordmark — the "CO" carries the signature lime as a brand tell. */
+/** DeCODE wordmark — the "CO" carries the signature mint as a brand tell. */
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span

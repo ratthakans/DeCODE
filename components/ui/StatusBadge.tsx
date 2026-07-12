@@ -1,7 +1,7 @@
 import type { Course } from "@/lib/courses";
 
 /**
- * Badge must have a VOICE, not just a color. Available uses the signature lime;
+ * Badge must have a VOICE, not just a color. Available uses the signature mint;
  * coming_soon stays quiet teal so the available course never gets drowned out.
  */
 export function StatusBadge({

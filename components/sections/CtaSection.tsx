@@ -1,4 +1,3 @@
-import { GradientField } from "../ui/GradientField";
 import { Reveal } from "../ui/Reveal";
 import { Button, LineIcon, ArrowIcon } from "../ui/Button";
 import { lineLink } from "@/lib/line";
@@ -7,8 +6,16 @@ export function CtaSection() {
   return (
     <section className="container-x py-20">
       <Reveal>
-        <div className="relative overflow-hidden rounded-[2.5rem] liquid-glass border-aurora-300/20 px-6 py-16 text-center sm:px-12 sm:py-24 noise">
-          <GradientField intensity={0.9} />
+        <div className="relative overflow-hidden rounded-[2.5rem] liquid-glass border-aurora-300/20 px-6 py-16 text-center sm:px-12 sm:py-24">
+          {/* quiet static glow — the aurora's motion is spent in the Hero only */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(60% 80% at 50% 0%, rgba(18,165,148,0.14), transparent 70%)",
+            }}
+            aria-hidden
+          />
           <div className="relative mx-auto max-w-2xl">
             <span className="eyebrow">พร้อมเริ่มแล้วใช่ไหม</span>
             <h2 className="mt-5 text-balance font-display text-fluid-2xl font-extrabold leading-[1.05] text-white">

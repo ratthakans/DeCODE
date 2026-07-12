@@ -4,39 +4,29 @@ import { RevealGroup, RevealItem } from "../ui/Reveal";
 interface Feature {
   title: string;
   body: string;
-  glyph: string;
   span: string;
-  tint: string;
 }
 
 const features: Feature[] = [
   {
     title: "เรียนแบบลงมือทำ ไม่ใช่นั่งฟัง",
     body: "ทุกคอร์สจบด้วย Capstone ที่ให้คุณเอางานจริงของตัวเองมาทำในคลาส เดินออกจากห้องพร้อมระบบที่รันต่อได้ทันที",
-    glyph: "◇",
     span: "md:col-span-2 md:row-span-1",
-    tint: "",
   },
   {
     title: "ไม่ต้องมีพื้นฐานโค้ด",
     body: "สอนวิธี ‘สั่งงาน’ AI ด้วยภาษาคน เจ้าของร้าน คนทำงาน ผู้บริหาร เรียนได้หมด",
-    glyph: "❋",
     span: "md:col-span-1",
-    tint: "",
   },
   {
     title: "โค้ชประกบรายโต๊ะ",
     body: "รับจำนวนจำกัดต่อรอบ เพื่อให้ทุกคนได้คำแนะนำแบบใกล้ชิด ไม่ใช่สัมมนาหมื่นคน",
-    glyph: "✦",
     span: "md:col-span-1",
-    tint: "",
   },
   {
     title: "ได้คลัง Prompt & Template ติดมือกลับ",
     body: "ทุกคอร์สแถมคลังคำสั่งและ Blueprint ที่ก๊อปไปปรับใช้กับงานจริงได้เลย ไม่ต้องเริ่มจากศูนย์",
-    glyph: "◈",
     span: "md:col-span-2",
-    tint: "",
   },
 ];
 
@@ -61,9 +51,7 @@ export function Features() {
             <div
               className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl liquid-glass p-6 transition-colors hover:border-mint/25`}
             >
-              <span className="font-display text-3xl text-mint/70 transition-transform duration-500 group-hover:scale-110 group-hover:text-accent">
-                {f.glyph}
-              </span>
+              <span className="h-1.5 w-1.5 rounded-full bg-mint/70 transition-colors group-hover:bg-mint" />
               <div>
                 <h3 className="font-display text-lg font-bold text-white">
                   {f.title}

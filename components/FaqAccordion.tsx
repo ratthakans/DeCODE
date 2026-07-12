@@ -24,7 +24,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
               <span
                 className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                   isOpen
-                    ? "rotate-45 border-lime bg-lime text-ink"
+                    ? "rotate-45 border-mint bg-mint text-ink"
                     : "border-white/15 text-white/60"
                 }`}
               >

@@ -62,28 +62,11 @@
     @apply mx-auto w-full max-w-container px-5 sm:px-8 lg:px-10;
   }
 
-  /* ── Clean Glass Effects ── */
+  /* ── Flat surface — no blur, no glow, a hairline and a solid fill ── */
   .glass, .glass-strong, .liquid-glass {
-    background: rgba(15, 15, 15, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.8);
+    background: #0A0F0E;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1rem; /* standard rounded-2xl */
-  }
-
-  .bg-grainy {
-    position: relative;
-  }
-  .bg-grainy::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: 0.15;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    z-index: 50;
   }
 
   /* ── Aurora text gradient — mint → dark teal ── */
@@ -94,9 +77,12 @@
     color: transparent;
   }
 
-  /* Legacy alias */
+  /* Legacy alias — same aurora recipe, kept for existing call sites */
   .text-gradient-teal {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-200;
+    background: linear-gradient(100deg, #7FF3DC 0%, #2DD4BF 45%, #12A594 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   /* Hairline label */

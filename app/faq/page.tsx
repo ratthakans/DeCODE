@@ -44,7 +44,7 @@ export default function FaqPage() {
             <Reveal key={g} delay={gi * 0.05}>
               <div>
                 <h2 className="mb-5 flex items-center gap-3 font-display text-lg font-bold text-white">
-                  <span className="font-mono text-sm text-teal-300">
+                  <span className="font-mono text-sm text-mint">
                     {String(gi + 1).padStart(2, "0")}
                   </span>
                   {g}

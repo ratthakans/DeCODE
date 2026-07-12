@@ -4,7 +4,7 @@ import { RevealGroup, RevealItem } from "../ui/Reveal";
 import { Avatar } from "../ui/Avatar";
 import type { Course } from "@/lib/courses";
 
-const accents: Course["accent"][] = ["teal", "rose", "emerald"];
+const accents: Course["accent"][] = ["teal", "neutral", "neutral"];
 
 export function Testimonials() {
   return (
@@ -67,7 +67,7 @@ export function Testimonials() {
 
 function ArrowDown() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className="mt-1 h-4 w-4 shrink-0 text-lime" aria-hidden>
+    <svg viewBox="0 0 24 24" fill="none" className="mt-1 h-4 w-4 shrink-0 text-mint" aria-hidden>
       <path
         d="M12 5v14m0 0 5-5m-5 5-5-5"
         stroke="currentColor"

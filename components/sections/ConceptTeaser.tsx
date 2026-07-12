@@ -4,7 +4,7 @@ import { ArrowIcon } from "../ui/Button";
 
 export function ConceptTeaser() {
   return (
-    <section className="relative overflow-hidden border-y border-white/5 bg-neutral-950 py-24 md:py-32 bg-grainy">
+    <section className="relative overflow-hidden border-y border-white/8 bg-black py-24 md:py-32">
       <div className="container-x">
         <div className="mb-12 flex flex-col items-center text-center">
           <Reveal>
@@ -25,7 +25,7 @@ export function ConceptTeaser() {
         <div className="grid gap-4 md:grid-cols-3 md:grid-rows-2 lg:gap-6">
           {/* Bento Box 1: The Problem (Spans 2 cols) */}
           <Reveal delay={0.2} className="md:col-span-2">
-            <div className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-colors hover:bg-white/10">
+            <div className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/10">
               <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-aurora-500/10 blur-3xl transition-transform duration-700 group-hover:scale-150" />
               <div className="relative z-10 flex h-full flex-col justify-between">
                 <div>
@@ -51,7 +51,7 @@ export function ConceptTeaser() {
 
           {/* Bento Box 2: Speed (1 col) */}
           <Reveal delay={0.3}>
-            <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aurora-900/40 to-black p-8 backdrop-blur-sm">
+            <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aurora-900/40 to-black p-8">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-aurora-500/20 mb-6">
                 <svg className="w-6 h-6 text-aurora-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
@@ -64,7 +64,7 @@ export function ConceptTeaser() {
 
           {/* Bento Box 3: Quality (1 col) */}
           <Reveal delay={0.4}>
-            <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-colors hover:bg-white/10">
+            <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/10">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 mb-6">
                 <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
               </div>
@@ -77,7 +77,7 @@ export function ConceptTeaser() {
 
           {/* Bento Box 4: Architecture (Spans 2 cols) */}
           <Reveal delay={0.5} className="md:col-span-2">
-            <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+            <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8">
               <div className="absolute right-0 bottom-0 opacity-20 transform translate-x-1/4 translate-y-1/4">
                 <svg width="200" height="200" viewBox="0 0 24 24" fill="none" className="text-aurora-500">
                   <path d="M20 7L12 3L4 7M20 7L12 11M20 7V17L12 21M12 11L4 7M12 11V21M4 7V17L12 21" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>

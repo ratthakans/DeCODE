@@ -57,7 +57,7 @@ export default function ConceptPage() {
               AI ไม่ได้มาแทนคุณ
               <br />
               แต่คนที่ใช้ AI เป็น
-              <span className="text-lime"> กำลังจะแทน</span>
+              <span className="text-mint"> กำลังจะแทน</span>
             </h1>
           </Reveal>
           <Reveal delay={0.14}>
@@ -75,7 +75,7 @@ export default function ConceptPage() {
         <Reveal>
           <div className="mb-12 max-w-2xl">
             <span className="eyebrow mb-4 inline-flex items-center gap-2">
-              <span className="h-px w-6 bg-teal-300/50" />
+              <span className="h-px w-6 bg-mint/50" />
               GAP ที่คุณอาจไม่ทันสังเกต
             </span>
             <h2 className="text-balance font-display text-fluid-xl font-bold leading-tight text-white">
@@ -91,7 +91,7 @@ export default function ConceptPage() {
             <RevealItem key={i}>
               <div className="grid items-center gap-4 rounded-3xl border border-white/8 bg-ink-100/40 p-6 sm:grid-cols-[1fr_auto_1fr]">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-teal-400/10 font-mono text-xs text-teal-200">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-aurora-200/10 font-mono text-xs text-mint">
                     เขา
                   </span>
                   <p className="font-display font-semibold text-white">
@@ -117,7 +117,7 @@ export default function ConceptPage() {
         <Reveal delay={0.1}>
           <p className="mx-auto mt-10 max-w-xl text-center font-display text-fluid-base italic text-white/45">
             ความอายที่เห็นภาพได้ ขายดีกว่าความกลัวนามธรรม —
-            เราไม่ได้อยากให้คุณกลัว เราอยากให้คุณ<span className="text-lime not-italic"> เริ่ม</span>
+            เราไม่ได้อยากให้คุณกลัว เราอยากให้คุณ<span className="text-mint not-italic"> เริ่ม</span>
           </p>
         </Reveal>
       </section>
@@ -134,7 +134,7 @@ export default function ConceptPage() {
             {beliefs.map((b) => (
               <RevealItem key={b.n}>
                 <div className="flex h-full flex-col rounded-3xl border border-white/8 bg-ink-100/50 p-7">
-                  <span className="font-mono text-sm text-lime">{b.n}</span>
+                  <span className="font-mono text-sm text-mint">{b.n}</span>
                   <h3 className="mt-4 font-display text-lg font-bold leading-snug text-white">
                     {b.t}
                   </h3>
@@ -155,7 +155,7 @@ export default function ConceptPage() {
             <p className="text-balance font-display text-fluid-2xl font-bold leading-[1.15] text-white">
               เราไม่ได้สอนให้คุณ<span className="text-white/40">รู้จัก</span> AI
               <br />
-              เราสอนให้คุณ<span className="text-lime">สั่งงาน</span>มันเป็น
+              เราสอนให้คุณ<span className="text-mint">สั่งงาน</span>มันเป็น
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/courses" variant="aurora" size="lg">

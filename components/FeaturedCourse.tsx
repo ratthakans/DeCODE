@@ -12,7 +12,7 @@ import { Reveal } from "./ui/Reveal";
 
 /**
  * The available course is the HERO, not 1 of 6. Full-width, seats + schedule
- * + big instructor + loud CTA. Lime is spent only here on this page.
+ * + big instructor + loud CTA. Mint is spent only here on this page.
  */
 export function FeaturedCourse({ course }: { course: Course }) {
   return (
@@ -34,7 +34,7 @@ export function FeaturedCourse({ course }: { course: Course }) {
             <h3 className="max-w-xl font-display text-fluid-xl font-extrabold leading-[1.08] text-white">
               {course.title}
             </h3>
-            <p className="mt-4 max-w-xl text-fluid-base leading-relaxed text-teal-50/80">
+            <p className="mt-4 max-w-xl text-fluid-base leading-relaxed text-white/65">
               {course.subtitle}
             </p>
 
@@ -81,7 +81,7 @@ export function FeaturedCourse({ course }: { course: Course }) {
 
             {course.launchDate && (
               <div className="mb-6">
-                <p className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-teal-300/80">
+                <p className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-mint/80">
                   เริ่มเรียนใน
                 </p>
                 <Countdown iso={course.launchDate} />

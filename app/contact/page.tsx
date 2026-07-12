@@ -41,9 +41,9 @@ export default function ContactPage() {
       <section className="container-x py-12">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-lime/20 bg-gradient-to-br from-teal-500/10 to-transparent p-8">
+            <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-aurora-300/20 bg-gradient-to-br from-aurora-300/10 to-transparent p-8">
               <div>
-                <span className="eyebrow text-lime/80">ช่องทางหลัก</span>
+                <span className="eyebrow text-mint/80">ช่องทางหลัก</span>
                 <h2 className="mt-3 font-display text-fluid-lg font-bold text-white">
                   ทักไลน์ตอบไว ที่สุด
                 </h2>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   <li>{site.hours}</li>
                   <li>{site.phone}</li>
                   <li>
-                    <a href={`mailto:${site.email}`} className="hover:text-lime">
+                    <a href={`mailto:${site.email}`} className="hover:text-mint">
                       {site.email}
                     </a>
                   </li>
@@ -108,11 +108,11 @@ export default function ContactPage() {
           <Reveal delay={0.08}>
             <div
               id="b2b"
-              className="scroll-mt-28 rounded-3xl border border-teal-300/20 bg-gradient-to-br from-teal-500/[0.07] to-transparent p-7"
+              className="scroll-mt-28 rounded-3xl border border-aurora-300/20 bg-gradient-to-br from-aurora-300/[0.07] to-transparent p-7"
             >
               <div className="flex items-center gap-2">
                 <span className="eyebrow">สำหรับองค์กร</span>
-                <span className="rounded-full bg-teal-400/15 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-widest text-teal-200">
+                <span className="rounded-full bg-aurora-200/15 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-widest text-mint">
                   B2B
                 </span>
               </div>

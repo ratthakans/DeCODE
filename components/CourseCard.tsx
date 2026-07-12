@@ -45,7 +45,7 @@ export function CourseCard({ course }: { course: Course }) {
           background: useMotionTemplate`
             radial-gradient(
               450px circle at ${mouseX}px ${mouseY}px,
-              rgba(16, 185, 129, 0.15),
+              rgba(45, 212, 191, 0.15),
               transparent 80%
             )
           `,
@@ -54,8 +54,6 @@ export function CourseCard({ course }: { course: Course }) {
 
       <div className="absolute inset-0 block z-0">
         <CourseArt course={course} className="h-full w-full opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
-        {/* Grainy overlay */}
-        <div className="absolute inset-0 bg-grainy" />
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
         
