@@ -9,41 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Dark base — Premium Off-Black (Charcoal)
+        // Pure-black base — the ground of the aurora night
         ink: {
-          DEFAULT: "#0A0A0B",
-          50: "#0D0D0E",
-          100: "#121315",
-          200: "#1A1B1E",
-          300: "#222428",
+          DEFAULT: "#000000",
+          50: "#050807",
+          100: "#0A0F0E",
+          200: "#121917",
+          300: "#1B2422",
         },
-        // Aurora green spectrum
+        // Dark-teal aurora spectrum — one signature hue, ice → deep
         aurora: {
-          50: "#CBEFEB",
-          100: "#B5F2DB",
-          200: "#8fe9db",
-          300: "#48A89A",
-          400: "#22bda9",
-          500: "#00524D",
-          600: "#053931",
-          700: "#042F34",
-          800: "#072928",
-          900: "#021e21",
-          violet: "#7c3aed",
-          magenta: "#c026d3",
+          50: "#E1F5EE",
+          100: "#7FF3DC",
+          200: "#2DD4BF",
+          300: "#12A594",
+          400: "#0F8577",
+          500: "#0C6B5F",
+          600: "#0C3B36",
+          700: "#08302C",
+          800: "#052220",
+          900: "#021512",
         },
-        // Mint green — the signature aurora highlight
+        // Mint highlight — the glowing tip of the aurora
         mint: {
-          DEFAULT: "#B5F2DB",
-          soft: "#CBEFEB",
-          bright: "#8fe9db",
-          dim: "#48A89A",
+          DEFAULT: "#7FF3DC",
+          soft: "#E1F5EE",
+          bright: "#2DD4BF",
+          dim: "#12A594",
         },
-        // Platinum / Pure White accent — for HUD elements and buttons
+        // Off-white accent — HUD elements and secondary buttons
         accent: {
-          DEFAULT: "#ffffff",
-          soft: "#a3a3a3",
-          deep: "#525252",
+          DEFAULT: "#EEF4F2",
+          soft: "#7C8A87",
+          deep: "#4E5A58",
         },
         // Neutral tones
         pale: "#E4EEF0",

@@ -39,7 +39,7 @@ export function CourseProof({
             style={{
               background:
                 i === 0
-                  ? "linear-gradient(135deg,#48A89A,#00524D)"
+                  ? "linear-gradient(135deg,#2DD4BF,#0C3B36)"
                   : i === 1
                   ? "linear-gradient(135deg,#38bdf8,#0e7490)"
                   : "linear-gradient(135deg,#34d399,#0f766e)",

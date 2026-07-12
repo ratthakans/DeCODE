@@ -7,14 +7,15 @@
     --font-display: "Anuphan", system-ui, sans-serif;
     --font-body: "IBM Plex Sans Thai", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", monospace;
-    /* Aurora color tokens */
+    /* Aurora color tokens — pure black base, single dark-teal hue */
     --aurora-deep: #000000;
-    --aurora-forest: #053931;
-    --aurora-mid: #00524D;
-    --aurora-green: #48A89A;
-    --aurora-mint: #B5F2DB;
-    --aurora-ice: #CBEFEB;
-    --accent-platinum: #ffffff;
+    --aurora-forest: #0C3B36;
+    --aurora-mid: #0C6B5F;
+    --aurora-green: #12A594;
+    --aurora-bright: #2DD4BF;
+    --aurora-mint: #7FF3DC;
+    --aurora-ice: #E1F5EE;
+    --accent-platinum: #EEF4F2;
   }
 
   * {
@@ -27,8 +28,8 @@
   }
 
   body {
-    background-color: #021e21;
-    color: #F5F5F5;
+    background-color: #000000;
+    color: #EEF4F2;
     font-family: var(--font-body);
     overflow-x: hidden;
   }
@@ -52,7 +53,7 @@
     border: 2px solid #000000;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #48A89A;
+    background: #12A594;
   }
 }
 
@@ -85,9 +86,9 @@
     z-index: 50;
   }
 
-  /* ── Aurora text gradient ── */
+  /* ── Aurora text gradient — mint → dark teal ── */
   .text-gradient-aurora {
-    background: linear-gradient(100deg, #CBEFEB 0%, #B5F2DB 35%, #48A89A 70%, #8fe9db 100%);
+    background: linear-gradient(100deg, #7FF3DC 0%, #2DD4BF 45%, #12A594 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -101,7 +102,7 @@
   /* Hairline label */
   .eyebrow {
     @apply font-mono text-[0.7rem] uppercase tracking-[0.28em];
-    color: rgba(181, 242, 219, 0.8);
+    color: rgba(127, 243, 220, 0.8);
   }
 
   /* Thin divider line */
@@ -121,7 +122,7 @@
       90deg,
       transparent,
       rgba(255, 255, 255, 0.08),
-      rgba(72, 168, 154, 0.25),
+      rgba(45, 212, 191, 0.25),
       rgba(255, 255, 255, 0.08),
       transparent
     );

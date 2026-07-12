@@ -46,7 +46,7 @@ export function Hero() {
                 <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block">เท่า</motion.span>
                 <br />
                 <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block mr-4">ด้วย</motion.span>
-                <motion.span variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-aurora-300 via-aurora-violet to-aurora-magenta bg-[length:200%_auto] animate-aurora-shimmer">AI</motion.span>
+                <motion.span variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-mint via-aurora-200 to-aurora-300 bg-[length:200%_auto] animate-aurora-shimmer">AI</motion.span>
               </motion.div>
             </div>
 
