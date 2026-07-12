@@ -58,17 +58,17 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                   ลงชื่อรับการแจ้งเตือน
                 </h3>
                 <p className="text-sm text-white/60 mb-6">
-                  สำหรับคอร์ส <span className="text-aurora-400 font-medium">{courseTitle}</span>
+                  สำหรับคอร์ส <span className="text-aurora-200 font-medium">{courseTitle}</span>
                 </p>
 
                 {status === "success" ? (
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-aurora-500/10 p-6 text-center border border-aurora-500/20"
+                    className="rounded-2xl bg-aurora-500/10 p-6 text-center border border-aurora-300/20"
                   >
                     <div className="mx-auto w-12 h-12 rounded-full bg-aurora-500/20 flex items-center justify-center mb-4">
-                      <svg className="w-6 h-6 text-aurora-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-6 h-6 text-aurora-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
@@ -91,7 +91,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                         type="text" 
                         name="name" 
                         required 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-500/50 focus:outline-none focus:ring-1 focus:ring-aurora-500/50 transition-colors"
+                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-300/50 focus:outline-none focus:ring-1 focus:ring-aurora-300/50 transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -101,7 +101,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                         type="email" 
                         name="email" 
                         required 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-500/50 focus:outline-none focus:ring-1 focus:ring-aurora-500/50 transition-colors"
+                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-300/50 focus:outline-none focus:ring-1 focus:ring-aurora-300/50 transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -110,7 +110,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                       <input 
                         type="tel" 
                         name="phone" 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-500/50 focus:outline-none focus:ring-1 focus:ring-aurora-500/50 transition-colors"
+                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-300/50 focus:outline-none focus:ring-1 focus:ring-aurora-300/50 transition-colors"
                         placeholder="08X-XXX-XXXX"
                       />
                     </div>
@@ -130,7 +130,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                       <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="flex-1 rounded-full bg-aurora-500 py-3 text-sm font-medium text-black hover:bg-aurora-400 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                        className="flex-1 rounded-full bg-aurora-200 py-3 text-sm font-semibold text-[#022b26] hover:bg-mint transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                       >
                         {status === "loading" ? "กำลังส่ง..." : "ลงชื่อเลย"}
                       </button>

@@ -23,7 +23,7 @@ export default function ContactPage() {
             <span className="eyebrow">ติดต่อเรา</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-extrabold leading-[1.05] text-white">
+            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
               คุยกับเราก่อนได้{" "}
               <span className="text-gradient-teal">ไม่มีข้อผูกมัด</span>
             </h1>
@@ -61,7 +61,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="flex h-full items-center gap-6 rounded-3xl border border-white/8 bg-ink-100/50 p-8">
+            <div className="flex h-full items-center gap-6 rounded-3xl border border-white/10 bg-ink-100/50 p-8">
               <QrMock />
               <div>
                 <p className="font-display font-semibold text-white">
@@ -90,7 +90,7 @@ export default function ContactPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* B2C */}
           <Reveal>
-            <div className="rounded-3xl border border-white/8 bg-ink-100/40 p-7">
+            <div className="rounded-3xl border border-white/10 bg-ink-100/40 p-7">
               <span className="eyebrow">บุคคลทั่วไป</span>
               <h2 className="mt-3 font-display text-lg font-bold text-white">
                 สอบถามคอร์ส / ขอคำแนะนำ

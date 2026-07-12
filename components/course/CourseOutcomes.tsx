@@ -13,7 +13,7 @@ export function CourseOutcomes({ course }: { course: Course }) {
         {course.outcomes.map((o, i) => (
           <RevealItem key={o}>
             <div className="flex h-full flex-col gap-3 py-4">
-              <span className="font-mono text-3xl font-light text-white/20">
+              <span className="font-mono text-3xl font-normal text-white/20">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <p className="text-base leading-relaxed text-white/90">{o}</p>

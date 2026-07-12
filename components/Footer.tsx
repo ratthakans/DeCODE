@@ -56,7 +56,7 @@ export function Footer() {
                   href={v}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-aurora-300/15 text-xs uppercase text-white/60 transition-colors hover:border-mint/50 hover:text-mint"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-aurora-300/10 text-xs uppercase text-white/60 transition-colors hover:border-mint/50 hover:text-mint"
                 >
                   {k[0]}
                 </a>
@@ -65,7 +65,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-aurora-300/8 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-aurora-300/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {site.name}. สงวนลิขสิทธิ์.</p>
           <p className="font-mono tracking-wide">
             สอน AI แบบลงมือทำ · Claude · Gemini · ChatGPT · Coding

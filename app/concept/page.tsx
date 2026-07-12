@@ -53,7 +53,7 @@ export default function ConceptPage() {
             <span className="eyebrow">แนวคิดของ DeCODE</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-4xl text-balance font-display text-fluid-3xl font-extrabold leading-[0.98] text-white">
+            <h1 className="mt-5 max-w-4xl text-balance font-display text-fluid-3xl font-bold leading-[0.98] text-white">
               AI ไม่ได้มาแทนคุณ
               <br />
               แต่คนที่ใช้ AI เป็น
@@ -89,7 +89,7 @@ export default function ConceptPage() {
         <RevealGroup className="space-y-4">
           {gaps.map((g, i) => (
             <RevealItem key={i}>
-              <div className="grid items-center gap-4 rounded-3xl border border-white/8 bg-ink-100/40 p-6 sm:grid-cols-[1fr_auto_1fr]">
+              <div className="grid items-center gap-4 rounded-3xl border border-white/10 bg-ink-100/40 p-6 sm:grid-cols-[1fr_auto_1fr]">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-aurora-200/10 font-mono text-xs text-mint">
                     เขา
@@ -123,7 +123,7 @@ export default function ConceptPage() {
       </section>
 
       {/* beliefs */}
-      <section className="border-y border-white/8 bg-ink-50/40 py-24">
+      <section className="border-y border-white/10 bg-ink-50/40 py-24">
         <div className="container-x">
           <Reveal>
             <h2 className="mb-14 max-w-2xl font-display text-fluid-xl font-bold leading-tight text-white">
@@ -133,7 +133,7 @@ export default function ConceptPage() {
           <RevealGroup className="grid gap-6 md:grid-cols-3">
             {beliefs.map((b) => (
               <RevealItem key={b.n}>
-                <div className="flex h-full flex-col rounded-3xl border border-white/8 bg-ink-100/50 p-7">
+                <div className="flex h-full flex-col rounded-3xl border border-white/10 bg-ink-100/50 p-7">
                   <span className="font-mono text-sm text-mint">{b.n}</span>
                   <h3 className="mt-4 font-display text-lg font-bold leading-snug text-white">
                     {b.t}

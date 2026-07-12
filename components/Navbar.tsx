@@ -71,7 +71,7 @@ export function Navbar() {
           </div>
 
           <button
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-aurora-300/15 bg-aurora-300/5 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-aurora-300/10 bg-aurora-300/5 md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="เมนู"
             aria-expanded={open}
@@ -111,7 +111,7 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="border-b border-aurora-300/8 py-3.5 text-lg text-white/80"
+                  className="border-b border-aurora-300/10 py-3.5 text-lg text-white/80"
                 >
                   {item.label}
                 </Link>

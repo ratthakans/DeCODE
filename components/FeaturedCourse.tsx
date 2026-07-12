@@ -31,7 +31,7 @@ export function FeaturedCourse({ course }: { course: Course }) {
               </span>
             </div>
 
-            <h3 className="max-w-xl font-display text-fluid-xl font-extrabold leading-[1.08] text-white">
+            <h3 className="max-w-xl font-display text-fluid-xl font-bold leading-[1.08] text-white">
               {course.title}
             </h3>
             <p className="mt-4 max-w-xl text-fluid-base leading-relaxed text-white/65">
@@ -39,7 +39,7 @@ export function FeaturedCourse({ course }: { course: Course }) {
             </p>
 
             {/* schedule — shown clearly for available */}
-            <div className="mt-6 inline-flex items-center gap-2.5 rounded-2xl border border-aurora-300/15 bg-aurora-300/[0.04] backdrop-blur-sm px-4 py-3">
+            <div className="mt-6 inline-flex items-center gap-2.5 rounded-2xl border border-aurora-300/10 bg-aurora-300/[0.04] backdrop-blur-sm px-4 py-3">
               <CalendarIcon />
               <span className="text-sm font-medium text-white/85">
                 {course.schedule}

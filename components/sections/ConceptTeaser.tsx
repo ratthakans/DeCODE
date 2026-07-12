@@ -4,20 +4,20 @@ import { ArrowIcon } from "../ui/Button";
 
 export function ConceptTeaser() {
   return (
-    <section className="relative overflow-hidden border-y border-white/8 bg-black py-24 md:py-32">
+    <section className="relative overflow-hidden border-y border-white/10 bg-black py-24 md:py-32">
       <div className="container-x">
         <div className="mb-12 flex flex-col items-center text-center">
           <Reveal>
             <span className="eyebrow inline-flex items-center gap-2 mb-4">
-              <span className="h-px w-6 bg-aurora-400/50" />
+              <span className="h-px w-6 bg-mint/50" />
               THE DECODE CONCEPT
-              <span className="h-px w-6 bg-aurora-400/50" />
+              <span className="h-px w-6 bg-mint/50" />
             </span>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-balance font-display text-4xl font-bold leading-[1.1] text-white md:text-5xl">
               ยุคนี้คนที่ใช้ AI เป็น <br className="hidden sm:block" />
-              จะวิ่งนำคนอื่นไป <span className="text-aurora-400">10 เท่า</span>
+              จะวิ่งนำคนอื่นไป <span className="text-aurora-200">10 เท่า</span>
             </h2>
           </Reveal>
         </div>
@@ -39,7 +39,7 @@ export function ConceptTeaser() {
                 <div className="mt-8">
                   <Link
                     href="/concept"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-aurora-400 transition-colors hover:text-aurora-300"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-aurora-200 transition-colors hover:text-aurora-100"
                   >
                     อ่านแนวคิดเต็ม
                     <ArrowIcon className="transition-transform group-hover:translate-x-1" />
@@ -53,7 +53,7 @@ export function ConceptTeaser() {
           <Reveal delay={0.3}>
             <div className="relative h-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-aurora-900/40 to-black p-8">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-aurora-500/20 mb-6">
-                <svg className="w-6 h-6 text-aurora-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                <svg className="w-6 h-6 text-aurora-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
               </div>
               <h3 className="font-display text-xl font-semibold text-white mb-2">Automate Everything</h3>
               <p className="text-sm text-white/50 leading-relaxed">

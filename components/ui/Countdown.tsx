@@ -61,7 +61,7 @@ export function Countdown({
       {units.map((u) => (
         <div
           key={u.l}
-          className="flex min-w-[64px] flex-col items-center rounded-xl border border-aurora-300/15 bg-aurora-300/[0.04] backdrop-blur-sm px-3 py-2.5"
+          className="flex min-w-[64px] flex-col items-center rounded-xl border border-aurora-300/10 bg-aurora-300/[0.04] backdrop-blur-sm px-3 py-2.5"
         >
           <span className="font-display text-2xl font-bold tabular-nums text-white">
             {t ? String(u.v).padStart(2, "0") : "--"}

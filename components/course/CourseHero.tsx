@@ -68,7 +68,7 @@ export function CourseHero({
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-5 max-w-2xl text-balance font-display text-fluid-2xl font-extrabold leading-[1.05] text-white">
+              <h1 className="mt-5 max-w-2xl text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
                 {course.title}
               </h1>
             </Reveal>
@@ -121,7 +121,7 @@ export function CourseHero({
                   </div>
 
                   {/* schedule */}
-                  <div className="mb-5 space-y-3 border-y border-white/8 py-5 text-sm">
+                  <div className="mb-5 space-y-3 border-y border-white/10 py-5 text-sm">
                     <Row label="รูปแบบ" value={course.duration} />
                     <Row label="ระดับ" value={course.level} />
                     <Row

@@ -9,7 +9,7 @@ export default function NotFound() {
         <p className="font-mono text-sm uppercase tracking-[0.3em] text-mint/70">
           404
         </p>
-        <h1 className="mx-auto mt-4 max-w-lg font-display text-fluid-2xl font-extrabold text-white">
+        <h1 className="mx-auto mt-4 max-w-lg font-display text-fluid-2xl font-bold text-white">
           ไม่เจอหน้านี้ <span className="text-mint">แต่เจอทางกลับ</span>
         </h1>
         <p className="mx-auto mt-4 max-w-md text-white/55">

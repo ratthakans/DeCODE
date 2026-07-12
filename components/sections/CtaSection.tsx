@@ -18,7 +18,7 @@ export function CtaSection() {
           />
           <div className="relative mx-auto max-w-2xl">
             <span className="eyebrow">พร้อมเริ่มแล้วใช่ไหม</span>
-            <h2 className="mt-5 text-balance font-display text-fluid-2xl font-extrabold leading-[1.05] text-white">
+            <h2 className="mt-5 text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
               ช้าวันไหน ก็ถูกแซงวันนั้น
               <br />
               <span className="text-gradient-teal">เริ่มก่อน ได้เปรียบก่อน</span>

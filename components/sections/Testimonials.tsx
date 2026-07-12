@@ -26,7 +26,7 @@ export function Testimonials() {
           <RevealItem key={t.id}>
             <figure className="flex h-full flex-col rounded-3xl liquid-glass p-6">
               {/* before/after — the heart of the card */}
-              <div className="mb-5 rounded-2xl border border-aurora-300/15 bg-aurora-300/[0.04] p-4">
+              <div className="mb-5 rounded-2xl border border-aurora-300/10 bg-aurora-300/[0.04] p-4">
                 <div className="flex items-center gap-2 text-sm">
                   <span className="text-white/45 line-through decoration-white/25">
                     {t.beforeAfter.before}

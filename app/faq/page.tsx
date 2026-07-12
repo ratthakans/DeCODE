@@ -23,7 +23,7 @@ export default function FaqPage() {
             <span className="eyebrow">คำถามที่พบบ่อย</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-extrabold leading-[1.05] text-white">
+            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
               เคลียร์ข้อลังเลให้จบ{" "}
               <span className="text-gradient-teal">ก่อนทักแชต</span>
             </h1>

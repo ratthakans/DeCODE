@@ -69,7 +69,7 @@ export function CourseCard({ course }: { course: Course }) {
             <span className="text-sm font-medium text-white/80">{course.instructor.name}</span>
           </div>
 
-          <h3 className="font-display text-2xl font-bold leading-tight text-white transition-colors group-hover:text-aurora-400">
+          <h3 className="font-display text-2xl font-bold leading-tight text-white transition-colors group-hover:text-aurora-200">
             {course.title}
           </h3>
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/60">
@@ -88,7 +88,7 @@ export function CourseCard({ course }: { course: Course }) {
                 courseSlug={course.slug}
                 courseTitle={course.title}
                 size="sm"
-                className="border-white/20 hover:border-aurora-400 hover:text-aurora-400 backdrop-blur-md"
+                className="border-white/20 hover:border-aurora-200 hover:text-aurora-200 backdrop-blur-md"
               />
             </div>
           </div>
