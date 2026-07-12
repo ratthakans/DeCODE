@@ -16,25 +16,26 @@ export function HomeCourses() {
           eyebrow="หลักสูตรทั้งหมด"
           title={
             <>
-              อัปสกิลรอบด้านด้วย{" "}
-              <span className="text-gradient-teal">DeCODE</span>
+              เลือกเส้นทางของคุณ
+              <br />
+              แล้วสั่ง AI ให้ทำงานแทน
             </>
           }
           intro="เลือกคอร์สที่เหมาะกับเป้าหมายของคุณ พร้อมเริ่มเรียนทันที หรือกดรับแจ้งเตือนสำหรับคอร์สใหม่"
         />
         <Link
           href="/courses"
-          className="group inline-flex items-center gap-2 rounded-full border border-aurora-300/20 px-5 py-2.5 text-sm text-white/70 transition-colors hover:border-aurora-200/40 hover:text-aurora-200"
+          className="group inline-flex items-center gap-2 text-sm text-white/60 transition-colors hover:text-mint"
         >
           ดูทั้งหมด
           <ArrowIcon className="transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
 
-      <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {displayCourses.map((c) => (
+      <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {displayCourses.map((c, i) => (
           <RevealItem key={c.id}>
-            <CourseCard course={c} />
+            <CourseCard course={c} index={i} />
           </RevealItem>
         ))}
       </RevealGroup>

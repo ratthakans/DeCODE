@@ -85,7 +85,7 @@ export const courses: Course[] = [
     proofMode: "countdown",
     category: "บริหาร & ระบบอัตโนมัติ",
     tags: ["Claude Projects", "Automation", "n8n", "ClickUp", "Business Intelligence"],
-    coverImage: "/courses/operator.jpg",
+    coverImage: "https://images.pexels.com/photos/15389577/pexels-photo-15389577.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "teal",
     businessType: "b2c",
     outcomes: [
@@ -141,7 +141,7 @@ export const courses: Course[] = [
     proofMode: "countdown",
     category: "Coding & Deployment",
     tags: ["React", "Supabase", "GitHub Actions", "Railway", "CI/CD"],
-    coverImage: "/courses/10x.jpg",
+    coverImage: "https://images.pexels.com/photos/256502/pexels-photo-256502.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
@@ -196,7 +196,7 @@ export const courses: Course[] = [
     proofMode: "waitlist",
     category: "Creative & Front-End",
     tags: ["GSAP", "Framer Motion", "Three.js", "Awwwards", "Typography"],
-    coverImage: "/courses/aesthetic.jpg",
+    coverImage: "https://images.pexels.com/photos/326514/pexels-photo-326514.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
@@ -251,7 +251,7 @@ export const courses: Course[] = [
     proofMode: "waitlist",
     category: "บริหาร & ระบบอัตโนมัติ",
     tags: ["Claude Projects", "n8n", "ClickUp", "Delegation", "SMEMOVE"],
-    coverImage: "/courses/coworker.jpg",
+    coverImage: "https://images.pexels.com/photos/3582392/pexels-photo-3582392.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
@@ -306,7 +306,7 @@ export const courses: Course[] = [
     proofMode: "waitlist",
     category: "Creative Direction",
     tags: ["Art Direction", "XML Prompt", "Gamma", "Pitching", "Agency Workflow"],
-    coverImage: "/courses/godmode.jpg",
+    coverImage: "https://images.pexels.com/photos/29506609/pexels-photo-29506609.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
@@ -361,7 +361,7 @@ export const courses: Course[] = [
     proofMode: "countdown",
     category: "Full-Stack & SaaS",
     tags: ["Supabase", "Stripe", "GitHub Actions", "Railway", "SaaS"],
-    coverImage: "/courses/startup.jpg",
+    coverImage: "https://images.pexels.com/photos/3747115/pexels-photo-3747115.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
@@ -417,7 +417,7 @@ export const courses: Course[] = [
     proofMode: "waitlist",
     category: "AI Deep Tech",
     tags: ["Prompt Engineering", "Context Window", "API", "Function Calling"],
-    coverImage: "/courses/deepcore.jpg",
+    coverImage: "https://images.pexels.com/photos/12060425/pexels-photo-12060425.jpeg?auto=compress&cs=tinysrgb&w=1200",
     accent: "neutral",
     businessType: "b2c",
     outcomes: [

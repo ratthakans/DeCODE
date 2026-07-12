@@ -46,10 +46,10 @@ export default function CoursesPage() {
           <span className="hairline flex-1" />
         </div>
 
-        <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {courses.map((c) => (
+        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {courses.map((c, i) => (
             <RevealItem key={c.id}>
-              <CourseCard course={c} />
+              <CourseCard course={c} index={i} />
             </RevealItem>
           ))}
         </RevealGroup>

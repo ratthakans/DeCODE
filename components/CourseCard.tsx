@@ -6,10 +6,9 @@ import { motion } from "framer-motion";
 import type { Course } from "@/lib/courses";
 import { priceFormatter } from "@/lib/courses";
 import { StatusBadge } from "./ui/StatusBadge";
-import { Avatar } from "./ui/Avatar";
 
-/** Editorial poster card — full-bleed cover, quiet chrome, teal on hover. */
-export function CourseCard({ course }: { course: Course }) {
+/** Cinematic poster card — a moody cover, glass edge, blueprint grid, teal on hover. */
+export function CourseCard({ course, index }: { course: Course; index?: number }) {
   const router = useRouter();
   const available = course.status === "available";
   const go = () => router.push(`/courses/${course.slug}`);
@@ -23,43 +22,43 @@ export function CourseCard({ course }: { course: Course }) {
       tabIndex={0}
       aria-label={course.title}
       onKeyDown={(e) => e.key === "Enter" && go()}
-      className="group relative flex aspect-[3/4] cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-100 transition-colors duration-300 hover:border-mint/30"
+      className="glass-edge group relative flex aspect-[5/6] cursor-pointer flex-col overflow-hidden rounded-[20px] border border-white/10 bg-ink-100 transition-[transform,border-color,box-shadow] duration-300 hover:border-mint/40"
     >
       {/* cover */}
-      <div className="absolute inset-0">
+      <div className="blueprint absolute inset-0">
         {course.coverImage ? (
           <Image
             src={course.coverImage}
             alt={course.title}
             fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-[1.06]"
           />
         ) : (
           <div className="h-full w-full bg-[linear-gradient(150deg,#0c3b36,#000_80%)]" />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/5" />
+        <div className="scrim-cine absolute inset-0" />
       </div>
 
-      {/* top row: status + category */}
-      <div className="relative z-10 flex items-start justify-between gap-2 p-5">
+      {/* top row */}
+      <div className="relative z-10 flex items-start justify-between gap-2 p-4">
         <StatusBadge course={course} size="sm" />
-        <span className="rounded-full border border-white/15 bg-black/30 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-widest text-white/70 backdrop-blur-sm">
+        <span className="rounded-full border border-white/15 bg-black/35 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-widest text-white/75 backdrop-blur-sm">
           {course.category}
         </span>
       </div>
 
-      {/* bottom: identity + pitch + price */}
+      {/* bottom */}
       <div className="relative z-10 mt-auto p-5">
-        <div className="mb-3 flex items-center gap-2.5">
-          <Avatar name={course.instructor.name} src={course.instructor.photoUrl} accent={course.accent} size={26} />
-          <span className="text-xs font-medium text-white/70">{course.instructor.name}</span>
-        </div>
-
-        <h3 className="font-display text-xl font-bold leading-tight text-white">
+        {typeof index === "number" && (
+          <span className="font-mono text-[11px] tracking-[0.1em] text-aurora-200">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        )}
+        <h3 className="mt-1.5 font-display text-xl font-bold leading-tight tracking-[-0.02em] text-[#f8fbfa]">
           {course.title}
         </h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/55">
+        <p className="mt-2 line-clamp-2 text-[0.86rem] leading-relaxed text-white/55">
           {course.subtitle}
         </p>
 
@@ -82,9 +81,6 @@ export function CourseCard({ course }: { course: Course }) {
           </span>
         </div>
       </div>
-
-      {/* teal wash on hover */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-2/5 bg-gradient-to-t from-mint/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
     </motion.article>
   );
 }

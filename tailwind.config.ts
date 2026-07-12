@@ -118,6 +118,10 @@ const config: Config = {
           "0%, 100%": { opacity: "0.3" },
           "50%": { opacity: "1" },
         },
+        cursor: {
+          "0%, 55%": { opacity: "1" },
+          "56%, 100%": { opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -132,6 +136,7 @@ const config: Config = {
         "aurora-pulse": "aurora-pulse 4s ease-in-out infinite",
         "glass-refract": "glass-refract 12s linear infinite",
         "star-twinkle": "star-twinkle 3s ease-in-out infinite",
+        cursor: "cursor 1.4s steps(1) infinite",
       },
     },
   },

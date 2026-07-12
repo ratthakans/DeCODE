@@ -1,11 +1,12 @@
-/** DeCODE wordmark — the "CO" carries the signature mint as a brand tell. */
+/** DeCODE wordmark — monospace developer lockup; the "CO" carries the mint,
+ *  a blinking cursor gives it a terminal feel. */
 export function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`font-display text-xl font-bold tracking-tight text-white ${className}`}
+      className={`font-mono font-medium tracking-[-0.04em] text-white ${className}`}
     >
       De<span className="text-mint">CO</span>DE
-      <span className="ml-0.5 inline-block h-1.5 w-1.5 translate-y-[-2px] rounded-full bg-accent align-middle" />
+      <span className="animate-cursor text-aurora-200">_</span>
     </span>
   );
 }
