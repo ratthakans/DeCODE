@@ -49,7 +49,7 @@ export function Features() {
         {features.map((f) => (
           <RevealItem key={f.title} className={f.span}>
             <div
-              className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl liquid-glass p-6 transition-colors hover:border-mint/25`}
+              className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/20`}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-mint/70 transition-colors group-hover:bg-mint" />
               <div>
