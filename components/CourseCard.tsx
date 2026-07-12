@@ -1,99 +1,90 @@
 "use client";
 
-
+import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import type { Course } from "@/lib/courses";
 import { priceFormatter } from "@/lib/courses";
-import { CourseArt } from "./ui/CourseArt";
 import { StatusBadge } from "./ui/StatusBadge";
 import { Avatar } from "./ui/Avatar";
-import { CourseAction } from "./course/CourseAction";
-import { notifyLineLink, courseLineLink } from "@/lib/line";
-import { MouseEvent } from "react";
 
-/** A4 Vertical Poster style for CourseCard with Cursor Spotlight */
+/** Editorial poster card — full-bleed cover, quiet chrome, teal on hover. */
 export function CourseCard({ course }: { course: Course }) {
   const router = useRouter();
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-  
   const available = course.status === "available";
-  const ctaHref = available
-    ? courseLineLink(course.title, course.schedule)
-    : notifyLineLink(course.title);
-  const ctaLabel = available ? "จองที่นั่ง" : "แจ้งเตือน";
+  const go = () => router.push(`/courses/${course.slug}`);
 
   return (
     <motion.article
-      onMouseMove={handleMouseMove}
-      whileHover={{ y: -6, scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-100 shadow-sm aspect-[4/5] sm:aspect-[1/1.414] cursor-pointer"
-      onClick={() => router.push(`/courses/${course.slug}`)}
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 26 }}
+      onClick={go}
+      role="link"
+      tabIndex={0}
+      aria-label={course.title}
+      onKeyDown={(e) => e.key === "Enter" && go()}
+      className="group relative flex aspect-[3/4] cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-ink-100 transition-colors duration-300 hover:border-mint/30"
     >
-      {/* Spotlight Effect */}
-      <motion.div
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100 z-10"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              450px circle at ${mouseX}px ${mouseY}px,
-              rgba(45, 212, 191, 0.15),
-              transparent 80%
-            )
-          `,
-        }}
-      />
+      {/* cover */}
+      <div className="absolute inset-0">
+        {course.coverImage ? (
+          <Image
+            src={course.coverImage}
+            alt={course.title}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+          />
+        ) : (
+          <div className="h-full w-full bg-[linear-gradient(150deg,#0c3b36,#000_80%)]" />
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/5" />
+      </div>
 
-      <div className="absolute inset-0 block z-0">
-        <CourseArt course={course} className="h-full w-full opacity-60 transition-opacity duration-500 group-hover:opacity-80" />
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-        
-        {/* Top badges */}
-        <div className="absolute left-4 top-4 flex justify-between right-4">
-          <StatusBadge course={course} size="sm" />
+      {/* top row: status + category */}
+      <div className="relative z-10 flex items-start justify-between gap-2 p-5">
+        <StatusBadge course={course} size="sm" />
+        <span className="rounded-full border border-white/15 bg-black/30 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-widest text-white/70 backdrop-blur-sm">
+          {course.category}
+        </span>
+      </div>
+
+      {/* bottom: identity + pitch + price */}
+      <div className="relative z-10 mt-auto p-5">
+        <div className="mb-3 flex items-center gap-2.5">
+          <Avatar name={course.instructor.name} src={course.instructor.photoUrl} accent={course.accent} size={26} />
+          <span className="text-xs font-medium text-white/70">{course.instructor.name}</span>
         </div>
 
-        {/* Content at the bottom */}
-        <div className="absolute inset-x-0 bottom-0 flex flex-col p-6 text-shadow-sm">
-          <div className="mb-4 flex items-center gap-3">
-            <Avatar name={course.instructor.name} src={course.instructor.photoUrl} accent={course.accent} size={48} />
-            <span className="text-sm font-medium text-white/80">{course.instructor.name}</span>
-          </div>
+        <h3 className="font-display text-xl font-bold leading-tight text-white">
+          {course.title}
+        </h3>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/55">
+          {course.subtitle}
+        </p>
 
-          <h3 className="font-display text-2xl font-bold leading-tight text-white transition-colors group-hover:text-aurora-200">
-            {course.title}
-          </h3>
-          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/60">
-            {course.subtitle}
-          </p>
-
-          <div className="mt-6 flex items-center justify-between gap-3">
-            <span className="font-mono text-sm font-semibold text-white/70 tabular-nums">
+        <div className="mt-4 flex items-center justify-between border-t border-white/10 pt-4">
+          <div className="flex items-baseline gap-2">
+            <span className="font-mono text-sm font-semibold tabular-nums text-white/90">
               {priceFormatter.format(course.price)}
             </span>
-            <div onClick={(e) => e.stopPropagation()}>
-              <CourseAction
-                available={available}
-                ctaHref={ctaHref}
-                ctaLabel={ctaLabel}
-                courseSlug={course.slug}
-                courseTitle={course.title}
-                size="sm"
-                className="border-white/20 hover:border-aurora-200 hover:text-aurora-200 backdrop-blur-md"
-              />
-            </div>
+            {course.priceCompareAt && (
+              <span className="font-mono text-xs text-white/35 line-through">
+                {priceFormatter.format(course.priceCompareAt)}
+              </span>
+            )}
           </div>
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-mint">
+            {available ? "จองที่นั่ง" : "ดูรายละเอียด"}
+            <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
         </div>
       </div>
+
+      {/* teal wash on hover */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-2/5 bg-gradient-to-t from-mint/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
     </motion.article>
   );
 }
