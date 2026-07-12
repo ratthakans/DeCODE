@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { courses, getCourse } from "@/lib/courses";
 import { courseLineLink, notifyLineLink } from "@/lib/line";
 import { Reveal } from "@/components/ui/Reveal";
-import { Button, LineIcon } from "@/components/ui/Button";
+
 
 import { CourseHero } from "@/components/course/CourseHero";
 import { CourseOutcomes } from "@/components/course/CourseOutcomes";

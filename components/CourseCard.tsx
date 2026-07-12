@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import type { Course } from "@/lib/courses";
@@ -35,7 +35,7 @@ export function CourseCard({ course }: { course: Course }) {
       onMouseMove={handleMouseMove}
       whileHover={{ y: -6, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 shadow-sm aspect-[1/1.414] cursor-pointer"
+      className="group relative flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-neutral-900 shadow-sm aspect-[4/5] sm:aspect-[1/1.414] cursor-pointer"
       onClick={() => router.push(`/courses/${course.slug}`)}
     >
       {/* Spotlight Effect */}
@@ -71,7 +71,7 @@ export function CourseCard({ course }: { course: Course }) {
             <span className="text-sm font-medium text-white/80">{course.instructor.name}</span>
           </div>
 
-          <h3 className="font-display text-2xl font-bold leading-tight text-white transition-colors group-hover:text-emerald-400">
+          <h3 className="font-display text-2xl font-bold leading-tight text-white transition-colors group-hover:text-aurora-400">
             {course.title}
           </h3>
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-white/60">
@@ -90,7 +90,7 @@ export function CourseCard({ course }: { course: Course }) {
                 courseSlug={course.slug}
                 courseTitle={course.title}
                 size="sm"
-                className="border-white/20 hover:border-emerald-400 hover:text-emerald-400 backdrop-blur-md"
+                className="border-white/20 hover:border-aurora-400 hover:text-aurora-400 backdrop-blur-md"
               />
             </div>
           </div>

@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { useRef, type ReactNode } from "react";
 
-type Variant = "lime" | "teal" | "ghost" | "outline";
+type Variant = "aurora" | "teal" | "ghost" | "outline";
 
 const base =
   "relative inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-tight transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-ink select-none";
@@ -16,7 +16,7 @@ const sizes = {
 };
 
 const variants: Record<Variant, string> = {
-  lime: "bg-[linear-gradient(110deg,#10b981,45%,#34d399,55%,#10b981)] bg-[length:200%_100%] animate-shimmer text-black shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:-translate-y-0.5",
+  aurora: "bg-[linear-gradient(110deg,#22bda9,30%,#7c3aed,50%,#c026d3,70%,#22bda9)] bg-[length:200%_100%] animate-shimmer text-white shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 hover:-translate-y-0.5",
   teal: "bg-neutral-800 text-white hover:bg-neutral-700", // Flat dark secondary button
   ghost: "bg-transparent text-white hover:bg-white/5 border border-white/10",
   outline: "bg-transparent text-white/70 border border-white/20 hover:border-white/50 hover:bg-white/5",
@@ -39,7 +39,7 @@ export function Button({
   children,
   href,
   onClick,
-  variant = "lime",
+  variant = "aurora",
   size = "md",
   className = "",
   external,

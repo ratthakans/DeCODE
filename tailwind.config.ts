@@ -29,6 +29,8 @@ const config: Config = {
           700: "#042F34",
           800: "#072928",
           900: "#021e21",
+          violet: "#7c3aed",
+          magenta: "#c026d3",
         },
         // Mint green — the signature aurora highlight
         mint: {

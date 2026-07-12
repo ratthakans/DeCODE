@@ -8,11 +8,14 @@ import { Countdown } from "../ui/Countdown";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { GradientField } from "../ui/GradientField";
+
 export function Hero() {
   const featured = getAvailableCourse();
 
   return (
     <section className="relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-32">
+      <GradientField intensity={0.5} />
       <div className="container-x relative">
         
         {/* Split Layout Container */}
@@ -43,7 +46,7 @@ export function Hero() {
                 <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block">เท่า</motion.span>
                 <br />
                 <motion.span variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block mr-4">ด้วย</motion.span>
-                <motion.span variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block text-emerald-400">AI</motion.span>
+                <motion.span variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1, transition: { type: "spring", stiffness: 300, damping: 24 } } }} className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-aurora-300 via-aurora-violet to-aurora-magenta bg-[length:200%_auto] animate-aurora-shimmer">AI</motion.span>
               </motion.div>
             </div>
 
@@ -55,7 +58,7 @@ export function Hero() {
 
             <Reveal delay={0.24}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-                <Button href="/courses" variant="lime" size="lg">
+                <Button href="/courses" variant="aurora" size="lg">
                   ดูคอร์สทั้งหมด <ArrowIcon />
                 </Button>
                 <Button href="/concept" variant="ghost" size="lg" magnetic={false}>

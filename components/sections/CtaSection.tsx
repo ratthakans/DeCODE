@@ -21,7 +21,7 @@ export function CtaSection() {
               เดี๋ยวเราแนะนำคอร์สที่เหมาะกับคุณให้เอง
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href={lineLink()} external variant="lime" size="lg">
+              <Button href={lineLink()} external variant="aurora" size="lg">
                 <LineIcon /> ทักไลน์สอบถาม
               </Button>
               <Button href="/courses" variant="ghost" size="lg" magnetic={false}>

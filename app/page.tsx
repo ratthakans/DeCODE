@@ -28,8 +28,8 @@ export default function HomePage() {
         </Marquee>
       </section>
 
-      <ConceptTeaser />
       <HomeCourses />
+      <ConceptTeaser />
       <Features />
       {/* Trust layer: testimonials answer "does it work for others" */}
       <Testimonials />

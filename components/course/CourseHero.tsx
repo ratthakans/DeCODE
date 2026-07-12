@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Course, priceFormatter } from "@/lib/courses";
 import { Reveal } from "@/components/ui/Reveal";
-import { ArrowIcon, LineIcon } from "@/components/ui/Button";
+import { ArrowIcon } from "@/components/ui/Button";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { CourseArt } from "@/components/ui/CourseArt";
 import { Avatar } from "@/components/ui/Avatar";

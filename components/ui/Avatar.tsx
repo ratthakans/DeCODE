@@ -56,7 +56,9 @@ export function Avatar({
       aria-hidden
     >
       <span className="absolute inset-0 opacity-25 mix-blend-overlay noise" />
-      {initials(name)}
+      <svg className="w-1/2 h-1/2 text-ink/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
     </span>
   );
 }

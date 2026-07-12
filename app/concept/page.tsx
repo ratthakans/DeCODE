@@ -158,7 +158,7 @@ export default function ConceptPage() {
               เราสอนให้คุณ<span className="text-lime">สั่งงาน</span>มันเป็น
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/courses" variant="lime" size="lg">
+              <Button href="/courses" variant="aurora" size="lg">
                 เลือกคอร์สของคุณ <ArrowIcon />
               </Button>
               <Button href="/faq" variant="ghost" size="lg" magnetic={false}>

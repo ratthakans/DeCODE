@@ -52,7 +52,7 @@ export default function ContactPage() {
                   ทีมงานพร้อมตอบเรื่องที่ว่าง ราคา และรอบเรียน
                 </p>
                 <div className="mt-6">
-                  <Button href={lineLink()} external variant="lime" size="lg">
+                  <Button href={lineLink()} external variant="aurora" size="lg">
                     <LineIcon /> เพิ่มเพื่อน {site.lineOaId}
                   </Button>
                 </div>

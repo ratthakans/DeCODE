@@ -65,7 +65,7 @@ export function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Button href={lineLink()} external variant="lime" size="sm">
+            <Button href={lineLink()} external variant="aurora" size="sm">
               <LineIcon /> ทักไลน์
             </Button>
           </div>
@@ -117,7 +117,7 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="pt-4">
-                <Button href={lineLink()} external variant="lime" size="md" className="w-full">
+                <Button href={lineLink()} external variant="aurora" size="md" className="w-full">
                   <LineIcon /> ทักไลน์ สอบถามคอร์ส
                 </Button>
               </div>

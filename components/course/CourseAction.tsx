@@ -31,7 +31,7 @@ export function CourseAction({
       <Button
         href={ctaHref}
         external
-        variant="lime"
+        variant="aurora"
         size={size}
         className={className}
       >

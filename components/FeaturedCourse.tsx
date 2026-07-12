@@ -50,7 +50,7 @@ export function FeaturedCourse({ course }: { course: Course }) {
               <Button
                 href={courseLineLink(course.title, course.schedule)}
                 external
-                variant="lime"
+                variant="aurora"
                 size="lg"
               >
                 <LineIcon /> สอบถาม / จองที่นั่ง

@@ -89,7 +89,7 @@ export function ContactFormB2C() {
                 course ? `สนใจคอร์ส ${course} ครับ/ค่ะ` : undefined
               )}
               external
-              variant="lime"
+              variant="aurora"
               size="md"
               className="w-full sm:w-auto"
               magnetic={false}

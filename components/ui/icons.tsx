@@ -32,14 +32,8 @@ export function NextJsIcon({ className = "" }: { className?: string }) {
 
 export function ClaudeIcon({ className = "" }: { className?: string }) {
   return (
-    <div className={`relative ${className}`}>
-      <Image 
-        src="https://upload.wikimedia.org/wikipedia/commons/4/47/Claude_Ai.svg" 
-        alt="Claude AI" 
-        fill
-        className="object-contain"
-        unoptimized
-      />
-    </div>
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path d="M12 2C12.5523 2 13 2.44772 13 3V8.26795L17.5622 5.63397C18.0402 5.35804 18.6517 5.52187 18.9276 5.99987C19.2036 6.47787 19.0397 7.0894 18.5617 7.36533L14 10L18.5617 12.634C19.0397 12.9099 19.2036 13.5215 18.9276 13.9995C18.6517 14.4775 18.0402 14.6413 17.5622 14.3654L13 11.732V17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17V11.732L6.43782 14.3654C5.95982 14.6413 5.34828 14.4775 5.07235 13.9995C4.79641 13.5215 4.96025 12.9099 5.43825 12.634L10 10L5.43825 7.36533C4.96025 7.0894 4.79641 6.47787 5.07235 5.99987C5.34828 5.52187 5.95982 5.35804 6.43782 5.63397L11 8.26795V3C11 2.44772 11.4477 2 12 2Z" />
+    </svg>
   );
 }

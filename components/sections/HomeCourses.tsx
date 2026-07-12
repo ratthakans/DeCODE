@@ -7,7 +7,7 @@ import { ArrowIcon } from "../ui/Button";
 
 export function HomeCourses() {
   // Use all courses to display them in a unified A4 poster grid
-  const displayCourses = courses.slice(0, 4);
+  const displayCourses = courses.slice(0, 8);
 
   return (
     <section className="container-x py-24 md:py-32">
@@ -24,7 +24,7 @@ export function HomeCourses() {
         />
         <Link
           href="/courses"
-          className="group inline-flex items-center gap-2 rounded-full border border-emerald-500/15 px-5 py-2.5 text-sm text-white/70 transition-colors hover:border-emerald-400/40 hover:text-emerald-400"
+          className="group inline-flex items-center gap-2 rounded-full border border-aurora-500/15 px-5 py-2.5 text-sm text-white/70 transition-colors hover:border-aurora-400/40 hover:text-aurora-400"
         >
           ดูทั้งหมด
           <ArrowIcon className="transition-transform group-hover:translate-x-1" />

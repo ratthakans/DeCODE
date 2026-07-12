@@ -8,7 +8,6 @@ import { Footer } from "@/components/Footer";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { site } from "@/lib/site";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 
 const display = Anuphan({
   subsets: ["thai", "latin"],
@@ -78,7 +77,6 @@ export default function RootLayout({
   return (
     <html lang="th" className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="min-h-screen bg-ink text-pale antialiased">
-        <CustomCursor />
         <AmbientBackground />
         <ScrollProgress />
         <Navbar />
@@ -86,7 +84,7 @@ export default function RootLayout({
         <Footer />
         <SpeedInsights />
         {/* Placeholder for real Google Analytics ID (GA4) */}
-        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
+        {/* <GoogleAnalytics gaId="G-XXXXXXXXXX" /> */}
       </body>
     </html>
   );

@@ -15,7 +15,7 @@ export function Footer() {
               {site.tagline} — เรียน onsite ลงมือทำจริง ได้ระบบที่เอาไปใช้กับธุรกิจต่อได้ทันที
             </p>
             <div className="mt-6">
-              <Button href={lineLink()} external variant="lime" size="sm">
+              <Button href={lineLink()} external variant="aurora" size="sm">
                 <LineIcon /> ทักไลน์ {site.lineOaId}
               </Button>
             </div>

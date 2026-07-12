@@ -16,7 +16,7 @@ export default function NotFound() {
           หน้าที่คุณกำลังหาอาจถูกย้ายหรือยังไม่เปิด ลองกลับไปหน้าแรกหรือดูคอร์สทั้งหมด
         </p>
         <div className="mt-8 flex justify-center gap-4">
-          <Button href="/" variant="lime" size="md">
+          <Button href="/" variant="aurora" size="md">
             กลับหน้าแรก <ArrowIcon />
           </Button>
           <Button href="/courses" variant="ghost" size="md" magnetic={false}>
