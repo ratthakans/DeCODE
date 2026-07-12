@@ -1,4 +1,3 @@
-import { Hero } from "@/components/sections/Hero";
 import { HomeCourses } from "@/components/sections/HomeCourses";
 import { Features } from "@/components/sections/Features";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -11,10 +10,8 @@ import { OpenAI, Supabase, NextJsIcon, ClaudeIcon } from "@/components/ui/icons"
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      
-      {/* Tech Stack Marquee */}
-      <section className="bg-black py-8 border-y border-white/10">
+      {/* Tech Stack Marquee — first section; clears the fixed navbar */}
+      <section className="bg-black pt-28 pb-8 md:pt-32 border-b border-white/10">
         <Marquee speed={30}>
           <div className="flex items-center gap-16 px-8">
             <div className="flex items-center gap-4 text-white/50"><ClaudeIcon className="h-8 w-8" /> <span className="font-display text-xl font-semibold">Claude</span></div>
