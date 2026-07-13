@@ -9,9 +9,9 @@ export function ConceptTeaser() {
         <div className="mb-12 flex flex-col items-center text-center">
           <Reveal>
             <span className="eyebrow inline-flex items-center gap-2 mb-4">
-              <span className="h-px w-6 bg-mint/50" />
+              <span className="h-px w-6 bg-aurora-200/50" />
               THE DECODE CONCEPT
-              <span className="h-px w-6 bg-mint/50" />
+              <span className="h-px w-6 bg-aurora-200/50" />
             </span>
           </Reveal>
           <Reveal delay={0.1}>
@@ -36,7 +36,7 @@ export function ConceptTeaser() {
               </div>
               <Link
                 href="/concept"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-mint transition-colors hover:text-mint-soft"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-aurora-200 transition-colors hover:text-aurora-100"
               >
                 อ่านแนวคิดเต็ม
                 <ArrowIcon className="transition-transform group-hover:translate-x-1" />
@@ -47,7 +47,7 @@ export function ConceptTeaser() {
           {/* Automate */}
           <Reveal delay={0.3}>
             <div className="h-full rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/20">
-              <span className="mb-6 block font-mono text-xs uppercase tracking-[0.2em] text-mint/70">01</span>
+              <span className="mb-6 block font-mono text-xs uppercase tracking-[0.2em] text-aurora-200/70">01</span>
               <h3 className="mb-2 font-display text-xl font-semibold text-white">Automate Everything</h3>
               <p className="text-sm leading-relaxed text-white/50">
                 เปลี่ยนงานซ้ำซากให้เป็นระบบอัตโนมัติด้วย AI
@@ -58,7 +58,7 @@ export function ConceptTeaser() {
           {/* Build faster */}
           <Reveal delay={0.4}>
             <div className="h-full rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/20">
-              <span className="mb-6 block font-mono text-xs uppercase tracking-[0.2em] text-mint/70">02</span>
+              <span className="mb-6 block font-mono text-xs uppercase tracking-[0.2em] text-aurora-200/70">02</span>
               <h3 className="mb-2 font-display text-xl font-semibold text-white">Build Ideas Faster</h3>
               <p className="text-sm leading-relaxed text-white/50">
                 เปลี่ยนไอเดียในหัวเป็นชิ้นงานจริงได้ในชั่วข้ามคืน
@@ -69,7 +69,7 @@ export function ConceptTeaser() {
           {/* System, not prompts (spans 2 cols) */}
           <Reveal delay={0.5} className="md:col-span-2">
             <div className="h-full rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/20">
-              <span className="mb-6 block font-mono text-xs uppercase tracking-[0.2em] text-mint/70">03</span>
+              <span className="mb-6 block font-mono text-xs uppercase tracking-[0.2em] text-aurora-200/70">03</span>
               <h3 className="mb-3 font-display text-2xl font-semibold text-white">
                 ไม่ใช่แค่ Prompt แต่คือ System
               </h3>

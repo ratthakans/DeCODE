@@ -45,7 +45,7 @@ export function Countdown({
       <div className={`flex items-center gap-1.5 font-mono ${className}`}>
         {units.map((u, i) => (
           <span key={u.l} className="flex items-baseline gap-1.5">
-            <span className="tabular-nums text-mint-soft">
+            <span className="tabular-nums text-aurora-100">
               {t ? String(u.v).padStart(2, "0") : "--"}
             </span>
             <span className="text-[0.65rem] text-white/40">{u.l}</span>

@@ -21,7 +21,7 @@ export function SectionHeading({
       {eyebrow && (
         <Reveal>
           <span className="eyebrow mb-4 inline-flex items-center gap-2">
-            <span className="h-px w-6 bg-mint/50" />
+            <span className="h-px w-6 bg-aurora-200/50" />
             {eyebrow}
           </span>
         </Reveal>

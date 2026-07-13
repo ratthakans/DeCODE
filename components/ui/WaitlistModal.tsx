@@ -130,7 +130,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                       <button
                         type="submit"
                         disabled={status === "loading"}
-                        className="flex-1 rounded-full bg-aurora-200 py-3 text-sm font-semibold text-[#022b26] hover:bg-mint transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
+                        className="flex-1 rounded-full bg-aurora-200 py-3 text-sm font-semibold text-[#022b26] hover:bg-aurora-100 transition-colors disabled:opacity-50 flex items-center justify-center gap-2"
                       >
                         {status === "loading" ? "กำลังส่ง..." : "ลงชื่อเลย"}
                       </button>

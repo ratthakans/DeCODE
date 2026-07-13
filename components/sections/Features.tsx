@@ -51,7 +51,7 @@ export function Features() {
             <div
               className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition-colors hover:border-white/20`}
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-mint/70 transition-colors group-hover:bg-mint" />
+              <span className="h-1.5 w-1.5 rounded-full bg-aurora-200/70 transition-colors group-hover:bg-aurora-100" />
               <div>
                 <h3 className="font-display text-lg font-bold text-white">
                   {f.title}

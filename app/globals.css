@@ -71,7 +71,7 @@
 
   /* ── Aurora text gradient — mint → dark teal ── */
   .text-gradient-aurora {
-    background: linear-gradient(100deg, #7FF3DC 0%, #2DD4BF 45%, #12A594 100%);
+    background: linear-gradient(100deg, #34d399, #2dd4bf 38%, #22d3ee 68%, #818cf8);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -79,16 +79,23 @@
 
   /* Legacy alias — same aurora recipe, kept for existing call sites */
   .text-gradient-teal {
-    background: linear-gradient(100deg, #7FF3DC 0%, #2DD4BF 45%, #12A594 100%);
+    background: linear-gradient(100deg, #34d399, #2dd4bf 38%, #22d3ee 68%, #818cf8);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
-  /* Hairline label */
+  /* Eyebrow label — Space Grotesk, aurora gradient (site-wide accent) */
   .eyebrow {
-    @apply font-mono text-[0.7rem] uppercase tracking-[0.28em];
-    color: rgba(127, 243, 220, 0.8);
+    font-family: var(--font-grotesk), system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    background: linear-gradient(100deg, #34d399, #2dd4bf 38%, #22d3ee 68%, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   /* Thin divider line */

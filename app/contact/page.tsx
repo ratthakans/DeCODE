@@ -43,7 +43,7 @@ export default function ContactPage() {
           <Reveal>
             <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-aurora-300/20 bg-gradient-to-br from-aurora-300/10 to-transparent p-8">
               <div>
-                <span className="eyebrow text-mint/80">ช่องทางหลัก</span>
+                <span className="eyebrow text-aurora-200/80">ช่องทางหลัก</span>
                 <h2 className="mt-3 font-display text-fluid-lg font-bold text-white">
                   ทักไลน์ตอบไว ที่สุด
                 </h2>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                   <li>{site.hours}</li>
                   <li>{site.phone}</li>
                   <li>
-                    <a href={`mailto:${site.email}`} className="hover:text-mint">
+                    <a href={`mailto:${site.email}`} className="hover:text-aurora-100">
                       {site.email}
                     </a>
                   </li>
@@ -112,7 +112,7 @@ export default function ContactPage() {
             >
               <div className="flex items-center gap-2">
                 <span className="eyebrow">สำหรับองค์กร</span>
-                <span className="rounded-full bg-aurora-200/15 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-widest text-mint">
+                <span className="rounded-full bg-aurora-200/15 px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-widest text-aurora-200">
                   B2B
                 </span>
               </div>

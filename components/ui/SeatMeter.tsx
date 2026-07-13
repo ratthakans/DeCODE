@@ -23,7 +23,7 @@ export function SeatMeter({
       <div className="mb-2 flex items-baseline justify-between">
         <span
           className={`font-display text-sm font-semibold ${
-            critical ? "text-accent" : "text-mint-soft"
+            critical ? "text-accent" : "text-aurora-100"
           }`}
         >
           {critical

@@ -19,8 +19,8 @@ export function CourseProof({
   if (course.proofMode === "countdown" && course.launchDate) {
     return (
       <div className={className}>
-        <p className="mb-2 flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-mint/80">
-          <span className="h-1 w-1 animate-pulse rounded-full bg-mint" />
+        <p className="mb-2 flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-aurora-200/80">
+          <span className="h-1 w-1 animate-pulse rounded-full bg-aurora-200" />
           เปิดจองใน
         </p>
         <Countdown iso={course.launchDate} compact />
@@ -52,7 +52,7 @@ export function CourseProof({
           initial={{ opacity: 0, y: 6 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="font-display text-sm font-semibold text-mint-soft"
+          className="font-display text-sm font-semibold text-aurora-100"
         >
           จองสิทธิ์แล้ว {course.waitlistCount} คน
         </motion.p>

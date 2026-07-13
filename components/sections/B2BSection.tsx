@@ -17,7 +17,7 @@ export function B2BSection() {
           <div className="relative grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
             <div>
               <span className="eyebrow mb-4 inline-flex items-center gap-2">
-                <span className="h-px w-6 bg-mint/50" />
+                <span className="h-px w-6 bg-aurora-200/50" />
                 สำหรับองค์กร
               </span>
               <h2 className="max-w-xl font-display text-fluid-lg font-bold leading-tight text-white">
@@ -32,7 +32,7 @@ export function B2BSection() {
                 {["In-house training", "ซื้อสิทธิ์ให้พนักงาน", "ปรับหลักสูตรตามธุรกิจ", "ออกใบกำกับภาษี"].map(
                   (x) => (
                     <li key={x} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-mint" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-aurora-200" />
                       {x}
                     </li>
                   )

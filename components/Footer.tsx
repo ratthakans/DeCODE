@@ -56,7 +56,7 @@ export function Footer() {
                   href={v}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-aurora-300/10 text-xs uppercase text-white/60 transition-colors hover:border-mint/50 hover:text-mint"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-aurora-300/10 text-xs uppercase text-white/60 transition-colors hover:border-aurora-200/50 hover:text-aurora-100"
                 >
                   {k[0]}
                 </a>
