@@ -6,28 +6,20 @@ export function CtaSection() {
   return (
     <section className="container-x py-20">
       <Reveal>
-        <div className="relative overflow-hidden rounded-[2.5rem] liquid-glass border-aurora-300/20 px-6 py-16 text-center sm:px-12 sm:py-24">
-          {/* quiet static glow — the aurora's motion is spent in the Hero only */}
+        <div className="relative overflow-hidden rounded-[28px] border border-white/16 px-6 py-14 text-center sm:py-20">
           <div
             className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(60% 80% at 50% 0%, rgba(18,165,148,0.14), transparent 70%)",
-            }}
+            style={{ background: "radial-gradient(60% 90% at 50% 0,rgba(45,212,191,0.18),transparent 65%)" }}
             aria-hidden
           />
-          <div className="relative mx-auto max-w-2xl">
-            <span className="eyebrow">พร้อมเริ่มแล้วใช่ไหม</span>
-            <h2 className="mt-5 text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
+          <div className="relative mx-auto max-w-xl">
+            <h2 className="font-display text-[clamp(1.9rem,1.4rem+2.2vw,3rem)] font-bold tracking-[-0.03em] text-white">
               ช้าวันไหน ก็ถูกแซงวันนั้น
-              <br />
-              <span className="text-gradient-teal">เริ่มก่อน ได้เปรียบก่อน</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-lg text-fluid-base leading-relaxed text-white/60">
-              บอกเราว่าคุณทำธุรกิจอะไร อยากใช้ AI กับงานส่วนไหน
-              เดี๋ยวเราแนะนำคอร์สที่เหมาะกับคุณให้เอง
+            <p className="mt-4 text-white/60">
+              บอกเราว่าคุณทำธุรกิจอะไร เดี๋ยวเราแนะนำคอร์สที่เหมาะกับคุณให้เอง
             </p>
-            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href={lineLink()} external variant="aurora" size="lg">
                 <LineIcon /> ทักไลน์สอบถาม
               </Button>

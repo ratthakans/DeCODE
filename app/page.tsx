@@ -1,35 +1,65 @@
 import { Masthead } from "@/components/sections/Masthead";
+import { Concept } from "@/components/sections/Concept";
+import { FeaturedCourse } from "@/components/FeaturedCourse";
 import { HomeCourses } from "@/components/sections/HomeCourses";
-import { Features } from "@/components/sections/Features";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaSection } from "@/components/sections/CtaSection";
-import { Marquee } from "@/components/ui/Marquee";
-import { OpenAI, Supabase, NextJsIcon, ClaudeIcon } from "@/components/ui/icons";
+import { Reveal } from "@/components/ui/Reveal";
+import { getAvailableCourse } from "@/lib/courses";
+
+const PARTNERS = ["Claude", "OpenAI", "Next.js", "Supabase", "n8n", "ClickUp", "Vercel"];
 
 export default function HomePage() {
+  const featured = getAvailableCourse();
+
   return (
     <>
+      {/* 1. Hero */}
       <Masthead />
 
-      {/* Trust strip */}
-      <section className="border-y border-white/10 bg-black py-8">
-        <Marquee speed={30}>
-          <div className="flex items-center gap-16 px-8">
-            <div className="flex items-center gap-4 text-white/45"><ClaudeIcon className="h-7 w-7" /> <span className="font-mono text-lg font-medium">Claude</span></div>
-            <div className="flex items-center gap-4 text-white/45"><NextJsIcon className="h-7 w-24" /></div>
-            <div className="flex items-center gap-4 text-white/45"><Supabase className="h-7 w-7" /> <span className="font-mono text-lg font-medium">Supabase</span></div>
-            <div className="flex items-center gap-4 text-white/45"><OpenAI className="h-7 w-7" /> <span className="font-mono text-lg font-medium">OpenAI</span></div>
-            <div className="flex items-center gap-4 text-white/45"><span className="font-mono text-lg font-medium tracking-tight">Cursor</span></div>
-            <div className="flex items-center gap-4 text-white/45"><span className="font-mono text-lg font-medium">Vercel</span></div>
-            <div className="flex items-center gap-4 text-white/45"><span className="font-mono text-lg font-medium">TailwindCSS</span></div>
+      {/* 2. Concept */}
+      <Concept />
+
+      {/* 3. Course promo (featured) */}
+      {featured && (
+        <section className="container-x py-24 md:py-32">
+          <Reveal>
+            <div className="mx-auto mb-14 max-w-2xl text-center">
+              <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.12em] aurora-text">
+                คอร์สแนะนำ · เปิดรับตอนนี้
+              </span>
+              <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-bold tracking-[-0.03em] text-white">
+                รอบเดียวก่อนปิดปีนี้
+              </h2>
+            </div>
+          </Reveal>
+          <FeaturedCourse course={featured} />
+        </section>
+      )}
+
+      {/* 4. Remaining courses */}
+      <HomeCourses />
+
+      {/* 5. Partner logos */}
+      <section className="border-y border-white/10 py-14">
+        <div className="container-x">
+          <p className="mb-7 text-center font-grotesk text-xs uppercase tracking-[0.16em] text-white/35">
+            เครื่องมือที่ใช้จริงในคลาส
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-[clamp(28px,6vw,64px)] gap-y-6 opacity-60">
+            {PARTNERS.map((p) => (
+              <span key={p} className="font-grotesk text-lg font-bold tracking-tight text-white/70">
+                {p}
+              </span>
+            ))}
           </div>
-        </Marquee>
+        </div>
       </section>
 
-      <HomeCourses />
-      <Features />
-      {/* Trust layer: testimonials answer "does it work for others" */}
+      {/* 6. Testimonials */}
       <Testimonials />
+
+      {/* 7. CTA */}
       <CtaSection />
     </>
   );

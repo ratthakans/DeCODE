@@ -51,6 +51,7 @@ const config: Config = {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         sans: ["var(--font-body)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+        grotesk: ["var(--font-grotesk)", "var(--font-display)", "system-ui", "sans-serif"],
       },
       fontSize: {
         // Fluid type scale

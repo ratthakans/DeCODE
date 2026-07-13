@@ -47,9 +47,9 @@ export default function CoursesPage() {
         </div>
 
         <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((c, i) => (
+          {courses.map((c) => (
             <RevealItem key={c.id}>
-              <CourseCard course={c} index={i} />
+              <CourseCard course={c} />
             </RevealItem>
           ))}
         </RevealGroup>

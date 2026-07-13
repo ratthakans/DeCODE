@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Anuphan, IBM_Plex_Sans_Thai, JetBrains_Mono } from "next/font/google";
+import { Anuphan, IBM_Plex_Sans_Thai, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -27,6 +27,13 @@ const mono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-mono",
+  display: "swap",
+});
+
+const grotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-grotesk",
   display: "swap",
 });
 
@@ -75,7 +82,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="th" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="th" className={`${display.variable} ${body.variable} ${mono.variable} ${grotesk.variable}`}>
       <body className="min-h-screen bg-ink text-pale antialiased">
         <AmbientBackground />
         <ScrollProgress />

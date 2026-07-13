@@ -15,6 +15,7 @@ export interface Course {
   id: string;
   slug: string;
   title: string;
+  edition?: string;
   subtitle: string;
   description: string;
   syllabus: { day: string; items: string[] }[];
@@ -45,6 +46,7 @@ export const courses: Course[] = [
     id: "c-operator",
     slug: "claude-operator",
     title: "CLAUDE OPERATOR",
+    edition: "The Unfair Advantage",
     subtitle: "เลิกเป็นแรงงานในออฟฟิศ ขึ้นมาเป็นผู้บริหาร AI ที่สั่งงานยากให้เสร็จก่อนกาแฟเย็นจะละลาย",
     description: "แคมป์ 2 วันเต็ม ที่ไม่ได้สอนใช้โปรแกรมพื้นฐาน แต่เปลี่ยนระบบคิดของคุณให้เป็น AI Director — เซตอัป Claude ให้เข้าใจธุรกิจคุณระดับพนักงานอาวุโส แล้ววางระบบอัตโนมัติที่ทำงานแทนคุณตั้งแต่วันแรกที่เดินออกจากห้อง",
     syllabus: [
@@ -72,7 +74,7 @@ export const courses: Course[] = [
       name: "ธนกร วรรธนะกุล",
       title: "Founder & Lead Operator, DeCODE",
       bio: "อดีตที่ปรึกษาระบบองค์กร ผู้วางระบบ AI automation ให้ธุรกิจ SME กว่า 40 แห่ง เชื่อว่าคนเก่งที่สุดคือคนที่เซตระบบให้ทำงานแทนตัวเองได้",
-      photoUrl: "/instructor-claude.jpg",
+      photoUrl: "https://images.pexels.com/photos/28446973/pexels-photo-28446973.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     price: 12900,
     priceCompareAt: 15900,
@@ -103,6 +105,7 @@ export const courses: Course[] = [
     id: "c-10x",
     slug: "claude-code-10x-engineer",
     title: "CLAUDE CODE: THE 10X ENGINEER",
+    edition: "The 10X Architect",
     subtitle: "หมดยุคกรรมกรหน้าจอ สั่ง AI เขียนโครง ไล่บัค และ Deploy ระบบแทนคุณ จบงานเท่าทีม Dev 5 คนในร่างเดียว",
     description: "ไม่ได้สอนให้คุณเขียนโค้ดเก่งขึ้น แต่สอนให้คุณเขียนโค้ดน้อยลง 90% โดยได้แอปพลิเคชันสเกลใหญ่กว่าเดิม เปลี่ยนช่วงเวลาน่าเบื่อที่สุดของ Dev — เซตโปรเจกต์ ไล่บัค เขียน Boilerplate — ให้เป็นหน้าที่ของ Claude",
     syllabus: [
@@ -129,7 +132,7 @@ export const courses: Course[] = [
       name: "ปวริศ อินทรโชติ",
       title: "Staff Engineer & AI Pair-Programming Coach",
       bio: " full-stack engineer ที่สร้างและ ship product เดี่ยวมากกว่าทีมทั้งทีม ผู้เชี่ยวชาญการใช้ Claude Code เป็น Senior Dev ประจำตัว",
-      photoUrl: "",
+      photoUrl: "https://images.pexels.com/photos/33261955/pexels-photo-33261955.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     price: 13900,
     seatsTotal: 20,
@@ -158,6 +161,7 @@ export const courses: Course[] = [
     id: "c-aesthetic",
     slug: "claude-code-aesthetic-frontend",
     title: "CLAUDE CODE: THE AESTHETIC FRONT-END",
+    edition: "Awwwards Grade",
     subtitle: "AI สร้างเว็บได้ใน 1 นาที แต่เว็บที่ ‘เท่และโคตรแพง’ ต้องใช้ชั้นเชิงการสั่งการระดับ Art Director",
     description: "ก้าวข้ามเว็บหน้าตา Template สี่เหลี่ยมแข็งๆ สอนวิธีบรีฟ Claude Code ให้เข้าใจรสนิยมทางศิลปะ และสั่งเขียนโค้ด Web Animation ระดับสูง (GSAP, Framer Motion, Three.js) สร้างเว็บที่พร้อมส่งประกวดเวที Awwwards",
     syllabus: [
@@ -184,7 +188,7 @@ export const courses: Course[] = [
       name: "มนัสวี เจริญศิลป์",
       title: "Creative Developer & Motion Director",
       bio: "นักออกแบบสาย Creative Dev ที่ผสานงานอาร์ตเข้ากับโค้ด ผลงานติดเวที Awwwards และ FWA เชื่อว่าความแพงซ่อนอยู่ในดีเทลของ motion",
-      photoUrl: "",
+      photoUrl: "https://images.pexels.com/photos/36593089/pexels-photo-36593089.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     price: 13900,
     seatsTotal: 18,
@@ -213,6 +217,7 @@ export const courses: Course[] = [
     id: "c-coworker",
     slug: "claude-co-worker",
     title: "CLAUDE CO-WORKER",
+    edition: "The Master Delegator",
     subtitle: "ศิลปะการโยนงานให้ AI: บริหารระบบให้รันเอง 100% แล้วเอาเวลาไปทำเรื่องไร้สาระ",
     description: "ไม่ได้สอนให้คุณทำงานได้มากขึ้น แต่สอนให้คุณ ‘ทำน้อยลง’ ด้วยการเซตอัป Claude ให้เป็นเลขาและผู้ช่วยส่วนตัวที่ไม่มีวันลาพักร้อน — สำหรับผู้บริหารและเจ้าของธุรกิจที่บ้างานจนไม่มีเวลาใช้ชีวิต",
     syllabus: [
@@ -239,7 +244,7 @@ export const courses: Course[] = [
       name: "ธนกร วรรธนะกุล",
       title: "Founder & Lead Operator, DeCODE",
       bio: "ผู้วางระบบ AI automation ให้ธุรกิจ SME เชื่อว่าเป็นหัวหน้าไม่จำเป็นต้องเหนื่อยที่สุด",
-      photoUrl: "/instructor-claude.jpg",
+      photoUrl: "https://images.pexels.com/photos/28446973/pexels-photo-28446973.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     price: 12900,
     seatsTotal: 24,
@@ -268,6 +273,7 @@ export const courses: Course[] = [
     id: "c-godmode",
     slug: "claude-godmode-creative-director",
     title: "CLAUDE GODMODE",
+    edition: "The Creative Director",
     subtitle: "ปลดล็อกพลังพระเจ้า สั่ง Claude ขยี้ไอเดีย เปลี่ยนนามธรรมทางศิลปะให้เป็นชิ้นงานระดับมาสเตอร์พีซ",
     description: "ไม่ใช่คอร์สสอนเจนรูป แต่สอนวิธีคิดและวิธีสั่ง — แปลงสัมผัสทางอาร์ตให้เป็นโครงสร้างตรรกะที่ Claude เข้าใจและทำงานต่อได้จริง สำหรับ Creative Director, Art Director และเจ้าของเอเจนซี่",
     syllabus: [
@@ -294,7 +300,7 @@ export const courses: Course[] = [
       name: "มนัสวี เจริญศิลป์",
       title: "Creative Director & Aesthetic Architect",
       bio: "ผู้กำกับงานสร้างสรรค์ที่ใช้ AI เป็นสมองซีกขวา แปลงบรีฟนามธรรมให้เป็นระบบสั่งงานที่ทีมโปรดักชันทำต่อได้ทันที",
-      photoUrl: "",
+      photoUrl: "https://images.pexels.com/photos/36593089/pexels-photo-36593089.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     price: 14900,
     seatsTotal: 18,
@@ -323,6 +329,7 @@ export const courses: Course[] = [
     id: "c-architect",
     slug: "claude-code-one-man-startup",
     title: "CLAUDE CODE: THE ONE-MAN STARTUP",
+    edition: "From Prompt to Production",
     subtitle: "เลิกง้อโปรแกรมเมอร์ ประกอบร่าง Tech Startup ของคุณเอง ด้วยโค้ดที่ AI เขียนตั้งแต่บรรทัดแรกจนถึง Deploy",
     description: "เปลี่ยนสาย Business / Marketing ให้กลายเป็น System Architect ที่สร้าง Web App เชื่อม Database และวางระบบชำระเงินได้ด้วยตัวเอง — From Prompt to Production",
     syllabus: [
@@ -349,7 +356,7 @@ export const courses: Course[] = [
       name: "ปวริศ อินทรโชติ",
       title: "Full-Stack Architect & SaaS Builder",
       bio: "ผู้สร้างและ ship SaaS เดี่ยวหลายตัว เชี่ยวชาญการวาง Infrastructure หลังบ้านด้วย AI ตั้งแต่ Database ยันระบบตัดบัตร",
-      photoUrl: "",
+      photoUrl: "https://images.pexels.com/photos/33261955/pexels-photo-33261955.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     price: 15900,
     seatsTotal: 16,
@@ -378,6 +385,7 @@ export const courses: Course[] = [
     id: "c-performance",
     slug: "claude-performance-deep-core",
     title: "PERFORMANCE CLAUDE: THE DEEP CORE",
+    edition: "Power User Deep Dive",
     subtitle: "ปลดล็อกศักยภาพขั้นสุด เข้าถึง Deep Function ของ Claude ที่คน 99% ไม่เคยรู้ว่าทำได้",
     description: "คอร์สสำหรับ Power User ที่ต้องการรีดประสิทธิภาพของ Claude ออกมาให้ถึงขีดสุด เจาะลึกเทคนิคการใช้งาน Context Window ให้คุ้มค่า, การเขียน System Prompts ระดับวิศวกรรม, การรีด Logical Reasoning ขั้นสูง และเทคนิคลับเพื่อปลดล็อกขีดจำกัดเดิมๆ",
     syllabus: [
@@ -404,7 +412,7 @@ export const courses: Course[] = [
       name: "ปวริศ อินทรโชติ",
       title: "AI Researcher & Prompt Engineer",
       bio: "ผู้คลุกคลีกับโมเดลภาษาขนาดใหญ่ รีดศักยภาพ AI ด้วยเทคนิควิศวกรรม Prompt ขั้นสูง",
-      photoUrl: "",
+      photoUrl: "https://images.pexels.com/photos/33261955/pexels-photo-33261955.jpeg?auto=compress&cs=tinysrgb&w=400",
     },
     price: 13900,
     priceCompareAt: 16900,

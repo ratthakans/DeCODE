@@ -1,118 +1,88 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Course } from "@/lib/courses";
 import { priceFormatter } from "@/lib/courses";
-import { CourseArt } from "./ui/CourseArt";
-import { StatusBadge } from "./ui/StatusBadge";
-import { SeatMeter } from "./ui/SeatMeter";
-import { Countdown } from "./ui/Countdown";
-import { Avatar } from "./ui/Avatar";
-import { ArrowIcon, Button, LineIcon } from "./ui/Button";
+import { Button, LineIcon } from "./ui/Button";
 import { courseLineLink } from "@/lib/line";
 import { Reveal } from "./ui/Reveal";
 
-/**
- * The available course is the HERO, not 1 of 6. Full-width, seats + schedule
- * + big instructor + loud CTA. Mint is spent only here on this page.
- */
+/** Featured (available) course promo — pitch on the left, instructor on the right. */
 export function FeaturedCourse({ course }: { course: Course }) {
   return (
     <Reveal>
-      <article className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-sm">
-        <CourseArt course={course} big className="absolute inset-0 opacity-30 mix-blend-luminosity" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/20" />
-
-        <div className="relative grid gap-8 p-7 sm:p-10 lg:grid-cols-[1.35fr_1fr] lg:items-center">
-          {/* left: pitch */}
-          <div>
-            <div className="mb-5 flex flex-wrap items-center gap-3">
-              <StatusBadge course={course} />
-              <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-widest text-white/55">
-                {course.category}
-              </span>
-            </div>
-
-            <h3 className="max-w-xl font-display text-fluid-xl font-bold leading-[1.08] text-white">
+      <div className="relative overflow-hidden rounded-[26px] border border-white/16 bg-ink-100">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_100%_at_100%_0,rgba(45,212,191,0.18),transparent_60%)]" />
+        <div className="relative grid md:grid-cols-[1.2fr_0.9fr]">
+          {/* left — pitch */}
+          <div className="p-8 sm:p-12">
+            <span className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-bold text-[#04211d] aurora-bg">
+              ● {course.statusLabel} · เหลือ {course.seatsAvailable} ที่นั่ง
+            </span>
+            <h3 className="mt-5 font-display text-[clamp(1.8rem,1.2rem+2vw,2.8rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white">
               {course.title}
-            </h3>
-            <p className="mt-4 max-w-xl text-fluid-base leading-relaxed text-white/65">
-              {course.subtitle}
-            </p>
-
-            {/* schedule — shown clearly for available */}
-            <div className="mt-6 inline-flex items-center gap-2.5 rounded-2xl border border-aurora-300/10 bg-aurora-300/[0.04] backdrop-blur-sm px-4 py-3">
-              <CalendarIcon />
-              <span className="text-sm font-medium text-white/85">
-                {course.schedule}
-              </span>
-            </div>
-
-            <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <Button
-                href={courseLineLink(course.title, course.schedule)}
-                external
-                variant="aurora"
-                size="lg"
-              >
-                <LineIcon /> สอบถาม / จองที่นั่ง
-              </Button>
-              <Link
-                href={`/courses/${course.slug}`}
-                className="group inline-flex items-center gap-2 text-sm font-medium text-white/70 transition-colors hover:text-accent"
-              >
-                ดูรายละเอียดคอร์ส
-                <ArrowIcon className="transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-
-          {/* right: proof panel */}
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md">
-            <div className="mb-5 flex items-center gap-3">
-              <Avatar name={course.instructor.name} src={course.instructor.photoUrl} accent={course.accent} size={64} />
-              <div>
-                <p className="font-display font-semibold text-white">
-                  {course.instructor.name}
-                </p>
-                <p className="text-xs text-white/50">{course.instructor.title}</p>
-              </div>
-            </div>
-
-            <SeatMeter course={course} className="mb-6" />
-
-            {course.launchDate && (
-              <div className="mb-6">
-                <p className="mb-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-mint/80">
-                  เริ่มเรียนใน
-                </p>
-                <Countdown iso={course.launchDate} />
-              </div>
-            )}
-
-            <div className="flex items-end justify-between border-t border-aurora-300/10 pt-4">
-              <div>
-                <p className="text-xs text-white/45">ราคาคอร์ส</p>
-                <p className="font-display text-2xl font-bold text-white">
-                  {priceFormatter.format(course.price)}
-                </p>
-              </div>
-              {course.priceCompareAt && (
-                <span className="font-mono text-sm text-white/35 line-through">
-                  {priceFormatter.format(course.priceCompareAt)}
+              {course.edition && (
+                <span className="mt-2.5 block font-grotesk text-[0.42em] font-semibold aurora-text">
+                  {course.edition}
                 </span>
               )}
+            </h3>
+            <p className="mt-4 max-w-[46ch] text-white/60">{course.subtitle}</p>
+
+            <ul className="mt-6 grid gap-2.5">
+              {course.outcomes.slice(0, 3).map((o) => (
+                <li key={o} className="flex items-start gap-2.5 text-sm text-white/90">
+                  <svg className="mt-0.5 h-[18px] w-[18px] shrink-0 stroke-aurora-200" fill="none" viewBox="0 0 24 24" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                  {o}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-wrap items-center gap-5">
+              <div className="flex items-baseline gap-2">
+                <b className="font-grotesk text-3xl font-bold tracking-[-0.02em] text-white tabular-nums">
+                  {priceFormatter.format(course.price)}
+                </b>
+                {course.priceCompareAt && (
+                  <s className="font-grotesk text-white/35">{priceFormatter.format(course.priceCompareAt)}</s>
+                )}
+              </div>
+              <Button href={courseLineLink(course.title, course.schedule)} external variant="aurora" size="md">
+                <LineIcon /> จองที่นั่ง
+              </Button>
             </div>
           </div>
-        </div>
-      </article>
-    </Reveal>
-  );
-}
 
-function CalendarIcon() {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5 text-accent" aria-hidden>
-      <rect x="3" y="4.5" width="18" height="16" rx="2.5" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M3 9h18M8 3v3M16 3v3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
+          {/* right — instructor */}
+          <div className="relative min-h-[320px] overflow-hidden bg-ink-100">
+            {course.instructor.photoUrl && (
+              <Image
+                src={course.instructor.photoUrl}
+                alt={course.instructor.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover object-[50%_30%]"
+              />
+            )}
+            <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(45,212,191,0.28),transparent_55%),linear-gradient(0deg,rgba(6,8,9,0.55),transparent_60%)]" />
+            <div className="absolute right-4 top-4 z-[2] min-w-[180px] rounded-[14px] border border-white/20 bg-black/60 p-4 backdrop-blur-md">
+              <div className="font-grotesk text-[1.9rem] font-bold leading-none tracking-[-0.03em] text-white">
+                {course.duration.replace(/\s*\(.*\)/, "")}
+              </div>
+              <div className="mt-1 text-[11px] text-white/60">Intensive Bootcamp</div>
+              <div className="mt-3 text-[12.5px] font-semibold text-aurora-200">
+                🔥 เหลือ {course.seatsAvailable} / {course.seatsTotal} ที่นั่งสุดท้าย
+              </div>
+            </div>
+            <div className="absolute bottom-5 left-5 z-[2]">
+              <div className="font-bold text-white">{course.instructor.name}</div>
+              <div className="font-grotesk text-[11px] text-aurora-200">{course.instructor.title}</div>
+            </div>
+            <Link href={`/courses/${course.slug}`} className="absolute inset-0 z-[3]" aria-label={course.title} />
+          </div>
+        </div>
+      </div>
+    </Reveal>
   );
 }
