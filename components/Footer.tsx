@@ -6,7 +6,7 @@ import { Button, LineIcon } from "./ui/Button";
 
 export function Footer() {
   return (
-    <footer className="relative mt-10 border-t border-aurora-300/10 bg-ink-100">
+    <footer className="relative mt-10 border-t border-aurora-200/10 bg-ink-100">
       <div className="container-x py-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
@@ -56,7 +56,7 @@ export function Footer() {
                   href={v}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-aurora-300/10 text-xs uppercase text-white/60 transition-colors hover:border-aurora-200/50 hover:text-aurora-100"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-aurora-200/10 text-xs uppercase text-white/60 transition-colors hover:border-aurora-200/50 hover:text-aurora-100"
                 >
                   {k[0]}
                 </a>
@@ -65,7 +65,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-aurora-300/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-aurora-200/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {site.name}. สงวนลิขสิทธิ์.</p>
           <p className="font-mono tracking-wide">
             สอน AI แบบลงมือทำ · Claude · Gemini · ChatGPT · Coding

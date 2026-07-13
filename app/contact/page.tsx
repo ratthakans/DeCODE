@@ -41,7 +41,7 @@ export default function ContactPage() {
       <section className="container-x py-12">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-aurora-300/20 bg-gradient-to-br from-aurora-300/10 to-transparent p-8">
+            <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-aurora-200/20 bg-gradient-to-br from-aurora-200/10 to-transparent p-8">
               <div>
                 <span className="eyebrow text-aurora-200/80">ช่องทางหลัก</span>
                 <h2 className="mt-3 font-display text-fluid-lg font-bold text-white">
@@ -108,7 +108,7 @@ export default function ContactPage() {
           <Reveal delay={0.08}>
             <div
               id="b2b"
-              className="scroll-mt-28 rounded-3xl border border-aurora-300/20 bg-gradient-to-br from-aurora-300/[0.07] to-transparent p-7"
+              className="scroll-mt-28 rounded-3xl border border-aurora-200/20 bg-gradient-to-br from-aurora-200/[0.07] to-transparent p-7"
             >
               <div className="flex items-center gap-2">
                 <span className="eyebrow">สำหรับองค์กร</span>

@@ -65,7 +65,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-aurora-500/10 p-6 text-center border border-aurora-300/20"
+                    className="rounded-2xl bg-aurora-500/10 p-6 text-center border border-aurora-200/20"
                   >
                     <div className="mx-auto w-12 h-12 rounded-full bg-aurora-500/20 flex items-center justify-center mb-4">
                       <svg className="w-6 h-6 text-aurora-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,7 +91,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                         type="text" 
                         name="name" 
                         required 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-300/50 focus:outline-none focus:ring-1 focus:ring-aurora-300/50 transition-colors"
+                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -101,7 +101,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                         type="email" 
                         name="email" 
                         required 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-300/50 focus:outline-none focus:ring-1 focus:ring-aurora-300/50 transition-colors"
+                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -110,7 +110,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                       <input 
                         type="tel" 
                         name="phone" 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-300/50 focus:outline-none focus:ring-1 focus:ring-aurora-300/50 transition-colors"
+                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
                         placeholder="08X-XXX-XXXX"
                       />
                     </div>

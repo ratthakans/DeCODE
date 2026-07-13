@@ -43,7 +43,7 @@ export function SeatMeter({
           className={`h-full rounded-full ${
             critical
               ? "bg-accent"
-              : "bg-gradient-to-r from-aurora-300 to-mint"
+              : "bg-gradient-to-r from-aurora-200 to-aurora-100"
           }`}
         />
       </div>

@@ -28,7 +28,7 @@ export function Navbar() {
       <div
         className={`transition-all duration-500 ${
           scrolled
-            ? "border-b border-aurora-300/10 bg-ink/60 backdrop-blur-xl"
+            ? "border-b border-aurora-200/10 bg-ink/60 backdrop-blur-xl"
             : "border-b border-transparent bg-transparent"
         }`}
       >
@@ -54,7 +54,7 @@ export function Navbar() {
                   {active && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full bg-aurora-300/10"
+                      className="absolute inset-0 -z-10 rounded-full bg-aurora-200/10"
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
                     />
                   )}
@@ -71,7 +71,7 @@ export function Navbar() {
           </div>
 
           <button
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-aurora-300/10 bg-aurora-300/5 md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-aurora-200/10 bg-aurora-200/5 md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="เมนู"
             aria-expanded={open}
@@ -104,14 +104,14 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="border-b border-aurora-300/10 bg-ink/90 backdrop-blur-2xl md:hidden"
+            className="border-b border-aurora-200/10 bg-ink/90 backdrop-blur-2xl md:hidden"
           >
             <nav className="container-x flex flex-col py-4">
               {nav.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="border-b border-aurora-300/10 py-3.5 text-lg text-white/80"
+                  className="border-b border-aurora-200/10 py-3.5 text-lg text-white/80"
                 >
                   {item.label}
                 </Link>

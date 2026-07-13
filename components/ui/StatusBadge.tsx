@@ -30,7 +30,7 @@ export function StatusBadge({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border border-aurora-300/20 bg-aurora-300/5 font-mono uppercase tracking-[0.14em] text-aurora-200/90 ${pad}`}
+      className={`inline-flex items-center gap-1.5 rounded-full border border-aurora-200/20 bg-aurora-200/5 font-mono uppercase tracking-[0.14em] text-aurora-200/90 ${pad}`}
     >
       <span className="h-1.5 w-1.5 rounded-full bg-aurora-200/70" />
       {course.statusLabel}

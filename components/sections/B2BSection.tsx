@@ -12,7 +12,7 @@ export function B2BSection() {
       <Reveal>
         <div className="relative overflow-hidden rounded-[2rem] liquid-glass p-8 sm:p-12">
           {/* subtle formal gradient — no signature accent here, this path is B2B */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-aurora-300/10 blur-3xl" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-aurora-200/10 blur-3xl" />
 
           <div className="relative grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
             <div>
