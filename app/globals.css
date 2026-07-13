@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --font-display: "Anuphan", system-ui, sans-serif;
-    --font-body: "IBM Plex Sans Thai", system-ui, sans-serif;
-    --font-mono: "JetBrains Mono", monospace;
+    /* --font-display / --font-body / --font-mono / --font-grotesk are provided
+       by next/font (Kanit, IBM Plex Sans Thai, JetBrains Mono, Space Grotesk)
+       via the class on <html>; do not hardcode them here or they override it. */
     /* Aurora color tokens — pure black base, single dark-teal hue */
     --aurora-deep: #000000;
     --aurora-forest: #0C3B36;
