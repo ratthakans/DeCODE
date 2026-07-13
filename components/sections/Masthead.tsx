@@ -14,13 +14,15 @@ export function Masthead() {
       {/* dimmed video background (scaled up to crop the YouTube chrome) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <iframe
-          className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 scale-[1.45] pointer-events-none"
-          src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&iv_load_policy=3`}
+          className="absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2 scale-[1.6] pointer-events-none"
+          src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${VIDEO_ID}&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&disablekb=1&iv_load_policy=3&fs=0&cc_load_policy=0`}
           title="DeCODE"
           allow="autoplay; encrypted-media"
           frameBorder={0}
           aria-hidden
         />
+        {/* transparent shield — blocks all interaction/hover UI from YouTube */}
+        <div className="absolute inset-0" />
       </div>
       <div className="absolute inset-0 z-[1] bg-[rgba(3,5,6,0.8)]" />
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(60%_60%_at_50%_12%,rgba(45,212,191,0.14),transparent_60%)]" />

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Anuphan, IBM_Plex_Sans_Thai, JetBrains_Mono, Space_Grotesk } from "next/font/google";
+import { Kanit, IBM_Plex_Sans_Thai, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -9,9 +9,9 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { site } from "@/lib/site";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 
-const display = Anuphan({
+const display = Kanit({
   subsets: ["thai", "latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-display",
   display: "swap",
 });
