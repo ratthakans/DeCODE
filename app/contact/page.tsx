@@ -23,7 +23,7 @@ export default function ContactPage() {
             <span className="eyebrow">ติดต่อเรา</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
+            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-semibold leading-[1.05] text-white">
               คุยกับเราก่อนได้{" "}
               <span className="text-gradient-teal">ไม่มีข้อผูกมัด</span>
             </h1>
@@ -44,7 +44,7 @@ export default function ContactPage() {
             <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-aurora-200/20 bg-gradient-to-br from-aurora-200/10 to-transparent p-8">
               <div>
                 <span className="eyebrow text-aurora-200/80">ช่องทางหลัก</span>
-                <h2 className="mt-3 font-display text-fluid-lg font-bold text-white">
+                <h2 className="mt-3 font-display text-fluid-lg font-semibold text-white">
                   ทักไลน์ตอบไว ที่สุด
                 </h2>
                 <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/60">
@@ -92,7 +92,7 @@ export default function ContactPage() {
           <Reveal>
             <div className="rounded-3xl border border-white/10 bg-ink-100/40 p-7">
               <span className="eyebrow">บุคคลทั่วไป</span>
-              <h2 className="mt-3 font-display text-lg font-bold text-white">
+              <h2 className="mt-3 font-display text-lg font-semibold text-white">
                 สอบถามคอร์ส / ขอคำแนะนำ
               </h2>
               <p className="mt-2 text-sm text-white/55">
@@ -116,7 +116,7 @@ export default function ContactPage() {
                   B2B
                 </span>
               </div>
-              <h2 className="mt-3 font-display text-lg font-bold text-white">
+              <h2 className="mt-3 font-display text-lg font-semibold text-white">
                 ขอใบเสนอราคา / In-house training
               </h2>
               <p className="mt-2 text-sm text-white/55">

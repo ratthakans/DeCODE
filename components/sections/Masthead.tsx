@@ -1,8 +1,12 @@
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { Button, ArrowIcon, LineIcon } from "../ui/Button";
 import { lineLink } from "@/lib/line";
 
 const VIDEO_ID = "rKV5JcALQoQ";
+const AVATARS = [28446973, 36593089, 33261955, 31869537].map(
+  (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=120`
+);
 
 /**
  * Hero — a muted, looping YouTube video dimmed hard to black, with an aurora
@@ -25,7 +29,9 @@ export function Masthead() {
         <div className="absolute inset-0" />
       </div>
       <div className="absolute inset-0 z-[1] bg-[rgba(3,5,6,0.8)]" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(60%_60%_at_50%_12%,rgba(45,212,191,0.14),transparent_60%)]" />
+      <div className="hero-fluid z-[1]" aria-hidden>
+        <span className="fb1" /><span className="fb2" /><span className="fb3" />
+      </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-b from-transparent to-black" />
 
       <div className="container-x relative z-10 mx-auto w-full max-w-4xl py-24">
@@ -36,7 +42,7 @@ export function Masthead() {
           เปิดรับรอบ · กรกฎาคม 2026
         </span>
 
-        <h2 className="mt-7 font-display text-[clamp(2.7rem,1.5rem+5.2vw,5.2rem)] font-bold leading-[1.05] tracking-[-0.035em] text-white text-balance">
+        <h2 className="mt-7 font-display text-[clamp(2.7rem,1.5rem+5.2vw,5.2rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-white text-balance">
           ลดเวลาทำงาน 10 เท่า
           <br />
           ด้วย <span className="aurora-text">AI ที่ใช้ได้จริง</span>
@@ -55,10 +61,17 @@ export function Masthead() {
           </Button>
         </div>
 
-        <div className="mt-12 flex items-center justify-center gap-3 text-sm text-white/45">
+        <div className="mt-12 flex items-center justify-center gap-3 text-sm text-white/55">
           <span className="flex">
-            {[0, 1, 2, 3].map((i) => (
-              <span key={i} className="-ml-2 h-6 w-6 rounded-full border-2 border-black aurora-bg first:ml-0" />
+            {AVATARS.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt=""
+                width={28}
+                height={28}
+                className="-ml-2 h-7 w-7 rounded-full border-2 border-black object-cover first:ml-0"
+              />
             ))}
           </span>
           ผู้เรียนกว่า 500+ คน · รีวิว 4.9/5

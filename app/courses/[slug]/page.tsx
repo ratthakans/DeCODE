@@ -59,7 +59,7 @@ export default function CourseDetailPage({
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink-100 px-6 py-14 text-center">
             <div className="relative mx-auto max-w-xl">
-              <h2 className="font-display text-fluid-xl font-bold text-white">
+              <h2 className="font-display text-fluid-xl font-semibold text-white">
                 {available ? "พร้อมจองที่นั่งแล้ว?" : "อยากรู้ก่อนใครเมื่อเปิด?"}
               </h2>
               <p className="mt-4 text-white/60">

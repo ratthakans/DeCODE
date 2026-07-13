@@ -17,7 +17,7 @@ export function CourseInstructor({ course }: { course: Course }) {
                 size={80}
               />
               <div>
-                <p className="font-display text-xl font-bold text-white">
+                <p className="font-display text-xl font-semibold text-white">
                   {course.instructor.name}
                 </p>
                 <p className="mt-1 text-sm text-white/50">
@@ -34,7 +34,7 @@ export function CourseInstructor({ course }: { course: Course }) {
         <Reveal delay={0.08}>
           <div className="flex h-full flex-col justify-center border-t border-white/10 pt-8">
             <span className="font-mono text-xs uppercase tracking-widest text-white/40">Included Bonuses</span>
-            <h3 className="mt-6 font-display text-xl font-bold text-white">
+            <h3 className="mt-6 font-display text-xl font-semibold text-white">
               ของแถมติดมือกลับบ้าน
             </h3>
             <ul className="mt-6 space-y-5">

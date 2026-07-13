@@ -48,7 +48,7 @@ export function CourseCard({ course }: { course: Course }) {
         {course.edition && (
           <span className="font-grotesk text-xs font-semibold text-aurora-200">{course.edition}</span>
         )}
-        <h4 className="mt-1 font-display text-xl font-bold tracking-tight text-white">{course.title}</h4>
+        <h4 className="mt-1 font-display text-xl font-semibold tracking-tight text-white">{course.title}</h4>
         <p className="mt-2 line-clamp-2 text-[0.88rem] leading-relaxed text-white/55">{course.subtitle}</p>
 
         <div className="mt-3.5 flex items-center gap-2.5">

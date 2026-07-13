@@ -15,7 +15,7 @@ export function ConceptTeaser() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="text-balance font-display text-4xl font-bold leading-[1.1] text-white md:text-5xl">
+            <h2 className="text-balance font-display text-4xl font-semibold leading-[1.1] text-white md:text-5xl">
               ยุคนี้คนที่ใช้ AI เป็น <br className="hidden sm:block" />
               จะวิ่งนำคนอื่นไป <span className="text-aurora-200">10 เท่า</span>
             </h2>

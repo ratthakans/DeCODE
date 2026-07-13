@@ -13,7 +13,7 @@ export function CtaSection() {
             aria-hidden
           />
           <div className="relative mx-auto max-w-xl">
-            <h2 className="font-display text-[clamp(1.9rem,1.4rem+2.2vw,3rem)] font-bold tracking-[-0.03em] text-white">
+            <h2 className="font-display text-[clamp(1.9rem,1.4rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
               ช้าวันไหน ก็ถูกแซงวันนั้น
             </h2>
             <p className="mt-4 text-white/60">

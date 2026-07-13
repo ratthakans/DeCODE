@@ -5,7 +5,7 @@ export function CourseOutcomes({ course }: { course: Course }) {
   return (
     <section className="container-x py-16">
       <Reveal>
-        <h2 className="font-display text-fluid-lg font-bold text-white">
+        <h2 className="font-display text-fluid-lg font-semibold text-white">
           เรียนจบแล้ว คุณจะ<span className="text-gradient-teal">ทำอะไรได้</span>
         </h2>
       </Reveal>

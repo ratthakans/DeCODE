@@ -5,7 +5,7 @@ export function CourseSyllabus({ course }: { course: Course }) {
   return (
     <section className="container-x py-16">
       <Reveal>
-        <h2 className="font-display text-fluid-lg font-bold text-white">
+        <h2 className="font-display text-fluid-lg font-semibold text-white">
           เนื้อหาหลักสูตร
         </h2>
       </Reveal>
@@ -21,7 +21,7 @@ export function CourseSyllabus({ course }: { course: Course }) {
                   <span className="font-mono text-xs uppercase tracking-widest text-aurora-200">
                     Day {String(di + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="mt-1 font-display text-2xl font-bold tracking-tight text-white transition-colors group-hover:text-aurora-100">
+                  <h3 className="mt-1 font-display text-2xl font-semibold tracking-tight text-white transition-colors group-hover:text-aurora-100">
                     {day.day.replace(/DAY \d+ — /, "")}
                   </h3>
                 </div>

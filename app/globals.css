@@ -141,6 +141,28 @@
     background: linear-gradient(100deg, #34d399, #2dd4bf 38%, #22d3ee 68%, #818cf8);
   }
 
+  /* Fluid aurora — soft drifting blobs, sits over the dimmed hero video */
+  .hero-fluid {
+    position: absolute;
+    inset: -10%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.4;
+  }
+  .hero-fluid span {
+    position: absolute;
+    border-radius: 50%;
+    mix-blend-mode: screen;
+  }
+  .hero-fluid .fb1 { width: 42vw; height: 42vw; left: 6%; top: -4%; background: radial-gradient(circle, #34d399, transparent 62%); animation: fluid-a 20s ease-in-out infinite; }
+  .hero-fluid .fb2 { width: 38vw; height: 38vw; right: 8%; top: 4%; background: radial-gradient(circle, #22d3ee, transparent 62%); animation: fluid-b 24s ease-in-out infinite; }
+  .hero-fluid .fb3 { width: 34vw; height: 34vw; left: 34%; top: 22%; background: radial-gradient(circle, #818cf8, transparent 62%); animation: fluid-a 28s ease-in-out infinite reverse; }
+  @keyframes fluid-a { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(6%, 8%) scale(1.15); } }
+  @keyframes fluid-b { 0%, 100% { transform: translate(0, 0) scale(1.05); } 50% { transform: translate(-8%, 6%) scale(0.9); } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-fluid span { animation: none; }
+  }
+
   /* premium glass edge — a hairline highlight on the top of dark cards */
   .glass-edge {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.6);

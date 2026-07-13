@@ -53,7 +53,7 @@ export default function ConceptPage() {
             <span className="eyebrow">แนวคิดของ DeCODE</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-4xl text-balance font-display text-fluid-3xl font-bold leading-[0.98] text-white">
+            <h1 className="mt-5 max-w-4xl text-balance font-display text-fluid-3xl font-semibold leading-[0.98] text-white">
               AI ไม่ได้มาแทนคุณ
               <br />
               แต่คนที่ใช้ AI เป็น
@@ -78,7 +78,7 @@ export default function ConceptPage() {
               <span className="h-px w-6 bg-aurora-200/50" />
               GAP ที่คุณอาจไม่ทันสังเกต
             </span>
-            <h2 className="text-balance font-display text-fluid-xl font-bold leading-tight text-white">
+            <h2 className="text-balance font-display text-fluid-xl font-semibold leading-tight text-white">
               มันไม่ใช่ &ldquo;AI ไปเร็วเกินจะตามทัน&rdquo; ลอยๆ
               <br />
               มันคือภาพที่เจ็บกว่านั้น
@@ -126,7 +126,7 @@ export default function ConceptPage() {
       <section className="border-y border-white/10 bg-ink-50/40 py-24">
         <div className="container-x">
           <Reveal>
-            <h2 className="mb-14 max-w-2xl font-display text-fluid-xl font-bold leading-tight text-white">
+            <h2 className="mb-14 max-w-2xl font-display text-fluid-xl font-semibold leading-tight text-white">
               บทบาทของ DeCODE คือ<span className="text-gradient-teal">ตัวช่วยปิด GAP</span> นั้น
             </h2>
           </Reveal>
@@ -135,7 +135,7 @@ export default function ConceptPage() {
               <RevealItem key={b.n}>
                 <div className="flex h-full flex-col rounded-3xl border border-white/10 bg-ink-100/50 p-7">
                   <span className="font-mono text-sm text-aurora-200">{b.n}</span>
-                  <h3 className="mt-4 font-display text-lg font-bold leading-snug text-white">
+                  <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-white">
                     {b.t}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/60">
@@ -152,7 +152,7 @@ export default function ConceptPage() {
       <section className="container-x py-24">
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-balance font-display text-fluid-2xl font-bold leading-[1.15] text-white">
+            <p className="text-balance font-display text-fluid-2xl font-semibold leading-[1.15] text-white">
               เราไม่ได้สอนให้คุณ<span className="text-white/40">รู้จัก</span> AI
               <br />
               เราสอนให้คุณ<span className="text-aurora-200">สั่งงาน</span>มันเป็น

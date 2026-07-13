@@ -23,7 +23,7 @@ export default function FaqPage() {
             <span className="eyebrow">คำถามที่พบบ่อย</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
+            <h1 className="mt-5 max-w-3xl text-balance font-display text-fluid-2xl font-semibold leading-[1.05] text-white">
               เคลียร์ข้อลังเลให้จบ{" "}
               <span className="text-gradient-teal">ก่อนทักแชต</span>
             </h1>
@@ -43,7 +43,7 @@ export default function FaqPage() {
           return (
             <Reveal key={g} delay={gi * 0.05}>
               <div>
-                <h2 className="mb-5 flex items-center gap-3 font-display text-lg font-bold text-white">
+                <h2 className="mb-5 flex items-center gap-3 font-display text-lg font-semibold text-white">
                   <span className="font-mono text-sm text-aurora-200">
                     {String(gi + 1).padStart(2, "0")}
                   </span>

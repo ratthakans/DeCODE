@@ -68,7 +68,7 @@ export function CourseHero({
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-5 max-w-2xl text-balance font-display text-fluid-2xl font-bold leading-[1.05] text-white">
+              <h1 className="mt-5 max-w-2xl text-balance font-display text-fluid-2xl font-semibold leading-[1.05] text-white">
                 {course.title}
               </h1>
             </Reveal>
@@ -152,7 +152,7 @@ export function CourseHero({
                   <div className="mb-5 flex items-end justify-between">
                     <div>
                       <p className="text-xs text-white/45">ราคาคอร์ส</p>
-                      <p className="font-display text-3xl font-bold text-white tabular-nums">
+                      <p className="font-display text-3xl font-semibold text-white tabular-nums">
                         {priceFormatter.format(course.price)}
                       </p>
                     </div>

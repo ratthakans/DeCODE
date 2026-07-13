@@ -27,7 +27,7 @@ export function Concept() {
             <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.12em] aurora-text">
               แนวคิด DeCODE
             </span>
-            <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-bold leading-tight tracking-[-0.03em] text-white text-balance">
+            <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold leading-tight tracking-[-0.03em] text-white text-balance">
               เราไม่ได้สอนให้คุณ<span className="aurora-text">รู้จัก</span> AI
               <br />
               เราสอนให้คุณ<span className="aurora-text">สั่งงานมันเป็น</span>
@@ -44,7 +44,7 @@ export function Concept() {
                     <path strokeLinecap="round" strokeLinejoin="round" d={p.icon} />
                   </svg>
                 </div>
-                <h3 className="text-lg font-bold tracking-tight text-white">{p.title}</h3>
+                <h3 className="text-lg font-semibold tracking-tight text-white">{p.title}</h3>
                 <p className="mt-2.5 text-sm leading-relaxed text-white/55">{p.body}</p>
               </div>
             </RevealItem>

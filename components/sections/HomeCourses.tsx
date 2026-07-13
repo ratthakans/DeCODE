@@ -12,7 +12,7 @@ export function HomeCourses() {
           <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.12em] aurora-text">
             หลักสูตรทั้งหมด
           </span>
-          <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-bold tracking-[-0.03em] text-white">
+          <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
             เลือกเส้นทางของคุณ
           </h2>
           <p className="mt-3.5 text-white/60">

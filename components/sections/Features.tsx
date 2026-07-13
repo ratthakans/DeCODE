@@ -53,7 +53,7 @@ export function Features() {
             >
               <span className="h-1.5 w-1.5 rounded-full bg-aurora-200/70 transition-colors group-hover:bg-aurora-100" />
               <div>
-                <h3 className="font-display text-lg font-bold text-white">
+                <h3 className="font-display text-lg font-semibold text-white">
                   {f.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/55">

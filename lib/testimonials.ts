@@ -29,7 +29,7 @@ export const testimonials: Testimonial[] = [
       after: "ทำเองใน 20 นาที ต่อสัปดาห์",
       metric: "ประหยัด 96,000 บ./ปี",
     },
-    photoUrl: "",
+    photoUrl: "https://images.pexels.com/photos/36593089/pexels-photo-36593089.jpeg?auto=compress&cs=tinysrgb&w=200",
     course: "CLAUDE OPERATOR",
   },
   {
@@ -43,7 +43,7 @@ export const testimonials: Testimonial[] = [
       after: "ได้ draft แรกใน 10 นาที",
       metric: "เร็วขึ้น ~430 เท่า",
     },
-    photoUrl: "",
+    photoUrl: "https://images.pexels.com/photos/33261955/pexels-photo-33261955.jpeg?auto=compress&cs=tinysrgb&w=200",
     course: "CLAUDE GODMODE",
   },
   {
@@ -57,7 +57,7 @@ export const testimonials: Testimonial[] = [
       after: "เหลือ 5 นาที ต่อครั้ง",
       metric: "คืนเวลา ~40 ชม./เดือน",
     },
-    photoUrl: "",
+    photoUrl: "https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&w=200",
     course: "CLAUDE CO-WORKER",
   },
 ];

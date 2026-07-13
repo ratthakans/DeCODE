@@ -63,7 +63,7 @@ export function Countdown({
           key={u.l}
           className="flex min-w-[64px] flex-col items-center rounded-xl border border-aurora-200/10 bg-aurora-200/[0.04] backdrop-blur-sm px-3 py-2.5"
         >
-          <span className="font-display text-2xl font-bold tabular-nums text-white">
+          <span className="font-display text-2xl font-semibold tabular-nums text-white">
             {t ? String(u.v).padStart(2, "0") : "--"}
           </span>
           <span className="font-mono text-[0.6rem] uppercase tracking-widest text-white/45">

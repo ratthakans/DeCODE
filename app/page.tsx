@@ -6,8 +6,18 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Reveal } from "@/components/ui/Reveal";
 import { getAvailableCourse } from "@/lib/courses";
+import type { ComponentType } from "react";
+import { ClaudeIcon, OpenAI, Supabase } from "@/components/ui/icons";
 
-const PARTNERS = ["Claude", "OpenAI", "Next.js", "Supabase", "n8n", "ClickUp", "Vercel"];
+const PARTNERS: { name: string; icon?: ComponentType<{ className?: string }> }[] = [
+  { name: "Claude", icon: ClaudeIcon },
+  { name: "OpenAI", icon: OpenAI },
+  { name: "Supabase", icon: Supabase },
+  { name: "Next.js" },
+  { name: "n8n" },
+  { name: "ClickUp" },
+  { name: "Vercel" },
+];
 
 export default function HomePage() {
   const featured = getAvailableCourse();
@@ -28,7 +38,7 @@ export default function HomePage() {
               <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.12em] aurora-text">
                 คอร์สแนะนำ · เปิดรับตอนนี้
               </span>
-              <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-bold tracking-[-0.03em] text-white">
+              <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
                 รอบเดียวก่อนปิดปีนี้
               </h2>
             </div>
@@ -46,10 +56,11 @@ export default function HomePage() {
           <p className="mb-7 text-center font-grotesk text-xs uppercase tracking-[0.16em] text-white/35">
             เครื่องมือที่ใช้จริงในคลาส
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-[clamp(28px,6vw,64px)] gap-y-6 opacity-60">
-            {PARTNERS.map((p) => (
-              <span key={p} className="font-grotesk text-lg font-bold tracking-tight text-white/70">
-                {p}
+          <div className="flex flex-wrap items-center justify-center gap-x-[clamp(24px,5vw,52px)] gap-y-6 opacity-70">
+            {PARTNERS.map(({ name, icon: Icon }) => (
+              <span key={name} className="flex items-center gap-2.5 text-white/55 transition-colors hover:text-white/80">
+                {Icon && <Icon className="h-6 w-6" />}
+                <span className="font-grotesk text-base font-medium tracking-tight">{name}</span>
               </span>
             ))}
           </div>

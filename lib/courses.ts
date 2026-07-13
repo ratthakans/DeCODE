@@ -45,7 +45,7 @@ export const courses: Course[] = [
   {
     id: "c-operator",
     slug: "claude-operator",
-    title: "CLAUDE OPERATOR",
+    title: "Claude Operator",
     edition: "The Unfair Advantage",
     subtitle: "เลิกเป็นแรงงานในออฟฟิศ ขึ้นมาเป็นผู้บริหาร AI ที่สั่งงานยากให้เสร็จก่อนกาแฟเย็นจะละลาย",
     description: "แคมป์ 2 วันเต็ม ที่ไม่ได้สอนใช้โปรแกรมพื้นฐาน แต่เปลี่ยนระบบคิดของคุณให้เป็น AI Director — เซตอัป Claude ให้เข้าใจธุรกิจคุณระดับพนักงานอาวุโส แล้ววางระบบอัตโนมัติที่ทำงานแทนคุณตั้งแต่วันแรกที่เดินออกจากห้อง",
@@ -104,7 +104,7 @@ export const courses: Course[] = [
   {
     id: "c-10x",
     slug: "claude-code-10x-engineer",
-    title: "CLAUDE CODE: THE 10X ENGINEER",
+    title: "Claude Code · 10X Engineer",
     edition: "The 10X Architect",
     subtitle: "หมดยุคกรรมกรหน้าจอ สั่ง AI เขียนโครง ไล่บัค และ Deploy ระบบแทนคุณ จบงานเท่าทีม Dev 5 คนในร่างเดียว",
     description: "ไม่ได้สอนให้คุณเขียนโค้ดเก่งขึ้น แต่สอนให้คุณเขียนโค้ดน้อยลง 90% โดยได้แอปพลิเคชันสเกลใหญ่กว่าเดิม เปลี่ยนช่วงเวลาน่าเบื่อที่สุดของ Dev — เซตโปรเจกต์ ไล่บัค เขียน Boilerplate — ให้เป็นหน้าที่ของ Claude",
@@ -160,7 +160,7 @@ export const courses: Course[] = [
   {
     id: "c-aesthetic",
     slug: "claude-code-aesthetic-frontend",
-    title: "CLAUDE CODE: THE AESTHETIC FRONT-END",
+    title: "Claude Code · Aesthetic Front-End",
     edition: "Awwwards Grade",
     subtitle: "AI สร้างเว็บได้ใน 1 นาที แต่เว็บที่ ‘เท่และโคตรแพง’ ต้องใช้ชั้นเชิงการสั่งการระดับ Art Director",
     description: "ก้าวข้ามเว็บหน้าตา Template สี่เหลี่ยมแข็งๆ สอนวิธีบรีฟ Claude Code ให้เข้าใจรสนิยมทางศิลปะ และสั่งเขียนโค้ด Web Animation ระดับสูง (GSAP, Framer Motion, Three.js) สร้างเว็บที่พร้อมส่งประกวดเวที Awwwards",
@@ -216,7 +216,7 @@ export const courses: Course[] = [
   {
     id: "c-coworker",
     slug: "claude-co-worker",
-    title: "CLAUDE CO-WORKER",
+    title: "Claude Co-Worker",
     edition: "The Master Delegator",
     subtitle: "ศิลปะการโยนงานให้ AI: บริหารระบบให้รันเอง 100% แล้วเอาเวลาไปทำเรื่องไร้สาระ",
     description: "ไม่ได้สอนให้คุณทำงานได้มากขึ้น แต่สอนให้คุณ ‘ทำน้อยลง’ ด้วยการเซตอัป Claude ให้เป็นเลขาและผู้ช่วยส่วนตัวที่ไม่มีวันลาพักร้อน — สำหรับผู้บริหารและเจ้าของธุรกิจที่บ้างานจนไม่มีเวลาใช้ชีวิต",
@@ -272,7 +272,7 @@ export const courses: Course[] = [
   {
     id: "c-godmode",
     slug: "claude-godmode-creative-director",
-    title: "CLAUDE GODMODE",
+    title: "Claude Godmode",
     edition: "The Creative Director",
     subtitle: "ปลดล็อกพลังพระเจ้า สั่ง Claude ขยี้ไอเดีย เปลี่ยนนามธรรมทางศิลปะให้เป็นชิ้นงานระดับมาสเตอร์พีซ",
     description: "ไม่ใช่คอร์สสอนเจนรูป แต่สอนวิธีคิดและวิธีสั่ง — แปลงสัมผัสทางอาร์ตให้เป็นโครงสร้างตรรกะที่ Claude เข้าใจและทำงานต่อได้จริง สำหรับ Creative Director, Art Director และเจ้าของเอเจนซี่",
@@ -328,7 +328,7 @@ export const courses: Course[] = [
   {
     id: "c-architect",
     slug: "claude-code-one-man-startup",
-    title: "CLAUDE CODE: THE ONE-MAN STARTUP",
+    title: "Claude Code · One-Man Startup",
     edition: "From Prompt to Production",
     subtitle: "เลิกง้อโปรแกรมเมอร์ ประกอบร่าง Tech Startup ของคุณเอง ด้วยโค้ดที่ AI เขียนตั้งแต่บรรทัดแรกจนถึง Deploy",
     description: "เปลี่ยนสาย Business / Marketing ให้กลายเป็น System Architect ที่สร้าง Web App เชื่อม Database และวางระบบชำระเงินได้ด้วยตัวเอง — From Prompt to Production",
@@ -384,7 +384,7 @@ export const courses: Course[] = [
   {
     id: "c-performance",
     slug: "claude-performance-deep-core",
-    title: "PERFORMANCE CLAUDE: THE DEEP CORE",
+    title: "Performance Claude · Deep Core",
     edition: "Power User Deep Dive",
     subtitle: "ปลดล็อกศักยภาพขั้นสุด เข้าถึง Deep Function ของ Claude ที่คน 99% ไม่เคยรู้ว่าทำได้",
     description: "คอร์สสำหรับ Power User ที่ต้องการรีดประสิทธิภาพของ Claude ออกมาให้ถึงขีดสุด เจาะลึกเทคนิคการใช้งาน Context Window ให้คุ้มค่า, การเขียน System Prompts ระดับวิศวกรรม, การรีด Logical Reasoning ขั้นสูง และเทคนิคลับเพื่อปลดล็อกขีดจำกัดเดิมๆ",

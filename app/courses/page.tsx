@@ -24,7 +24,7 @@ export default function CoursesPage() {
             <span className="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1 font-sans text-[0.65rem] font-semibold uppercase tracking-widest text-white/80">คอร์สทั้งหมด</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-6 max-w-3xl text-balance font-display text-4xl font-bold leading-[1.1] text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-6 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.1] text-white sm:text-5xl md:text-6xl">
               เลือกเส้นทางของคุณ — <br />
               <span className="text-white/50">แล้วสั่ง AI ให้ทำงานแทน</span>
             </h1>

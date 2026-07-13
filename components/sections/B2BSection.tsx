@@ -20,7 +20,7 @@ export function B2BSection() {
                 <span className="h-px w-6 bg-aurora-200/50" />
                 สำหรับองค์กร
               </span>
-              <h2 className="max-w-xl font-display text-fluid-lg font-bold leading-tight text-white">
+              <h2 className="max-w-xl font-display text-fluid-lg font-semibold leading-tight text-white">
                 อยากอัปสกิล AI ให้ทั้งทีม หรือจัดอบรม In-house?
               </h2>
               <p className="mt-4 max-w-lg text-fluid-base leading-relaxed text-white/60">
