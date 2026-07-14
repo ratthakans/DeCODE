@@ -26,9 +26,8 @@ export default function CoursesPage() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="mt-5 max-w-2xl text-fluid-base leading-relaxed text-white/60">
-              ไม่ใช่คลาสสอนเครื่องมือแยกกัน แต่คือระบบพัฒนาความสามารถ 8 สเตจ
-              ตั้งแต่ระดับบุคคลจนถึงองค์กร — เริ่มที่ OPERATE จบที่ MASTER
-              เลือกเส้นทางตามบทบาทของคุณ ไม่ต้องเรียนครบ
+              ระบบพัฒนาความสามารถ 8 สเตจ จาก OPERATE ถึง MASTER
+              เลือกเส้นทางตามบทบาท ไม่ต้องเรียนครบ
             </p>
           </Reveal>
           <Reveal delay={0.16}>

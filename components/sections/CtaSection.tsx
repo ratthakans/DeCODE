@@ -17,7 +17,7 @@ export function CtaSection() {
               ปิดช่องว่างระหว่าง<span className="aurora-text">คุณกับ AI</span>
             </h2>
             <p className="mt-4 text-white/60">
-              บอกเราว่าคุณทำธุรกิจอะไร เราจะแนะนำเส้นทางเรียนที่เหมาะกับบทบาทและเป้าหมายของคุณ
+              บอกเราว่าคุณทำธุรกิจอะไร เดี๋ยวเราแนะนำคอร์สให้
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href={lineLink()} external variant="aurora" size="lg">

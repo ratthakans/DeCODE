@@ -45,8 +45,7 @@ export function Masthead() {
         </h2>
 
         <p className="mx-auto mt-6 max-w-[52ch] text-[clamp(1.05rem,0.98rem+0.4vw,1.28rem)] leading-relaxed text-white/65">
-          เปลี่ยนความซับซ้อนของ AI ให้เป็นความสามารถที่ใช้ได้จริง — เรียน onsite
-          วางระบบที่ลดเวลาทำงาน 10 เท่า แล้วเอากลับไปรันกับธุรกิจได้ทันที
+          เรียน onsite วางระบบ AI ที่เอากลับไปใช้กับธุรกิจได้จริง
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
