@@ -3,6 +3,7 @@ import { Concept } from "@/components/sections/Concept";
 import { FeaturedCourse } from "@/components/FeaturedCourse";
 import { HomeCourses } from "@/components/sections/HomeCourses";
 import { Testimonials } from "@/components/sections/Testimonials";
+import { BrandManifesto } from "@/components/sections/BrandManifesto";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Reveal } from "@/components/ui/Reveal";
 import { getAvailableCourse } from "@/lib/courses";
@@ -70,7 +71,10 @@ export default function HomePage() {
       {/* 6. Testimonials */}
       <Testimonials />
 
-      {/* 7. CTA */}
+      {/* 7. Brand manifesto */}
+      <BrandManifesto />
+
+      {/* 8. CTA */}
       <CtaSection />
     </>
   );

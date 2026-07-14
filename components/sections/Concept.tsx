@@ -1,20 +1,24 @@
 import { Reveal, RevealGroup, RevealItem } from "../ui/Reveal";
 
-const POINTS = [
+const FORCES = [
   {
-    title: "ลงมือทำจริง",
-    body: "ทุกคอร์สจบด้วย Capstone เอางานจริงของคุณมาทำในคลาส เดินออกพร้อมระบบที่รันต่อได้",
-    icon: "M4.5 12.75l6 6 9-13.5",
+    name: "STRUCTURE",
+    gloss: "จัดระเบียบสิ่งที่ซับซ้อน",
+    body: "เราไม่สอนให้สุ่มลอง AI ไปเรื่อย ๆ แต่สอนให้เข้าใจว่าแต่ละเครื่องมือควรอยู่ตรงไหนของกระบวนการทำงาน",
+    keywords: ["Logic", "Framework", "System", "Process"],
   },
   {
-    title: "ไม่ต้องมีพื้นฐาน",
-    body: "สอนวิธี ‘สั่งงาน’ AI ด้วยภาษาคน เจ้าของร้าน คนทำงาน ผู้บริหาร เรียนได้หมด",
-    icon: "M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25a8.25 8.25 0 0115 0",
+    name: "CLARITY",
+    gloss: "ถอดรหัสความซับซ้อน",
+    body: "หน้าที่ของแบรนด์คือเปลี่ยนสิ่งที่ยากให้คนเข้าใจและนำไปใช้ได้ — มองเห็นชัดว่าอะไรคือสิ่งที่ควรทำต่อ",
+    keywords: ["Knowledge", "Focus", "Judgement", "Confidence"],
   },
   {
-    title: "ได้ระบบกลับบ้าน",
-    body: "ไม่ใช่แค่สไลด์ แต่ได้ Workflow และคลัง Prompt ที่ก๊อปไปใช้กับธุรกิจได้ทันที",
-    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    name: "INTELLIGENCE",
+    gloss: "พลังที่กำลังเคลื่อนไหว",
+    body: "ไม่ใช่แค่ความฉลาดของเครื่องจักร แต่คือความสามารถใหม่ที่เกิดขึ้นเมื่อมนุษย์ใช้เครื่องจักรได้อย่างถูกต้อง",
+    keywords: ["Transformation", "Connection", "Human Potential"],
+    accent: true,
   },
 ];
 
@@ -24,28 +28,61 @@ export function Concept() {
       <div className="container-x">
         <Reveal>
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.12em] aurora-text">
-              แนวคิด DeCODE
+            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
+              แนวคิด DeCODE · The Three Forces
             </span>
-            <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold leading-tight tracking-[-0.03em] text-white text-balance">
-              เราไม่ได้สอนให้คุณ<span className="aurora-text">รู้จัก</span> AI
-              <br />
-              เราสอนให้คุณ<span className="aurora-text">สั่งงานมันเป็น</span>
+            <h2 className="mt-4 font-display text-[clamp(1.8rem,1.2rem+2.4vw,3.1rem)] font-semibold leading-[1.12] tracking-[-0.035em] text-balance">
+              <span className="block">
+                <span className="text-white/40">BLACK</span> <span className="text-white">STRUCTURE.</span>
+              </span>
+              <span className="block">
+                <span className="text-white/40">WHITE</span> <span className="text-white">CLARITY.</span>
+              </span>
+              <span className="block aurora-text">AURORA INTELLIGENCE.</span>
             </h2>
+            <p className="mt-5 leading-relaxed text-white/55">
+              DeCODE อยู่ระหว่างความคิดสร้างสรรค์กับระบบ — เปลี่ยนความคิดให้เป็นระบบ
+              และเปลี่ยนเทคโนโลยีให้เป็นความสามารถทางธุรกิจ
+            </p>
           </div>
         </Reveal>
 
         <RevealGroup className="grid gap-4 md:grid-cols-3">
-          {POINTS.map((p) => (
-            <RevealItem key={p.title}>
-              <div className="h-full rounded-[18px] border border-white/10 bg-ink-100 p-8">
-                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-aurora-200/10">
-                  <svg className="h-5 w-5 stroke-aurora-200" fill="none" viewBox="0 0 24 24" strokeWidth={1.8}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={p.icon} />
-                  </svg>
+          {FORCES.map((f) => (
+            <RevealItem key={f.name}>
+              <div
+                className={`flex h-full flex-col rounded-[18px] border bg-ink-100 p-8 ${
+                  f.accent ? "border-aurora-200/30" : "border-white/10"
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full ${
+                      f.accent
+                        ? "bg-aurora-200 shadow-[0_0_8px_2px_rgba(45,212,191,0.6)]"
+                        : "bg-white/40"
+                    }`}
+                  />
+                  <h3
+                    className={`font-grotesk text-sm font-semibold uppercase tracking-[0.14em] ${
+                      f.accent ? "aurora-text" : "text-white"
+                    }`}
+                  >
+                    {f.name}
+                  </h3>
                 </div>
-                <h3 className="text-lg font-semibold tracking-tight text-white">{p.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-white/55">{p.body}</p>
+                <p className="mt-4 text-base font-semibold tracking-tight text-white">{f.gloss}</p>
+                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-white/55">{f.body}</p>
+                <div className="mt-6 flex flex-wrap gap-1.5">
+                  {f.keywords.map((k) => (
+                    <span
+                      key={k}
+                      className="rounded-full border border-white/10 px-2.5 py-1 font-grotesk text-[0.7rem] tracking-wide text-white/45"
+                    >
+                      {k}
+                    </span>
+                  ))}
+                </div>
               </div>
             </RevealItem>
           ))}
