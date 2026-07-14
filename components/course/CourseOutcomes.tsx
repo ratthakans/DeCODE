@@ -21,6 +21,24 @@ export function CourseOutcomes({ course }: { course: Course }) {
           </RevealItem>
         ))}
       </RevealGroup>
+
+      {course.notFor && course.notFor.length > 0 && (
+        <Reveal delay={0.08}>
+          <div className="mt-10 rounded-[18px] border border-white/10 bg-ink-100 p-7">
+            <h3 className="font-grotesk text-xs font-semibold uppercase tracking-[0.14em] text-white/45">
+              พูดตรง ๆ — คอร์สนี้อาจไม่เหมาะ ถ้า
+            </h3>
+            <ul className="mt-4 flex flex-col gap-2.5">
+              {course.notFor.map((n) => (
+                <li key={n} className="flex items-start gap-3 text-sm leading-relaxed text-white/60">
+                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-white/40" aria-hidden />
+                  {n}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      )}
     </section>
   );
 }

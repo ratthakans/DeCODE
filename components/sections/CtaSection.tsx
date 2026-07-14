@@ -14,10 +14,10 @@ export function CtaSection() {
           />
           <div className="relative mx-auto max-w-xl">
             <h2 className="font-display text-[clamp(1.9rem,1.4rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
-              ช้าวันไหน ก็ถูกแซงวันนั้น
+              ปิดช่องว่างระหว่าง<span className="aurora-text">คุณกับ AI</span>
             </h2>
             <p className="mt-4 text-white/60">
-              บอกเราว่าคุณทำธุรกิจอะไร เดี๋ยวเราแนะนำคอร์สที่เหมาะกับคุณให้เอง
+              บอกเราว่าคุณทำธุรกิจอะไร เราจะแนะนำเส้นทางเรียนที่เหมาะกับบทบาทและเป้าหมายของคุณ
             </p>
             <div className="mt-7 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href={lineLink()} external variant="aurora" size="lg">

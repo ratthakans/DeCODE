@@ -54,7 +54,7 @@ export default function HomePage() {
       {/* 5. Partner logos */}
       <section className="border-y border-white/10 py-14">
         <div className="container-x">
-          <p className="mb-7 text-center font-grotesk text-xs uppercase tracking-[0.16em] text-white/35">
+          <p className="mb-7 text-center font-grotesk text-xs uppercase tracking-[0.16em] text-white/45">
             เครื่องมือที่ใช้จริงในคลาส
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-[clamp(24px,5vw,52px)] gap-y-6 opacity-70">

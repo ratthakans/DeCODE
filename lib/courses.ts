@@ -39,6 +39,8 @@ export interface Course {
   businessType: BusinessType;
   outcomes: string[];
   bonuses: string[];
+  /** ความตรงไปตรงมาแบบ DeCODE — คอร์สนี้ไม่เหมาะกับใคร */
+  notFor?: string[];
 }
 
 const PEXELS = (id: number, w = 1200) =>
@@ -153,6 +155,10 @@ export const courses: Course[] = [
       "Prompt Library อย่างน้อย 5 ชุด + AI SOP 3 กระบวนการ",
       "AI Operating Manual สำหรับตัวเองหรือทีม",
     ],
+    notFor: [
+      "คุณอยากได้คลัง Prompt สำเร็จรูปไปก๊อปใช้ โดยไม่อยากเข้าใจว่าทำไมมันเวิร์ก",
+      "คุณหาเทคนิคลัดรายเครื่องมือ มากกว่าการวางระบบที่ใช้ซ้ำได้",
+    ],
   },
   {
     id: "c-coworker",
@@ -246,6 +252,10 @@ export const courses: Course[] = [
       "Final Project: Personal AI Operating System",
       "Executive System Prompt + Meeting & Decision Workflow",
       "Weekly Review System พร้อม Communication Library",
+    ],
+    notFor: [
+      "คุณยังไม่เคยใช้ AI ทำงานจริงเลย — เริ่มที่ Claude Operator ก่อนจะคุ้มกว่า",
+      "งานของคุณยังไม่ล้นมือ และยังไม่มีข้อมูล/การประชุมมากพอให้จัดระบบ",
     ],
   },
   {
@@ -341,6 +351,10 @@ export const courses: Course[] = [
       "Visual World + Moodboard + Key Visual Series",
       "Creative Review Checklist + Production Pipeline",
     ],
+    notFor: [
+      "คุณอยากเรียนแค่วิธีกดเจนภาพสวย ๆ — คอร์สนี้เน้น Concept และการกำกับ ไม่ใช่ปุ่ม",
+      "คุณยังไม่มีบริบทงาน Creative/Brand/Content ให้เอามาใช้เป็นโจทย์จริง",
+    ],
   },
   {
     id: "c-aesthetic",
@@ -434,6 +448,10 @@ export const courses: Course[] = [
       "Final Project: Deployed Digital Experience",
       "Design Tokens + Responsive Component Library",
       "Hero + Motion Section, Deploy บนโดเมนจริง",
+    ],
+    notFor: [
+      "คุณไม่พร้อมแตะโครงสร้างโค้ดเลยแม้แต่น้อย — ต้องอ่านโค้ดเป็นบ้าง (ไม่ต้องเขียนคล่อง)",
+      "คุณต้องการเว็บเสร็จเร็ว ๆ แบบไหนก็ได้ — คอร์สนี้เน้นรสนิยมและระบบ ไม่ใช่ความเร็วอย่างเดียว",
     ],
   },
   {
@@ -537,6 +555,10 @@ export const courses: Course[] = [
       "Front-end + Database + Auth + Core Feature",
       "Payment/Booking + Analytics + Deploy + V2 Roadmap",
     ],
+    notFor: [
+      "คุณยังไม่มีไอเดีย Product หรือปัญหาผู้ใช้ที่อยากแก้จริง ๆ",
+      "คุณไม่พร้อมเรียนต่อเนื่องหลายสัปดาห์และทำการบ้านระหว่างสัปดาห์",
+    ],
   },
   {
     id: "c-automation",
@@ -638,6 +660,10 @@ export const courses: Course[] = [
       "Final Project: One Working Business Automation",
       "Workflow Map + Human Approval + Error Handling",
       "SOP + Maintenance Guide ที่ส่งต่อทีมได้",
+    ],
+    notFor: [
+      "คุณอยากจ้างคนทำ Automation ให้ มากกว่าอยากเข้าใจและดูแลระบบเองได้",
+      "คุณไม่พร้อมแตะ API, JSON และ Data Structure เบื้องต้น",
     ],
   },
   {
@@ -748,6 +774,10 @@ export const courses: Course[] = [
       "Final Project: AI Transformation Blueprint",
       "Opportunity Map + Prioritised Use Cases + Governance Model",
       "90-Day Implementation Roadmap + KPI Framework",
+    ],
+    notFor: [
+      "คุณมาคนเดียวโดยไม่มีอำนาจตัดสินใจในองค์กร — คอร์สนี้ออกแบบให้มาเป็นทีม",
+      "องค์กรของคุณต้องการแค่สอนพนักงานใช้เครื่องมือ ไม่ใช่วาง Transformation",
     ],
   },
   {
@@ -867,6 +897,10 @@ export const courses: Course[] = [
       "Final Project: Advanced AI System",
       "Context Architecture + Memory + Agent Workflow",
       "Evaluation Dataset + Performance Benchmark",
+    ],
+    notFor: [
+      "คุณเพิ่งเริ่มใช้ Claude — เริ่มที่ Claude Operator ก่อน คอร์สนี้ต่อยอดจากการใช้งานจริง",
+      "คุณอยากได้เทคนิค Prompt เดี่ยว ๆ — คอร์สนี้ว่าด้วยการออกแบบและวัดผลทั้งระบบ",
     ],
   },
 ];

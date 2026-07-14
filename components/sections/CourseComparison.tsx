@@ -20,13 +20,13 @@ export function CourseComparison() {
         <div className="overflow-hidden rounded-[18px] border border-white/10 bg-ink-100">
           {/* header row — desktop only */}
           <div className="hidden grid-cols-[auto_1.6fr_1fr] gap-4 border-b border-white/10 px-6 py-4 md:grid">
-            <span className="font-grotesk text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/35">
+            <span className="font-grotesk text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/45">
               Stage
             </span>
-            <span className="font-grotesk text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/35">
+            <span className="font-grotesk text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/45">
               คอร์ส
             </span>
-            <span className="font-grotesk text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/35">
+            <span className="font-grotesk text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/45">
               สิ่งที่ได้
             </span>
           </div>
@@ -51,7 +51,7 @@ export function CourseComparison() {
                         {c.title}
                       </span>
                       {c.edition && (
-                        <span className="ml-2 hidden text-xs text-white/35 lg:inline">{c.edition}</span>
+                        <span className="ml-2 hidden text-xs text-white/45 lg:inline">{c.edition}</span>
                       )}
                     </span>
                     <span className="text-sm text-white/65">{courseDeliverable(c)}</span>

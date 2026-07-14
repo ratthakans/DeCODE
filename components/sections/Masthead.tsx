@@ -43,13 +43,14 @@ export function Masthead() {
         </span>
 
         <h2 className="mt-7 font-display text-[clamp(2.7rem,1.5rem+5.2vw,5.2rem)] font-semibold leading-[1.05] tracking-[-0.035em] text-white text-balance">
-          ลดเวลาทำงาน 10 เท่า
+          เราไม่ได้สอน AI
           <br />
-          ด้วย <span className="aurora-text">AI ที่ใช้ได้จริง</span>
+          เราสอน<span className="aurora-text">แต้มต่อทางธุรกิจ</span>
         </h2>
 
-        <p className="mx-auto mt-6 max-w-[50ch] text-[clamp(1.05rem,0.98rem+0.4vw,1.28rem)] leading-relaxed text-white/65">
-          {site.tagline} — เรียน onsite เปลี่ยน Claude และ Automation ให้เป็นระบบที่เอากลับไปใช้กับธุรกิจได้ทันที
+        <p className="mx-auto mt-6 max-w-[52ch] text-[clamp(1.05rem,0.98rem+0.4vw,1.28rem)] leading-relaxed text-white/65">
+          เปลี่ยนความซับซ้อนของ AI ให้เป็นความสามารถที่ใช้ได้จริง — เรียน onsite
+          วางระบบที่ลดเวลาทำงาน 10 เท่า แล้วเอากลับไปรันกับธุรกิจได้ทันที
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">

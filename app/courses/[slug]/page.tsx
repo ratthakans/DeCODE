@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { courses, getCourse } from "@/lib/courses";
-import { courseLineLink, notifyLineLink } from "@/lib/line";
+import { courseLineLink, lineLink, notifyLineLink } from "@/lib/line";
 import { Reveal } from "@/components/ui/Reveal";
 
 
@@ -37,10 +37,14 @@ export default function CourseDetailPage({
   if (!course) notFound();
 
   const available = course.status === "available";
-  const ctaHref = available
-    ? courseLineLink(course.title, course.schedule)
-    : notifyLineLink(course.title);
-  const ctaLabel = available ? "สอบถาม / จองที่นั่ง" : "แจ้งเตือนเมื่อเปิด";
+  const b2b = course.businessType === "b2b";
+  // b2b (องค์กร) ขายแบบ consultative — ชวนคุย ไม่ใช่กดจอง
+  const ctaHref = b2b
+    ? lineLink(`สนใจหลักสูตร ${course.title} สำหรับองค์กร ขอนัดคุยรายละเอียดครับ/ค่ะ`)
+    : available
+      ? courseLineLink(course.title, course.schedule)
+      : notifyLineLink(course.title);
+  const ctaLabel = b2b ? "นัดคุยกับทีมเรา" : available ? "สอบถาม / จองที่นั่ง" : "แจ้งเตือนเมื่อเปิด";
 
   return (
     <>
@@ -60,12 +64,14 @@ export default function CourseDetailPage({
           <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-ink-100 px-6 py-14 text-center">
             <div className="relative mx-auto max-w-xl">
               <h2 className="font-display text-fluid-xl font-semibold text-white">
-                {available ? "พร้อมจองที่นั่งแล้ว?" : "อยากรู้ก่อนใครเมื่อเปิด?"}
+                {b2b ? "คุยกันก่อน ไม่มีข้อผูกมัด" : available ? "พร้อมจองที่นั่งแล้ว?" : "อยากรู้ก่อนใครเมื่อเปิด?"}
               </h2>
               <p className="mt-4 text-white/60">
-                {available
-                  ? `เหลือ ${course.seatsAvailable} ที่นั่งสุดท้ายในรอบนี้ ทักไลน์มาจองได้เลย`
-                  : "กดแจ้งเตือน แล้วเราจะทักไปทันทีที่รอบใหม่เปิดจอง"}
+                {b2b
+                  ? "เล่าโจทย์ขององค์กรคุณให้เราฟัง เราจะช่วยประเมินว่าหลักสูตรนี้ตอบโจทย์หรือไม่"
+                  : available
+                    ? `เหลือ ${course.seatsAvailable} ที่นั่งสุดท้ายในรอบนี้ ทักไลน์มาจองได้เลย`
+                    : "กดแจ้งเตือน แล้วเราจะทักไปทันทีที่รอบใหม่เปิดจอง"}
               </p>
               <div className="mt-8">
                 <CourseAction

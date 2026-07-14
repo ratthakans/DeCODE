@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { courses, getAvailableCourse, getComingSoonCourses } from "@/lib/courses";
-import { FeaturedCourse } from "@/components/FeaturedCourse";
-import { CourseCard } from "@/components/CourseCard";
-import { GradientField } from "@/components/ui/GradientField";
-import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
-import { LearningPaths } from "@/components/sections/LearningPaths";
+import { courses, getComingSoonCourses } from "@/lib/courses";
+import { Reveal } from "@/components/ui/Reveal";
+import { CourseExplorer } from "@/components/sections/CourseExplorer";
 import { CourseComparison } from "@/components/sections/CourseComparison";
 import { CoursePhilosophy } from "@/components/sections/CoursePhilosophy";
 import { CtaSection } from "@/components/sections/CtaSection";
@@ -16,7 +13,6 @@ export const metadata: Metadata = {
 };
 
 export default function CoursesPage() {
-  const featured = getAvailableCourse();
   const comingSoon = getComingSoonCourses();
 
   return (
@@ -49,16 +45,9 @@ export default function CoursesPage() {
           <span className="hairline flex-1" />
         </div>
 
-        <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {courses.map((c) => (
-            <RevealItem key={c.id}>
-              <CourseCard course={c} />
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        <CourseExplorer />
       </section>
 
-      <LearningPaths />
       <CourseComparison />
       <CoursePhilosophy />
 
