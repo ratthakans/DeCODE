@@ -24,14 +24,11 @@ const FORCES = [
 
 export function Concept() {
   return (
-    <section className="border-y border-white/10 bg-gradient-to-b from-aurora-200/[0.03] to-transparent py-24 md:py-32">
+    <section className="bg-gradient-to-b from-aurora-200/[0.03] to-transparent py-24 md:py-32">
       <div className="container-x">
         <Reveal>
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-              แนวคิด DeCODE · The Three Forces
-            </span>
-            <h2 className="mt-4 font-display text-[clamp(1.8rem,1.2rem+2.4vw,3.1rem)] font-semibold leading-[1.12] tracking-[-0.035em] text-balance">
+            <h2 className="font-display text-[clamp(1.8rem,1.2rem+2.4vw,3.1rem)] font-semibold leading-[1.12] tracking-[-0.035em] text-balance">
               <span className="block">
                 <span className="text-white/40">BLACK</span> <span className="text-white">STRUCTURE.</span>
               </span>
@@ -51,8 +48,8 @@ export function Concept() {
           {FORCES.map((f) => (
             <RevealItem key={f.name}>
               <div
-                className={`flex h-full flex-col rounded-[18px] border bg-ink-100 p-8 ${
-                  f.accent ? "border-aurora-200/30" : "border-white/10"
+                className={`flex h-full flex-col rounded-[20px] p-8 ${
+                  f.accent ? "bg-aurora-200/[0.07]" : "bg-white/[0.04]"
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -77,7 +74,7 @@ export function Concept() {
                   {f.keywords.map((k) => (
                     <span
                       key={k}
-                      className="rounded-full border border-white/10 px-2.5 py-1 font-grotesk text-[0.7rem] tracking-wide text-white/45"
+                      className="rounded-full bg-white/[0.05] px-2.5 py-1 font-grotesk text-[0.7rem] tracking-wide text-white/50"
                     >
                       {k}
                     </span>

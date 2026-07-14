@@ -7,7 +7,7 @@ export function CourseInstructor({ course }: { course: Course }) {
     <section className="container-x py-16">
       <div className="grid gap-6 lg:grid-cols-2">
         <Reveal>
-          <div className="flex h-full flex-col justify-center border-t border-white/10 pt-8">
+          <div className="flex h-full flex-col justify-center border-t border-white/[0.06] pt-8">
             <span className="font-mono text-xs uppercase tracking-widest text-white/40">Instructor</span>
             <div className="mt-6 flex items-center gap-5">
               <Avatar
@@ -32,7 +32,7 @@ export function CourseInstructor({ course }: { course: Course }) {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="flex h-full flex-col justify-center border-t border-white/10 pt-8">
+          <div className="flex h-full flex-col justify-center border-t border-white/[0.06] pt-8">
             <span className="font-mono text-xs uppercase tracking-widest text-white/40">Final Project</span>
             <h3 className="mt-6 font-display text-xl font-semibold text-white">
               สิ่งที่คุณจะสร้าง และได้กลับไปใช้จริง

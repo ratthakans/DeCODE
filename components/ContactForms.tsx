@@ -7,7 +7,7 @@ import { courses } from "@/lib/courses";
 import { lineLink } from "@/lib/line";
 
 const inputCls =
-  "w-full rounded-xl border border-white/10 bg-ink/60 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors focus:border-aurora-200/50 focus:bg-ink/80";
+  "w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-colors focus:border-aurora-200/50 focus:bg-ink/80";
 const labelCls = "mb-1.5 block text-xs font-medium text-white/60";
 
 function SuccessNote({ text }: { text: string }) {
@@ -15,7 +15,7 @@ function SuccessNote({ text }: { text: string }) {
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="rounded-2xl border border-aurora-200/25 bg-aurora-200/[0.06] p-6 text-center"
+      className="rounded-2xl bg-aurora-200/[0.08] p-6 text-center"
     >
       <div className="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-aurora-200 text-ink">
         ✓

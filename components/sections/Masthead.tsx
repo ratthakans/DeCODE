@@ -33,7 +33,7 @@ export function Masthead() {
       <div className="container-x relative z-10 mx-auto w-full max-w-4xl py-24">
         <h1 className="sr-only">DeCODE — {site.tagline}</h1>
 
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/16 px-3.5 py-1.5 text-xs font-semibold text-white">
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/[0.08] px-3.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
           <span className="h-1.5 w-1.5 rounded-full bg-aurora-200 shadow-[0_0_8px_2px_rgba(45,212,191,0.7)]" />
           เปิดรับรอบ · กรกฎาคม 2026
         </span>

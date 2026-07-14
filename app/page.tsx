@@ -35,11 +35,8 @@ export default function HomePage() {
         <section className="container-x py-24 md:py-32">
           <Reveal>
             <div className="mx-auto mb-14 max-w-2xl text-center">
-              <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-                คอร์สแนะนำ · เปิดรับตอนนี้
-              </span>
-              <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
-                รอบเดียวก่อนปิดปีนี้
+              <h2 className="font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
+                คอร์สแนะนำ · รอบเดียวก่อนปิดปีนี้
               </h2>
             </div>
           </Reveal>
@@ -51,7 +48,7 @@ export default function HomePage() {
       <HomeCourses />
 
       {/* 5. Partner logos */}
-      <section className="border-y border-white/10 py-14">
+      <section className="border-y border-white/[0.06] py-14">
         <div className="container-x">
           <p className="mb-7 text-center font-grotesk text-xs uppercase tracking-[0.16em] text-white/45">
             เครื่องมือที่ใช้จริงในคลาส

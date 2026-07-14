@@ -8,20 +8,9 @@ const STATEMENTS = [
 
 export function BrandManifesto() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 bg-black py-24 md:py-32">
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-px"
-        style={{ background: "linear-gradient(90deg,transparent,rgba(45,212,191,0.5),transparent)" }}
-        aria-hidden
-      />
+    <section className="relative overflow-hidden bg-black py-24 md:py-32">
       <div className="container-x">
-        <Reveal>
-          <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-            ความเชื่อของ DeCODE · Brand Belief
-          </span>
-        </Reveal>
-
-        <RevealGroup className="mt-10 flex flex-col gap-5 border-l border-white/10 pl-6 md:pl-8">
+        <RevealGroup className="flex flex-col gap-5">
           {STATEMENTS.map((s) => (
             <RevealItem key={s.accent}>
               <p className="font-display text-[clamp(1.35rem,1rem+1.6vw,2.1rem)] font-semibold leading-snug tracking-[-0.025em]">
@@ -40,7 +29,7 @@ export function BrandManifesto() {
         </Reveal>
 
         <Reveal delay={0.16}>
-          <div className="mt-16 border-t border-white/10 pt-14">
+          <div className="mt-20">
             <p className="font-display text-[clamp(2rem,1.3rem+3.2vw,4rem)] font-semibold leading-[1.08] tracking-[-0.035em] text-white">
               Structure the chaos.
               <br />

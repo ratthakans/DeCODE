@@ -24,7 +24,7 @@ export function CourseOutcomes({ course }: { course: Course }) {
 
       {course.notFor && course.notFor.length > 0 && (
         <Reveal delay={0.08}>
-          <div className="mt-10 rounded-[18px] border border-white/10 bg-ink-100 p-7">
+          <div className="mt-10 rounded-[20px] bg-white/[0.04] p-7">
             <h3 className="font-grotesk text-xs font-semibold uppercase tracking-[0.14em] text-white/45">
               พูดตรง ๆ — คอร์สนี้อาจไม่เหมาะ ถ้า
             </h3>

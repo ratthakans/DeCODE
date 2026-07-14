@@ -18,8 +18,8 @@ const sizes = {
 const variants: Record<Variant, string> = {
   aurora: "aurora-bg text-[#04211d] font-semibold shadow-[0_8px_30px_-8px_rgba(45,212,191,0.5)] hover:shadow-[0_12px_40px_-8px_rgba(45,212,191,0.65)] hover:-translate-y-0.5",
   teal: "bg-ink-200 text-white hover:bg-ink-300", // Flat dark secondary button
-  ghost: "bg-transparent text-white hover:bg-white/5 border border-white/10",
-  outline: "bg-transparent text-white/70 border border-white/20 hover:border-white/50 hover:bg-white/5",
+  ghost: "bg-white/[0.06] text-white hover:bg-white/[0.11]",
+  outline: "bg-white/[0.06] text-white/80 hover:bg-white/[0.11] hover:text-white",
 };
 
 interface Props {

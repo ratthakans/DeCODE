@@ -24,7 +24,7 @@ export function CourseArt({
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <span className="absolute right-4 top-4 rounded-full border border-white/10 bg-black/40 px-3 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-widest text-white/90 backdrop-blur-md">
+        <span className="absolute right-4 top-4 rounded-full bg-black/45 px-3 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-widest text-white/90 backdrop-blur-md">
           {course.category}
         </span>
       </div>
@@ -55,7 +55,7 @@ export function CourseArt({
       >
         {a.glyph}
       </span>
-      <span className="absolute right-4 top-4 rounded-full border border-white/10 bg-white/5 px-3 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-widest text-white/70 backdrop-blur">
+      <span className="absolute right-4 top-4 rounded-full bg-white/[0.08] px-3 py-1 font-sans text-[0.6rem] font-semibold uppercase tracking-widest text-white/70 backdrop-blur">
         {course.category}
       </span>
     </div>

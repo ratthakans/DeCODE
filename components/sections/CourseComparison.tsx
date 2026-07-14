@@ -7,19 +7,16 @@ export function CourseComparison() {
     <section className="container-x py-24 md:py-32">
       <Reveal>
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-            เทียบให้ชัด · What You Get
-          </span>
-          <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
+          <h2 className="font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
             แต่ละคอร์ส เดินออกจากห้องพร้อมอะไร
           </h2>
         </div>
       </Reveal>
 
       <Reveal>
-        <div className="overflow-hidden rounded-[18px] border border-white/10 bg-ink-100">
+        <div className="overflow-hidden rounded-[20px] bg-white/[0.03]">
           {/* header row — desktop only */}
-          <div className="hidden grid-cols-[auto_1.6fr_1fr] gap-4 border-b border-white/10 px-6 py-4 md:grid">
+          <div className="hidden grid-cols-[auto_1.6fr_1fr] gap-4 border-b border-white/[0.06] px-6 py-4 md:grid">
             <span className="font-grotesk text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/45">
               Stage
             </span>
@@ -36,7 +33,7 @@ export function CourseComparison() {
               const stage = c.category.split(" · ")[1] ?? c.category;
               const num = c.category.split(" · ")[0];
               return (
-                <RevealItem key={c.id} className="border-t border-white/[0.07] first:border-t-0">
+                <RevealItem key={c.id} className="border-t border-white/[0.05] first:border-t-0">
                   <Link
                     href={`/courses/${c.slug}`}
                     className="group grid grid-cols-1 gap-1.5 px-6 py-5 transition-colors hover:bg-white/[0.03] md:grid-cols-[auto_1.6fr_1fr] md:items-center md:gap-4"

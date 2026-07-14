@@ -8,7 +8,7 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-white/10 overflow-hidden rounded-3xl border border-white/10 bg-ink-100/40">
+    <div className="divide-y divide-white/[0.06] overflow-hidden rounded-3xl bg-white/[0.04]">
       {items.map((item, i) => {
         const isOpen = open === i;
         return (
@@ -22,10 +22,10 @@ export function FaqAccordion({ items }: { items: FaqItem[] }) {
                 {item.q}
               </span>
               <span
-                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
                   isOpen
-                    ? "rotate-45 border-aurora-200 bg-aurora-200 text-ink"
-                    : "border-white/15 text-white/60"
+                    ? "rotate-45 bg-aurora-200 text-ink"
+                    : "bg-white/[0.08] text-white/60"
                 }`}
               >
                 <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4" aria-hidden>

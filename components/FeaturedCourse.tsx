@@ -10,7 +10,7 @@ import { Reveal } from "./ui/Reveal";
 export function FeaturedCourse({ course }: { course: Course }) {
   return (
     <Reveal>
-      <div className="relative overflow-hidden rounded-[26px] border border-white/16 bg-ink-100">
+      <div className="relative overflow-hidden rounded-[26px] bg-white/[0.04]">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_100%_at_100%_0,rgba(45,212,191,0.18),transparent_60%)]" />
         <div className="relative grid md:grid-cols-[1.2fr_0.9fr]">
           {/* left — pitch */}
@@ -45,7 +45,7 @@ export function FeaturedCourse({ course }: { course: Course }) {
                   {priceFormatter.format(course.price)}
                 </b>
                 {course.priceCompareAt && (
-                  <s className="font-grotesk text-white/35">{priceFormatter.format(course.priceCompareAt)}</s>
+                  <s className="font-grotesk text-white/40">{priceFormatter.format(course.priceCompareAt)}</s>
                 )}
               </div>
               <Button href={courseLineLink(course.title, course.schedule)} external variant="aurora" size="md">
@@ -66,7 +66,7 @@ export function FeaturedCourse({ course }: { course: Course }) {
               />
             )}
             <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(45,212,191,0.28),transparent_55%),linear-gradient(0deg,rgba(6,8,9,0.55),transparent_60%)]" />
-            <div className="absolute right-4 top-4 z-[2] min-w-[180px] rounded-[14px] border border-white/20 bg-black/60 p-4 backdrop-blur-md">
+            <div className="absolute right-4 top-4 z-[2] min-w-[180px] rounded-[14px] bg-black/45 p-4 backdrop-blur-xl">
               <div className="font-grotesk text-[1.9rem] font-semibold leading-none tracking-[-0.03em] text-white">
                 {course.duration.replace(/\s*\(.*\)/, "")}
               </div>

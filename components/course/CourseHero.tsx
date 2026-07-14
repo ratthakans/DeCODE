@@ -62,7 +62,7 @@ export function CourseHero({
             <Reveal delay={0.05}>
               <div className="flex flex-wrap items-center gap-3">
                 <StatusBadge course={course} />
-                <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-widest text-white/55">
+                <span className="rounded-full bg-white/[0.05] px-3 py-1 font-mono text-[0.65rem] uppercase tracking-widest text-white/60">
                   {course.category}
                 </span>
               </div>
@@ -88,7 +88,7 @@ export function CourseHero({
                 {course.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-xs text-white/60"
+                    className="rounded-full bg-white/[0.05] px-3 py-1 font-mono text-xs text-white/60"
                   >
                     {t}
                   </span>
@@ -100,7 +100,7 @@ export function CourseHero({
           {/* sticky booking card */}
           <Reveal delay={0.14} direction="left">
             <aside className="lg:sticky lg:top-24">
-              <div className="overflow-hidden rounded-3xl border border-white/10 bg-ink-100/50 shadow-sm backdrop-blur">
+              <div className="overflow-hidden rounded-3xl bg-white/[0.05] shadow-[0_20px_60px_-24px_rgba(0,0,0,0.7)] backdrop-blur">
                 <CourseArt course={course} className="h-28 w-full" />
                 <div className="p-6">
                   <div className="mb-5 flex items-center gap-3">
@@ -121,7 +121,7 @@ export function CourseHero({
                   </div>
 
                   {/* schedule */}
-                  <div className="mb-5 space-y-3 border-y border-white/10 py-5 text-sm">
+                  <div className="mb-5 space-y-3 border-y border-white/[0.06] py-5 text-sm">
                     <Row label="รูปแบบ" value={course.duration} />
                     <Row label="ระดับ" value={course.level} />
                     <Row
@@ -157,7 +157,7 @@ export function CourseHero({
                       </p>
                     </div>
                     {course.priceCompareAt && (
-                      <span className="font-mono text-sm text-white/35 line-through">
+                      <span className="font-mono text-sm text-white/40 line-through">
                         {priceFormatter.format(course.priceCompareAt)}
                       </span>
                     )}

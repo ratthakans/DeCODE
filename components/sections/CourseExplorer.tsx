@@ -33,7 +33,7 @@ export function CourseExplorer() {
                 <button
                   type="button"
                   onClick={() => scrollToCourse(c.slug)}
-                  className="group flex items-center gap-2 rounded-full border border-white/10 bg-ink-100 px-3.5 py-2 transition-colors hover:border-aurora-200/40 hover:bg-white/[0.04]"
+                  className="group flex items-center gap-2 rounded-full bg-white/[0.05] px-3.5 py-2 transition-colors hover:bg-white/[0.09]"
                   aria-label={`ไปที่คอร์ส ${c.title}`}
                 >
                   <span className="font-grotesk text-[0.7rem] font-semibold tabular-nums aurora-text">{num}</span>
@@ -55,10 +55,10 @@ export function CourseExplorer() {
         <button
           type="button"
           onClick={() => setActivePath(null)}
-          className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+          className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
             activePath === null
-              ? "border-aurora-200/50 bg-aurora-200/10 text-aurora-100"
-              : "border-white/10 text-white/55 hover:border-white/25 hover:text-white/80"
+              ? "bg-aurora-200/15 text-aurora-100"
+              : "bg-white/[0.05] text-white/55 hover:bg-white/[0.09] hover:text-white/80"
           }`}
         >
           ทั้งหมด
@@ -69,10 +69,10 @@ export function CourseExplorer() {
             type="button"
             onClick={() => setActivePath(activePath === p.id ? null : p.id)}
             title={p.persona}
-            className={`rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-colors ${
+            className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
               activePath === p.id
-                ? "border-aurora-200/50 bg-aurora-200/10 text-aurora-100"
-                : "border-white/10 text-white/55 hover:border-white/25 hover:text-white/80"
+                ? "bg-aurora-200/15 text-aurora-100"
+                : "bg-white/[0.05] text-white/55 hover:bg-white/[0.09] hover:text-white/80"
             }`}
           >
             {p.name}

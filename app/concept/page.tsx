@@ -58,12 +58,7 @@ export default function ConceptPage() {
         <GradientField className="h-[130%]" />
         <div className="container-x relative pb-16">
           <Reveal>
-            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-              แนวคิดของ DeCODE · Core Concept
-            </span>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-4xl text-balance font-display text-fluid-3xl font-semibold leading-[1.02] tracking-[-0.03em] text-white">
+            <h1 className="max-w-4xl text-balance font-display text-fluid-3xl font-semibold leading-[1.02] tracking-[-0.03em] text-white">
               The Intelligence
               <br />
               <span className="aurora-text">Between Systems</span>
@@ -85,10 +80,7 @@ export default function ConceptPage() {
       <section className="container-x py-20">
         <Reveal>
           <div className="mb-12 max-w-2xl">
-            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-              Brand Tension
-            </span>
-            <h2 className="mt-3.5 text-balance font-display text-fluid-xl font-semibold leading-tight tracking-[-0.03em] text-white">
+            <h2 className="text-balance font-display text-fluid-xl font-semibold leading-tight tracking-[-0.03em] text-white">
               แก่นของเราเกิดจากแรงตึง
               <br />
               ระหว่างสองสิ่งที่ต้องอยู่ด้วยกัน
@@ -99,7 +91,7 @@ export default function ConceptPage() {
         <RevealGroup className="grid gap-4 md:grid-cols-3">
           {TENSIONS.map((t) => (
             <RevealItem key={t.a}>
-              <div className="flex h-full flex-col rounded-[18px] border border-white/10 bg-ink-100 p-8">
+              <div className="flex h-full flex-col rounded-[20px] bg-white/[0.04] p-8">
                 <p className="font-grotesk text-lg font-semibold tracking-[0.04em]">
                   <span className="text-white">{t.a}</span>
                   <span className="mx-2 aurora-text">×</span>
@@ -113,14 +105,11 @@ export default function ConceptPage() {
       </section>
 
       {/* the DeCODE journey */}
-      <section className="border-y border-white/10 bg-gradient-to-b from-aurora-200/[0.03] to-transparent py-24">
+      <section className="bg-gradient-to-b from-aurora-200/[0.03] to-transparent py-24">
         <div className="container-x">
           <Reveal>
             <div className="mb-12 max-w-2xl">
-              <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-                The DeCODE Journey
-              </span>
-              <h2 className="mt-3.5 font-display text-fluid-xl font-semibold leading-tight tracking-[-0.03em] text-white">
+              <h2 className="font-display text-fluid-xl font-semibold leading-tight tracking-[-0.03em] text-white">
                 ทุกประสบการณ์ คือการเปลี่ยนผ่าน
               </h2>
               <p className="mt-4 leading-relaxed text-white/55">
@@ -133,7 +122,7 @@ export default function ConceptPage() {
           <RevealGroup className="flex flex-col gap-px">
             {JOURNEY.map((j, i) => (
               <RevealItem key={j.step}>
-                <div className="group flex flex-col gap-1.5 border-t border-white/[0.07] py-5 transition-colors first:border-t-0 hover:bg-white/[0.02] sm:flex-row sm:items-baseline sm:gap-8">
+                <div className="group flex flex-col gap-1.5 border-t border-white/[0.05] py-5 transition-colors first:border-t-0 hover:bg-white/[0.02] sm:flex-row sm:items-baseline sm:gap-8">
                   <span className="flex items-baseline gap-4 sm:w-64 sm:shrink-0">
                     <span className="font-grotesk text-xs font-semibold tabular-nums aurora-text">
                       {String(i + 1).padStart(2, "0")}
@@ -154,10 +143,7 @@ export default function ConceptPage() {
       <section className="container-x py-24">
         <Reveal>
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-              Emotional Territory
-            </span>
-            <h2 className="mt-3.5 font-display text-fluid-xl font-semibold tracking-[-0.03em] text-white">
+            <h2 className="font-display text-fluid-xl font-semibold tracking-[-0.03em] text-white">
               เรียนกับเราแล้ว คุณควรรู้สึกแบบนี้
             </h2>
           </div>
@@ -166,7 +152,7 @@ export default function ConceptPage() {
         <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {FEELINGS.map((f) => (
             <RevealItem key={f.en}>
-              <div className="flex h-full flex-col rounded-[18px] border border-white/10 bg-ink-100 p-7">
+              <div className="flex h-full flex-col rounded-[20px] bg-white/[0.04] p-7">
                 <p className="font-display text-lg font-semibold text-white">“{f.en}”</p>
                 <p className="mt-2.5 text-sm leading-relaxed text-white/55">{f.th}</p>
               </div>

@@ -51,7 +51,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="w-full max-w-md overflow-hidden rounded-3xl border border-white/10 bg-ink-100 shadow-2xl pointer-events-auto"
+              className="w-full max-w-md overflow-hidden rounded-3xl border border-white/[0.08] bg-ink-100 shadow-2xl pointer-events-auto"
             >
               <div className="p-8">
                 <h3 className="font-display text-2xl font-semibold text-white mb-2">
@@ -65,7 +65,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-aurora-500/10 p-6 text-center border border-aurora-200/20"
+                    className="rounded-2xl bg-aurora-500/10 p-6 text-center"
                   >
                     <div className="mx-auto w-12 h-12 rounded-full bg-aurora-500/20 flex items-center justify-center mb-4">
                       <svg className="w-6 h-6 text-aurora-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -91,7 +91,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                         type="text" 
                         name="name" 
                         required 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
+                        className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
                         placeholder="John Doe"
                       />
                     </div>
@@ -101,7 +101,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                         type="email" 
                         name="email" 
                         required 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
+                        className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
                         placeholder="john@example.com"
                       />
                     </div>
@@ -110,7 +110,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                       <input 
                         type="tel" 
                         name="phone" 
-                        className="w-full rounded-xl border border-white/10 bg-black/50 px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
+                        className="w-full rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-sm text-white placeholder-white/30 focus:border-aurora-200/50 focus:outline-none focus:ring-1 focus:ring-aurora-200/50 transition-colors"
                         placeholder="08X-XXX-XXXX"
                       />
                     </div>
@@ -123,7 +123,7 @@ export function WaitlistModal({ isOpen, onClose, courseSlug, courseTitle }: Wait
                       <button
                         type="button"
                         onClick={onClose}
-                        className="flex-1 rounded-full border border-white/10 bg-transparent py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors"
+                        className="flex-1 rounded-full bg-white/[0.06] py-3 text-sm font-medium text-white hover:bg-white/5 transition-colors"
                       >
                         ยกเลิก
                       </button>

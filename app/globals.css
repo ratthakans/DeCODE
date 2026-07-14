@@ -85,17 +85,13 @@
     color: transparent;
   }
 
-  /* Eyebrow label — Space Grotesk, aurora gradient (site-wide accent) */
+  /* Eyebrow label — quiet muted marker (Apple-style, no loud kicker) */
   .eyebrow {
     font-family: var(--font-grotesk), system-ui, sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    background: linear-gradient(100deg, #34d399, #2dd4bf 38%, #22d3ee 68%, #818cf8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.5);
   }
 
   /* Thin divider line */

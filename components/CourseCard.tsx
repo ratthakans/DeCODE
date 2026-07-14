@@ -21,7 +21,7 @@ export function CourseCard({ course }: { course: Course }) {
       tabIndex={0}
       aria-label={course.title}
       onKeyDown={(e) => e.key === "Enter" && go()}
-      className="group flex cursor-pointer flex-col overflow-hidden rounded-[18px] border border-white/10 bg-ink-100 transition-colors hover:border-white/16"
+      className="group flex cursor-pointer flex-col overflow-hidden rounded-[20px] bg-white/[0.04] transition-colors hover:bg-white/[0.06]"
     >
       {/* cover */}
       <div className="relative h-40 overflow-hidden bg-ink-200">
@@ -35,10 +35,10 @@ export function CourseCard({ course }: { course: Course }) {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 to-black/70" />
-        <span className="absolute left-3.5 top-3.5 rounded-full border border-white/10 bg-black/55 px-2.5 py-1 font-grotesk text-[10.5px] font-semibold text-white backdrop-blur-sm">
+        <span className="absolute left-3.5 top-3.5 rounded-full bg-black/50 px-2.5 py-1 font-grotesk text-[10.5px] font-semibold text-white backdrop-blur-md">
           {course.category}
         </span>
-        <span className="absolute right-3.5 top-3.5 rounded-full border border-aurora-200/30 bg-black/55 px-2.5 py-1 text-[11px] font-semibold text-aurora-200 backdrop-blur-sm">
+        <span className="absolute right-3.5 top-3.5 rounded-full bg-aurora-200/15 px-2.5 py-1 text-[11px] font-semibold text-aurora-100 backdrop-blur-md">
           {course.statusLabel}
         </span>
       </div>
@@ -58,7 +58,7 @@ export function CourseCard({ course }: { course: Course }) {
               alt={course.instructor.name}
               width={26}
               height={26}
-              className="h-[26px] w-[26px] rounded-full border border-white/16 object-cover"
+              className="h-[26px] w-[26px] rounded-full object-cover"
             />
           )}
           <span className="text-xs text-white/60">{course.instructor.name}</span>

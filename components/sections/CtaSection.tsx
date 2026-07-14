@@ -6,7 +6,7 @@ export function CtaSection() {
   return (
     <section className="container-x py-20">
       <Reveal>
-        <div className="relative overflow-hidden rounded-[28px] border border-white/16 px-6 py-14 text-center sm:py-20">
+        <div className="relative overflow-hidden rounded-[28px] bg-white/[0.03] px-6 py-14 text-center sm:py-20">
           <div
             className="pointer-events-none absolute inset-0"
             style={{ background: "radial-gradient(60% 90% at 50% 0,rgba(45,212,191,0.18),transparent 65%)" }}

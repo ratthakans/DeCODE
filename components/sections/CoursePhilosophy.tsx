@@ -23,10 +23,7 @@ export function CoursePhilosophy() {
     <section className="container-x py-24 md:py-32">
       <Reveal>
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
-            ปรัชญาหลักสูตร · Course Philosophy
-          </span>
-          <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
+          <h2 className="font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
             ทุกคอร์สต้องตอบ 3 ข้อนี้ให้ได้
           </h2>
         </div>
@@ -35,7 +32,7 @@ export function CoursePhilosophy() {
       <RevealGroup className="grid gap-4 md:grid-cols-3">
         {QUESTIONS.map((item) => (
           <RevealItem key={item.no}>
-            <div className="flex h-full flex-col rounded-[18px] border border-white/10 bg-ink-100 p-8">
+            <div className="flex h-full flex-col rounded-[20px] bg-white/[0.04] p-8">
               <span className="font-grotesk text-3xl font-semibold tabular-nums aurora-text">
                 {item.no}
               </span>
@@ -54,7 +51,7 @@ export function CoursePhilosophy() {
       </Reveal>
 
       <Reveal delay={0.16}>
-        <div className="mt-16 rounded-[2rem] border border-white/10 bg-ink-100 px-6 py-16 text-center">
+        <div className="mt-16 rounded-[2rem] bg-white/[0.04] px-6 py-16 text-center">
           <p className="font-display text-[clamp(1.8rem,1.2rem+2.6vw,3.2rem)] font-semibold leading-[1.15] tracking-[-0.03em] text-white">
             Don&apos;t leave with slides.
             <br />

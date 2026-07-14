@@ -41,9 +41,9 @@ export default function ContactPage() {
       <section className="container-x py-12">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl border border-aurora-200/20 bg-gradient-to-br from-aurora-200/10 to-transparent p-8">
+            <div className="relative flex flex-col justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-aurora-200/10 to-transparent p-8">
               <div>
-                <span className="eyebrow text-aurora-200/80">ช่องทางหลัก</span>
+                <span className="eyebrow">ช่องทางหลัก</span>
                 <h2 className="mt-3 font-display text-fluid-lg font-semibold text-white">
                   ทักไลน์ตอบไว ที่สุด
                 </h2>
@@ -61,7 +61,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="flex h-full items-center gap-6 rounded-3xl border border-white/10 bg-ink-100/50 p-8">
+            <div className="flex h-full items-center gap-6 rounded-3xl bg-white/[0.04] p-8">
               <QrMock />
               <div>
                 <p className="font-display font-semibold text-white">
@@ -90,7 +90,7 @@ export default function ContactPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* B2C */}
           <Reveal>
-            <div className="rounded-3xl border border-white/10 bg-ink-100/40 p-7">
+            <div className="rounded-3xl bg-white/[0.04] p-7">
               <span className="eyebrow">บุคคลทั่วไป</span>
               <h2 className="mt-3 font-display text-lg font-semibold text-white">
                 สอบถามคอร์ส / ขอคำแนะนำ
@@ -108,7 +108,7 @@ export default function ContactPage() {
           <Reveal delay={0.08}>
             <div
               id="b2b"
-              className="scroll-mt-28 rounded-3xl border border-aurora-200/20 bg-gradient-to-br from-aurora-200/[0.07] to-transparent p-7"
+              className="scroll-mt-28 rounded-3xl bg-gradient-to-br from-aurora-200/[0.07] to-transparent p-7"
             >
               <div className="flex items-center gap-2">
                 <span className="eyebrow">สำหรับองค์กร</span>
