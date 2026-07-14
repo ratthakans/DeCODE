@@ -28,8 +28,8 @@ export function CourseProof({
   return (
     <div className={`flex items-center gap-2.5 ${className}`}>
       <span className="h-1.5 w-1.5 rounded-full bg-aurora-200 shadow-[0_0_8px_2px_rgba(45,212,191,0.5)]" />
-      <p className="font-grotesk text-xs uppercase tracking-[0.14em] text-white/60">
-        {course.statusLabel}
+      <p className="text-sm text-white/60">
+        รอประกาศรอบเรียน — กดแจ้งเตือนเพื่อรู้ก่อนใคร
       </p>
     </div>
   );

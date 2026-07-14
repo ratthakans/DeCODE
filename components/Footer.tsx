@@ -67,8 +67,8 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-aurora-200/10 pt-6 text-xs text-white/40 sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {site.name}. สงวนลิขสิทธิ์.</p>
-          <p className="font-mono tracking-wide">
-            สอน AI แบบลงมือทำ · Claude · Gemini · ChatGPT · Coding
+          <p className="font-grotesk uppercase tracking-[0.14em]">
+            Structure the chaos · DeCODE the possible
           </p>
         </div>
       </div>

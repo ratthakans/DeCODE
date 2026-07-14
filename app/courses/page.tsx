@@ -20,18 +20,25 @@ export default function CoursesPage() {
       <section className="relative overflow-hidden bg-black pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="container-x relative">
           <Reveal>
-            <span className="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1 font-sans text-[0.65rem] font-semibold uppercase tracking-widest text-white/80">คอร์สทั้งหมด</span>
+            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
+              หลักสูตรทั้งหมดของ DeCODE
+            </span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-6 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.1] text-white sm:text-5xl md:text-6xl">
-              เลือกเส้นทางของคุณ — <br />
-              <span className="text-white/50">แล้วสั่ง AI ให้ทำงานแทน</span>
+            <h1 className="mt-5 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
+              THE CORE <span className="aurora-text">8</span>
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
-            <p className="mt-5 max-w-xl text-fluid-base leading-relaxed text-white/60">
-              1 คอร์สเปิดจองได้เดี๋ยวนี้ และอีก {comingSoon.length} คอร์สกำลังจะตามมา —
-              กดจองสิทธิ์ไว้ก่อนได้ เราจะแจ้งเตือนเมื่อเปิด
+            <p className="mt-5 max-w-2xl text-fluid-base leading-relaxed text-white/60">
+              ไม่ใช่คลาสสอนเครื่องมือแยกกัน แต่คือระบบพัฒนาความสามารถ 8 สเตจ
+              ตั้งแต่ระดับบุคคลจนถึงองค์กร — เริ่มที่ OPERATE จบที่ MASTER
+              เลือกเส้นทางตามบทบาทของคุณ ไม่ต้องเรียนครบ
+            </p>
+          </Reveal>
+          <Reveal delay={0.16}>
+            <p className="mt-4 text-sm text-white/45">
+              1 คอร์สเปิดจองตอนนี้ · อีก {comingSoon.length} คอร์สกดแจ้งเตือนไว้ก่อนได้
             </p>
           </Reveal>
         </div>

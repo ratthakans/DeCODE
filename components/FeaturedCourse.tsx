@@ -70,9 +70,11 @@ export function FeaturedCourse({ course }: { course: Course }) {
               <div className="font-grotesk text-[1.9rem] font-semibold leading-none tracking-[-0.03em] text-white">
                 {course.duration.replace(/\s*\(.*\)/, "")}
               </div>
-              <div className="mt-1 text-[11px] text-white/60">Intensive Bootcamp</div>
+              <div className="mt-1 text-[11px] text-white/60">
+                {course.duration.match(/\((.+)\)/)?.[1] ?? course.category}
+              </div>
               <div className="mt-3 text-[12.5px] font-semibold text-aurora-200">
-                🔥 เหลือ {course.seatsAvailable} / {course.seatsTotal} ที่นั่งสุดท้าย
+                เหลือ {course.seatsAvailable} / {course.seatsTotal} ที่นั่ง
               </div>
             </div>
             <div className="absolute bottom-5 left-5 z-[2]">

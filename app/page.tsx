@@ -35,7 +35,7 @@ export default function HomePage() {
         <section className="container-x py-24 md:py-32">
           <Reveal>
             <div className="mx-auto mb-14 max-w-2xl text-center">
-              <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.12em] aurora-text">
+              <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
                 คอร์สแนะนำ · เปิดรับตอนนี้
               </span>
               <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">

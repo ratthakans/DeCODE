@@ -15,14 +15,14 @@ export function CourseSyllabus({ course }: { course: Course }) {
             <div className="relative group">
               {/* Timeline dot */}
               <div className="absolute -left-[37px] md:-left-[45px] top-1 h-4 w-4 rounded-full bg-ink-100 border-2 border-white/20 transition-colors group-hover:border-aurora-200 group-hover:shadow-[0_0_12px_rgba(45,212,191,0.5)]" />
-              
+
               <div className="flex flex-col gap-4">
                 <div className="shrink-0">
                   <span className="font-mono text-xs uppercase tracking-widest text-aurora-200">
-                    Day {String(di + 1).padStart(2, "0")}
+                    Module {String(di + 1).padStart(2, "0")}
                   </span>
                   <h3 className="mt-1 font-display text-2xl font-semibold tracking-tight text-white transition-colors group-hover:text-aurora-100">
-                    {day.day.replace(/DAY \d+ — /, "")}
+                    {day.day.replace(/^(DAY|MODULE)\s*\d+\s*—\s*/, "")}
                   </h3>
                 </div>
                 <ul className="flex-1 space-y-4">

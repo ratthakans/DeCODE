@@ -2,7 +2,7 @@ export const site = {
   name: "DeCODE",
   tagline: "สถาบันสอน AI แบบลงมือทำจริง",
   description:
-    "DeCODE — คอร์ส AI แบบ onsite สำหรับผู้ประกอบการและคนทำงาน สอนใช้ Claude, Gemini, ChatGPT, coding และ automation ให้เอาไปใช้กับธุรกิจได้จริง",
+    "DeCODE — เปลี่ยนความซับซ้อนของ AI ให้เป็นความสามารถที่ธุรกิจใช้ได้จริง หลักสูตร THE CORE 8 ตั้งแต่ระดับบุคคลจนถึงองค์กร เรียน onsite ลงมือทำจริง ได้ระบบกลับบ้าน",
   url: "https://decode.academy",
   ogImage: "https://decode.academy/og-image.jpg",
   // Line Official Account handle (mock). Replace with the real @id later.

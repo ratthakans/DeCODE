@@ -33,9 +33,9 @@ export function CourseInstructor({ course }: { course: Course }) {
 
         <Reveal delay={0.08}>
           <div className="flex h-full flex-col justify-center border-t border-white/10 pt-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-white/40">Included Bonuses</span>
+            <span className="font-mono text-xs uppercase tracking-widest text-white/40">Final Project</span>
             <h3 className="mt-6 font-display text-xl font-semibold text-white">
-              ของแถมติดมือกลับบ้าน
+              สิ่งที่คุณจะสร้าง และได้กลับไปใช้จริง
             </h3>
             <ul className="mt-6 space-y-5">
               {course.bonuses.map((b) => (

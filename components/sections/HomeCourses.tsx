@@ -1,33 +1,44 @@
 import { getComingSoonCourses } from "@/lib/courses";
 import { CourseCard } from "../CourseCard";
+import { Button, ArrowIcon } from "../ui/Button";
 import { Reveal, RevealGroup, RevealItem } from "../ui/Reveal";
 
 export function HomeCourses() {
-  const courses = getComingSoonCourses();
+  const comingSoon = getComingSoonCourses();
+  // 6 ใบพอดี 2 แถว — ที่เหลือไปดูครบพร้อมเส้นทางแนะนำที่ /courses
+  const preview = comingSoon.slice(0, 6);
 
   return (
     <section className="container-x py-24 md:py-32">
       <Reveal>
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.12em] aurora-text">
-            หลักสูตรทั้งหมด
+          <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
+            THE CORE 8 · หลักสูตรทั้งหมด
           </span>
           <h2 className="mt-3.5 font-display text-[clamp(1.9rem,1.3rem+2.2vw,3rem)] font-semibold tracking-[-0.03em] text-white">
-            เลือกเส้นทางของคุณ
+            เส้นทางยังไปต่ออีก {comingSoon.length} สเตจ
           </h2>
           <p className="mt-3.5 text-white/60">
-            อีก {courses.length} คอร์สกำลังจะเปิด — กดจองสิทธิ์ไว้ก่อนได้ เราจะแจ้งเตือนเมื่อเปิดรอบ
+            แต่ละคอร์สคือหนึ่งขั้นของระบบเดียวกัน — เลือกตามบทบาทของคุณ ไม่ต้องเรียนครบ
           </p>
         </div>
       </Reveal>
 
       <RevealGroup className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {courses.map((c) => (
+        {preview.map((c) => (
           <RevealItem key={c.id}>
             <CourseCard course={c} />
           </RevealItem>
         ))}
       </RevealGroup>
+
+      <Reveal delay={0.08}>
+        <div className="mt-10 text-center">
+          <Button href="/courses" variant="ghost" size="lg" magnetic={false}>
+            ดูครบทั้ง 8 คอร์ส พร้อมเส้นทางแนะนำ <ArrowIcon />
+          </Button>
+        </div>
+      </Reveal>
     </section>
   );
 }

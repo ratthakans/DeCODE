@@ -7,140 +7,142 @@ import { Button, ArrowIcon } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "แนวคิด",
   description:
-    "ทำไม DeCODE ถึงมีอยู่ — เราปิด GAP การเรียนรู้ AI ระหว่างคนที่ใช้เป็นกับคนที่ยังไม่เริ่ม",
+    "แนวคิดของ DeCODE — The Intelligence Between Systems: เชื่อมความคิดสร้างสรรค์ของมนุษย์เข้ากับระบบที่ใช้งานได้จริง แล้วเปลี่ยน AI ให้เป็นความสามารถของธุรกิจ",
 };
 
-const gaps = [
+// Brand Tension — แก่นของแบรนด์เกิดจากแรงตึงระหว่างสองสิ่ง
+const TENSIONS = [
   {
-    before: "คู่แข่งร่างสัญญาด้วย Claude ใน 3 นาที",
-    after: "คุณยังก๊อปไปวางใน ChatGPT ฟรี แล้วแก้เองทีละบรรทัด",
+    a: "LOGIC",
+    b: "CREATIVITY",
+    body: "ความคิดสร้างสรรค์ที่ไม่มีระบบ นำไปใช้จริงไม่ได้ และระบบที่ไม่มีความคิดสร้างสรรค์ ก็สร้างสิ่งใหม่ไม่ได้ — เราสอนให้คิดอย่างสร้างสรรค์ พร้อมโครงสร้างที่ทำให้ความคิดนั้นเกิดขึ้นจริง",
   },
   {
-    before: "ทีมข้างๆ ปล่อยแคมเปญได้ 3 ตัวต่อสัปดาห์",
-    after: "คุณยังรอกราฟิก 1 ชิ้นอยู่ 3 วัน",
+    a: "HUMAN",
+    b: "MACHINE",
+    body: "AI ไม่ได้มาแทนมนุษย์ แต่มาขยายความสามารถ — มนุษย์กำหนดทิศทาง ใช้วิจารณญาณ และรับผิดชอบผลลัพธ์ ส่วน AI ประมวลผล ทำงานซ้ำ และเพิ่มความเร็ว",
   },
   {
-    before: "เจ้าของร้านข้างบ้านทำคอนเทนต์เองทุกวัน",
-    after: "คุณยังจ้างฟรีแลนซ์เดือนละหลายพัน",
+    a: "CHAOS",
+    b: "SYSTEM",
+    body: "เครื่องมือเยอะเกิน ข้อมูลเยอะเกิน เปลี่ยนเร็วเกิน — เราเปลี่ยน Chaos ให้เป็น System ไม่ใช่ด้วยสูตรสำเร็จ แต่ด้วยความเข้าใจที่ทำให้คุณปรับตัวต่อได้เอง",
   },
 ];
 
-const beliefs = [
-  {
-    n: "01",
-    t: "เครื่องมือไม่ใช่ปัญหา วิธีสั่งงานต่างหาก",
-    b: "คนส่วนใหญ่มี AI เดียวกับมืออาชีพ แต่ได้ผลลัพธ์คนละชั้น เพราะไม่มีใครสอนวิธี ‘บรีฟ’ ให้มันทำงานจริง เราสอนตรงนี้",
-  },
-  {
-    n: "02",
-    t: "ลงมือทำ ชนะการนั่งฟัง",
-    b: "คุณจะไม่ได้แค่สไลด์กลับบ้าน แต่ได้ระบบจริงที่เซตในคลาส เดินออกจากห้องแล้วใช้ต่อได้เลย",
-  },
-  {
-    n: "03",
-    t: "ไม่ต้องเป็นสายเทคก็ทำได้",
-    b: "เจ้าของร้าน คนทำงาน ผู้บริหาร — ทุกคนสั่ง AI ด้วยภาษาคนได้ ไม่ต้องท่องจำโค้ดสักบรรทัด",
-  },
+// The DeCODE Journey — การเปลี่ยนผ่านที่ทุกประสบการณ์ควรพาไปถึง
+const JOURNEY = [
+  { step: "UNDERSTAND", gloss: "เข้าใจว่า AI ทำอะไรได้ และควรใช้ตรงไหน" },
+  { step: "STRUCTURE", gloss: "เปลี่ยนความรู้เป็น Framework และ Workflow" },
+  { step: "DIRECT", gloss: "กำกับ AI ให้ทำงานตามทิศทางและมาตรฐาน" },
+  { step: "BUILD", gloss: "สร้างงาน Product และระบบที่ใช้ได้จริง" },
+  { step: "CONNECT", gloss: "เชื่อมคน ข้อมูล และเครื่องมือเข้าด้วยกัน" },
+  { step: "TRANSFORM", gloss: "เปลี่ยนวิธีทำงานของทีมและองค์กร" },
+  { step: "EXPAND", gloss: "สร้างได้มากกว่าข้อจำกัดเดิมของตัวเอง" },
+];
+
+// Emotional Territory — เรียนกับเราแล้วคุณควรรู้สึกแบบนี้
+const FEELINGS = [
+  { en: "I can understand this.", th: "AI ไม่ใช่เรื่องไกลตัวหรือซับซ้อนเกินไป" },
+  { en: "I can control this.", th: "คุณกำหนดทิศทางและมาตรฐานได้ ไม่ใช่แค่ผู้ใช้" },
+  { en: "I can build with this.", th: "ความรู้เปลี่ยนเป็นงาน Product และระบบจริง" },
+  { en: "I can move faster.", th: "สิ่งที่เคยใช้เวลานาน ถูกออกแบบใหม่ได้" },
+  { en: "I am not falling behind.", th: "ปรับตัวทันโลกที่เปลี่ยน โดยไม่ต้องวิ่งตามทุก Tool" },
+  { en: "I have more capacity.", th: "ขยายขอบเขตของสิ่งที่หนึ่งคนหรือหนึ่งธุรกิจทำได้" },
 ];
 
 export default function ConceptPage() {
   return (
     <>
+      {/* hero — the core concept */}
       <section className="relative overflow-hidden pt-32 md:pt-44">
         <GradientField className="h-[130%]" />
         <div className="container-x relative pb-16">
           <Reveal>
-            <span className="eyebrow">แนวคิดของ DeCODE</span>
+            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
+              แนวคิดของ DeCODE · Core Concept
+            </span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-5 max-w-4xl text-balance font-display text-fluid-3xl font-semibold leading-[0.98] text-white">
-              AI ไม่ได้มาแทนคุณ
+            <h1 className="mt-5 max-w-4xl text-balance font-display text-fluid-3xl font-semibold leading-[1.02] tracking-[-0.03em] text-white">
+              The Intelligence
               <br />
-              แต่คนที่ใช้ AI เป็น
-              <span className="text-aurora-200"> กำลังจะแทน</span>
+              <span className="aurora-text">Between Systems</span>
             </h1>
           </Reveal>
           <Reveal delay={0.14}>
             <p className="mt-7 max-w-2xl text-fluid-lg leading-relaxed text-white/65">
-              ทุกวันที่ผ่านไป ช่องว่างระหว่างคนที่สั่ง AI เป็นกับคนที่ยังไม่เริ่ม
-              กว้างขึ้นเรื่อยๆ DeCODE เกิดมาเพื่อปิดช่องว่างนั้น —
-              ก่อนที่มันจะกว้างเกินกว่าจะข้าม
+              DeCODE อยู่ระหว่างสองโลก — โลกของความคิดสร้างสรรค์และความเป็นมนุษย์
+              กับโลกของระบบและเทคโนโลยีที่ใช้งานได้จริง
+              หน้าที่ของเราคือเชื่อมสองโลกนี้เข้าด้วยกัน
+              แล้วเปลี่ยน AI จากสิ่งที่ดูไกลตัว ให้เป็นสิ่งที่คุณควบคุม สั่งงาน
+              และใช้สร้างผลลัพธ์ได้จริง
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* the specific pain — shame you can picture */}
+      {/* brand tension */}
       <section className="container-x py-20">
         <Reveal>
           <div className="mb-12 max-w-2xl">
-            <span className="eyebrow mb-4 inline-flex items-center gap-2">
-              <span className="h-px w-6 bg-aurora-200/50" />
-              GAP ที่คุณอาจไม่ทันสังเกต
+            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
+              Brand Tension
             </span>
-            <h2 className="text-balance font-display text-fluid-xl font-semibold leading-tight text-white">
-              มันไม่ใช่ &ldquo;AI ไปเร็วเกินจะตามทัน&rdquo; ลอยๆ
+            <h2 className="mt-3.5 text-balance font-display text-fluid-xl font-semibold leading-tight tracking-[-0.03em] text-white">
+              แก่นของเราเกิดจากแรงตึง
               <br />
-              มันคือภาพที่เจ็บกว่านั้น
+              ระหว่างสองสิ่งที่ต้องอยู่ด้วยกัน
             </h2>
           </div>
         </Reveal>
 
-        <RevealGroup className="space-y-4">
-          {gaps.map((g, i) => (
-            <RevealItem key={i}>
-              <div className="grid items-center gap-4 rounded-3xl border border-white/10 bg-ink-100/40 p-6 sm:grid-cols-[1fr_auto_1fr]">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-aurora-200/10 font-mono text-xs text-aurora-200">
-                    เขา
-                  </span>
-                  <p className="font-display font-semibold text-white">
-                    {g.before}
-                  </p>
-                </div>
-                <div className="hidden text-white/25 sm:block">
-                  <ArrowIcon className="h-5 w-5" />
-                </div>
-                <div className="flex items-center gap-3 sm:justify-end sm:text-right">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-coral/10 font-mono text-xs text-coral sm:order-2">
-                    คุณ
-                  </span>
-                  <p className="text-sm leading-relaxed text-white/55 sm:order-1">
-                    {g.after}
-                  </p>
-                </div>
+        <RevealGroup className="grid gap-4 md:grid-cols-3">
+          {TENSIONS.map((t) => (
+            <RevealItem key={t.a}>
+              <div className="flex h-full flex-col rounded-[18px] border border-white/10 bg-ink-100 p-8">
+                <p className="font-grotesk text-lg font-semibold tracking-[0.04em]">
+                  <span className="text-white">{t.a}</span>
+                  <span className="mx-2 aurora-text">×</span>
+                  <span className="text-white">{t.b}</span>
+                </p>
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-white/60">{t.body}</p>
               </div>
             </RevealItem>
           ))}
         </RevealGroup>
-
-        <Reveal delay={0.1}>
-          <p className="mx-auto mt-10 max-w-xl text-center font-display text-fluid-base italic text-white/45">
-            ความอายที่เห็นภาพได้ ขายดีกว่าความกลัวนามธรรม —
-            เราไม่ได้อยากให้คุณกลัว เราอยากให้คุณ<span className="text-aurora-200 not-italic"> เริ่ม</span>
-          </p>
-        </Reveal>
       </section>
 
-      {/* beliefs */}
-      <section className="border-y border-white/10 bg-ink-50/40 py-24">
+      {/* the DeCODE journey */}
+      <section className="border-y border-white/10 bg-gradient-to-b from-aurora-200/[0.03] to-transparent py-24">
         <div className="container-x">
           <Reveal>
-            <h2 className="mb-14 max-w-2xl font-display text-fluid-xl font-semibold leading-tight text-white">
-              บทบาทของ DeCODE คือ<span className="text-gradient-teal">ตัวช่วยปิด GAP</span> นั้น
-            </h2>
+            <div className="mb-12 max-w-2xl">
+              <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
+                The DeCODE Journey
+              </span>
+              <h2 className="mt-3.5 font-display text-fluid-xl font-semibold leading-tight tracking-[-0.03em] text-white">
+                ทุกประสบการณ์ คือการเปลี่ยนผ่าน
+              </h2>
+              <p className="mt-4 leading-relaxed text-white/55">
+                จากความสับสนสู่ความเข้าใจ จากการถาม AI สู่การกำกับ AI
+                จากผู้ใช้ สู่ Operator, Builder และ Architect
+              </p>
+            </div>
           </Reveal>
-          <RevealGroup className="grid gap-6 md:grid-cols-3">
-            {beliefs.map((b) => (
-              <RevealItem key={b.n}>
-                <div className="flex h-full flex-col rounded-3xl border border-white/10 bg-ink-100/50 p-7">
-                  <span className="font-mono text-sm text-aurora-200">{b.n}</span>
-                  <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-white">
-                    {b.t}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/60">
-                    {b.b}
-                  </p>
+
+          <RevealGroup className="flex flex-col gap-px">
+            {JOURNEY.map((j, i) => (
+              <RevealItem key={j.step}>
+                <div className="group flex flex-col gap-1.5 border-t border-white/[0.07] py-5 transition-colors first:border-t-0 hover:bg-white/[0.02] sm:flex-row sm:items-baseline sm:gap-8">
+                  <span className="flex items-baseline gap-4 sm:w-64 sm:shrink-0">
+                    <span className="font-grotesk text-xs font-semibold tabular-nums aurora-text">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-grotesk text-lg font-semibold uppercase tracking-[0.06em] text-white">
+                      {j.step}
+                    </span>
+                  </span>
+                  <span className="text-sm leading-relaxed text-white/55 sm:text-base">{j.gloss}</span>
                 </div>
               </RevealItem>
             ))}
@@ -148,18 +150,47 @@ export default function ConceptPage() {
         </div>
       </section>
 
-      {/* mission statement */}
+      {/* emotional territory */}
       <section className="container-x py-24">
         <Reveal>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <span className="font-grotesk text-xs font-semibold uppercase tracking-[0.16em] aurora-text">
+              Emotional Territory
+            </span>
+            <h2 className="mt-3.5 font-display text-fluid-xl font-semibold tracking-[-0.03em] text-white">
+              เรียนกับเราแล้ว คุณควรรู้สึกแบบนี้
+            </h2>
+          </div>
+        </Reveal>
+
+        <RevealGroup className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {FEELINGS.map((f) => (
+            <RevealItem key={f.en}>
+              <div className="flex h-full flex-col rounded-[18px] border border-white/10 bg-ink-100 p-7">
+                <p className="font-display text-lg font-semibold text-white">“{f.en}”</p>
+                <p className="mt-2.5 text-sm leading-relaxed text-white/55">{f.th}</p>
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </section>
+
+      {/* closing statement */}
+      <section className="container-x pb-8 pt-8">
+        <Reveal>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-balance font-display text-fluid-2xl font-semibold leading-[1.15] text-white">
-              เราไม่ได้สอนให้คุณ<span className="text-white/40">รู้จัก</span> AI
+            <p className="text-balance font-display text-fluid-2xl font-semibold leading-[1.12] tracking-[-0.03em] text-white">
+              Close the gap.
               <br />
-              เราสอนให้คุณ<span className="text-aurora-200">สั่งงาน</span>มันเป็น
+              <span className="aurora-text">Build beyond human capacity.</span>
+            </p>
+            <p className="mx-auto mt-6 max-w-xl leading-relaxed text-white/55">
+              เราไม่ได้สอนให้คุณวิ่งตามอนาคต
+              แต่สอนให้เข้าใจ กำกับ และสร้างอนาคตนั้นด้วยตัวเอง
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/courses" variant="aurora" size="lg">
-                เลือกคอร์สของคุณ <ArrowIcon />
+                ดู THE CORE 8 <ArrowIcon />
               </Button>
               <Button href="/faq" variant="ghost" size="lg" magnetic={false}>
                 ยังมีคำถามอยู่?
