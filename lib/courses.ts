@@ -41,41 +41,94 @@ export interface Course {
   bonuses: string[];
 }
 
+const PEXELS = (id: number, w = 1200) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+
+const THANAKORN: Instructor = {
+  name: "ธนกร วรรธนะกุล",
+  title: "Founder & Lead Operator, DeCODE",
+  bio: "อดีตที่ปรึกษาระบบองค์กร ผู้วางระบบ AI automation ให้ธุรกิจ SME กว่า 40 แห่ง เชื่อว่าคนเก่งที่สุดคือคนที่เซตระบบให้ทำงานแทนตัวเองได้",
+  photoUrl: PEXELS(28446973, 400),
+};
+
+const PAWARIS: Instructor = {
+  name: "ปวริศ อินทรโชติ",
+  title: "Full-Stack Architect & AI Systems Engineer",
+  bio: "full-stack engineer ที่สร้างและ ship product เดี่ยวมากกว่าทีมทั้งทีม ผู้เชี่ยวชาญการกำกับ Claude ตั้งแต่ Context Architecture ยันระบบ Production",
+  photoUrl: PEXELS(33261955, 400),
+};
+
+const MANASWEE: Instructor = {
+  name: "มนัสวี เจริญศิลป์",
+  title: "Creative Director & Aesthetic Architect",
+  bio: "ผู้กำกับงานสร้างสรรค์ที่ผสานงานอาร์ตเข้ากับระบบ ผลงานติดเวที Awwwards และ FWA เชื่อว่าความแพงซ่อนอยู่ในดีเทลของการกำกับ",
+  photoUrl: PEXELS(36593089, 400),
+};
+
+// ── THE CORE 8 · OPERATE → DELEGATE → CREATE → DESIGN → BUILD → AUTOMATE → TRANSFORM → MASTER ──
 export const courses: Course[] = [
   {
     id: "c-operator",
     slug: "claude-operator",
     title: "Claude Operator",
-    edition: "The Unfair Advantage",
-    subtitle: "เลิกเป็นแรงงานในออฟฟิศ ขึ้นมาเป็นผู้บริหาร AI ที่สั่งงานยากให้เสร็จก่อนกาแฟเย็นจะละลาย",
-    description: "แคมป์ 2 วันเต็ม ที่ไม่ได้สอนใช้โปรแกรมพื้นฐาน แต่เปลี่ยนระบบคิดของคุณให้เป็น AI Director — เซตอัป Claude ให้เข้าใจธุรกิจคุณระดับพนักงานอาวุโส แล้ววางระบบอัตโนมัติที่ทำงานแทนคุณตั้งแต่วันแรกที่เดินออกจากห้อง",
+    edition: "Become an AI Director",
+    subtitle:
+      "เลิกเป็นคนพิมพ์คำถามให้ AI ขึ้นมาเป็น AI Director ที่วางบริบท สั่งงาน และคุมคุณภาพได้แบบมืออาชีพ",
+    description:
+      "หลักสูตรพื้นฐานที่สำคัญที่สุดของ DeCODE — ไม่ได้แจก Prompt สำเร็จรูป แต่สอนให้ AI เข้าใจธุรกิจ บริบท และกติกา จนทำงานได้เหมือนพนักงานที่เข้าใจงานจริง แล้ววางระบบให้ใช้ซ้ำได้ทั้งทีม",
     syllabus: [
       {
-        day: "DAY 1 — THE BRAIN & THE AUTOMATION",
+        day: "MODULE 01 — FROM USER TO OPERATOR",
         items: [
-          "ถอดรหัส Claude: ใช้ XML Tags และ System Prompt สั่งงานซับซ้อนให้จบม้วนเดียว",
-          "โคลนนิ่งสมองธุรกิจ: สร้าง Knowledge Base ผ่าน Claude Projects ยัดคู่มือ + สไตล์แบรนด์",
-          "เสกงานด้วยหน้าต่างเดียว: ร่างเอกสาร โค้ด และ Interactive UI แบบ Rapid Prototyping",
-          "พนักงานล่องหน: วาง Workflow อัตโนมัติ ยิง Task เข้า ClickUp / ดึงข้อมูลผ่าน n8n",
+          "AI User กับ AI Operator ต่างกันอย่างไร",
+          "งานไหนควรให้ AI ทำ งานไหนยังต้องให้คนตัดสินใจ",
+          "การเลือก Model และหลักการ Human-in-the-Loop",
         ],
       },
       {
-        day: "DAY 2 — THE STRATEGIST & THE CAPSTONE",
+        day: "MODULE 02 — CONTEXT ENGINEERING",
         items: [
-          "พลิกตัวเลขเป็นเงิน: โยนไฟล์ CSV / ข้อมูล BI ให้ Claude สแกนหา Insight และจุดรั่วไหล",
-          "ร่างแผนกลยุทธ์: แก้ปัญหางานคอขวด + จัดโครงสร้าง Presentation ระดับบริหารใน 15 นาที",
-          "ปล่อยของจริง: Workshop เอาระบบธุรกิจตัวเองมาเซต มีทีมโค้ชประกบรายโต๊ะ",
+          "Context ที่ดีประกอบด้วยอะไร: Background, Product, Audience, Brand Voice",
+          "Constraints, Risk และ Reference Material",
+          "Workshop: สร้าง Business Master Context ของธุรกิจตัวเอง",
+        ],
+      },
+      {
+        day: "MODULE 03 — PROMPT ARCHITECTURE",
+        items: [
+          "Framework: Role, Objective, Input, Process, Output",
+          "Constraints, Quality Criteria และ Examples",
+          "ฝึกเขียน Prompt ตั้งแต่งานง่ายถึงหลายขั้นตอน",
+        ],
+      },
+      {
+        day: "MODULE 04 — DELEGATION SYSTEM",
+        items: [
+          "แตก Task, กำหนด Milestone และขอ Plan ก่อนลงมือ",
+          "Approval Gate และ Definition of Done",
+          "Feedback Loop และการแก้ผลลัพธ์หลุดเป้า",
+        ],
+      },
+      {
+        day: "MODULE 05 — BUSINESS WORKSPACE",
+        items: [
+          "โครงสร้าง Claude Project และ Knowledge File",
+          "Prompt Library, Output Template, Version Control",
+          "Workspace สำหรับหลายแผนก",
+        ],
+      },
+      {
+        day: "MODULE 06 — AI SOP",
+        items: [
+          "เปลี่ยนวิธีทำงานให้เป็นระบบที่ AI และทีมทำตามได้",
+          "Workflow: Research, Competitor, Proposal, Campaign",
+          "Report Generation และ Content Review",
         ],
       },
     ],
-    duration: "2 วันเต็ม (Intensive Bootcamp)",
-    level: "เหมาะกับทุกระดับ — ไม่ต้องมีพื้นฐานเขียนโปรแกรม",
-    instructor: {
-      name: "ธนกร วรรธนะกุล",
-      title: "Founder & Lead Operator, DeCODE",
-      bio: "อดีตที่ปรึกษาระบบองค์กร ผู้วางระบบ AI automation ให้ธุรกิจ SME กว่า 40 แห่ง เชื่อว่าคนเก่งที่สุดคือคนที่เซตระบบให้ทำงานแทนตัวเองได้",
-      photoUrl: "https://images.pexels.com/photos/28446973/pexels-photo-28446973.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
+    duration: "2 วันเต็ม (Foundation Bootcamp)",
+    level: "Foundation — ไม่จำเป็นต้องเขียนโค้ด",
+    instructor: THANAKORN,
     price: 12900,
     priceCompareAt: 15900,
     seatsTotal: 24,
@@ -85,167 +138,92 @@ export const courses: Course[] = [
     statusLabel: "รอบเดียวก่อนปิดปีนี้",
     launchDate: "2026-07-25",
     proofMode: "countdown",
-    category: "บริหาร & ระบบอัตโนมัติ",
-    tags: ["Claude Projects", "Automation", "n8n", "ClickUp", "Business Intelligence"],
-    coverImage: "https://images.pexels.com/photos/15389577/pexels-photo-15389577.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    category: "01 · OPERATE",
+    tags: ["Claude Projects", "Context Engineering", "System Prompt", "AI SOP", "NotebookLM"],
+    coverImage: PEXELS(15389577),
     accent: "teal",
     businessType: "b2c",
     outcomes: [
-      "เซต Claude ให้เข้าใจธุรกิจคุณแบบพนักงานอาวุโส",
-      "วางระบบอัตโนมัติที่เคลียร์งานแอดมินโดยไม่ต้องลงมือ",
-      "อ่านข้อมูล BI แล้วสรุปเป็นรายงานผู้บริหารได้เอง",
+      "ออกแบบ Context ให้ AI เข้าใจธุรกิจระดับพนักงานจริง",
+      "สร้าง System Prompt และ Prompt Library ที่ทีมใช้ซ้ำได้",
+      "เปลี่ยนกระบวนการทำงานให้เป็น AI SOP",
     ],
     bonuses: [
-      "The Operator Cheat Sheet — คู่มือคีย์ลัด + โครงสร้างคำสั่ง",
-      "Prompt & Template Vault — คลังคำสั่งงานแอดมิน/การตลาด",
-      "1-on-1 Automation Audit — ปรึกษา 20 นาทีหลังเรียนจบ",
-    ],
-  },
-  {
-    id: "c-10x",
-    slug: "claude-code-10x-engineer",
-    title: "Claude Code · 10X Engineer",
-    edition: "The 10X Architect",
-    subtitle: "หมดยุคกรรมกรหน้าจอ สั่ง AI เขียนโครง ไล่บัค และ Deploy ระบบแทนคุณ จบงานเท่าทีม Dev 5 คนในร่างเดียว",
-    description: "ไม่ได้สอนให้คุณเขียนโค้ดเก่งขึ้น แต่สอนให้คุณเขียนโค้ดน้อยลง 90% โดยได้แอปพลิเคชันสเกลใหญ่กว่าเดิม เปลี่ยนช่วงเวลาน่าเบื่อที่สุดของ Dev — เซตโปรเจกต์ ไล่บัค เขียน Boilerplate — ให้เป็นหน้าที่ของ Claude",
-    syllabus: [
-      {
-        day: "DAY 1 — THE HACKER",
-        items: [
-          "The Master Prompt: บรีฟให้ Claude เข้าใจโครงสร้างโฟลเดอร์ Design Pattern และ Tech Stack เป๊ะ",
-          "Codebase Reverse: โยนโปรเจกต์มรดกให้ AI แกะการทำงานและ Refactor ให้คลีนใน 1 นาที",
-          "The Bug Killer: โยน Error Log + Stack Trace ให้ Claude ชี้บรรทัดที่พัง พร้อมโค้ดที่รันผ่าน",
-        ],
-      },
-      {
-        day: "DAY 2 — THE ARCHITECT",
-        items: [
-          "Instant Backend: สั่ง Claude วาง Database Schema และเขียน API เชื่อม Supabase",
-          "Auto-Deploy: ให้ AI เขียน GitHub Actions ดันโค้ดขึ้น Railway อัตโนมัติ ไม่ต้องเซต Server เอง",
-          "Capstone: จับเวลาสร้าง Web App ตั้งแต่หน้าบ้านยัน Deploy จริง โดยคุณเป็นแค่ผู้คุมสถาปัตยกรรม",
-        ],
-      },
-    ],
-    duration: "2 วันเต็ม",
-    level: "มีพื้นฐานการเขียนโปรแกรมเล็กน้อย",
-    instructor: {
-      name: "ปวริศ อินทรโชติ",
-      title: "Staff Engineer & AI Pair-Programming Coach",
-      bio: " full-stack engineer ที่สร้างและ ship product เดี่ยวมากกว่าทีมทั้งทีม ผู้เชี่ยวชาญการใช้ Claude Code เป็น Senior Dev ประจำตัว",
-      photoUrl: "https://images.pexels.com/photos/33261955/pexels-photo-33261955.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
-    price: 13900,
-    seatsTotal: 20,
-    seatsAvailable: 20,
-    schedule: "รอประกาศรอบเปิดเรียน",
-    status: "coming_soon",
-    statusLabel: "ใกล้เปิดจอง",
-    launchDate: "2026-08-16",
-    proofMode: "countdown",
-    category: "Coding & Deployment",
-    tags: ["React", "Supabase", "GitHub Actions", "Railway", "CI/CD"],
-    coverImage: "https://images.pexels.com/photos/256502/pexels-photo-256502.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    accent: "neutral",
-    businessType: "b2c",
-    outcomes: [
-      "สั่ง AI ประกอบ UI, เชื่อม Database, และ Deploy จบใน 20 นาที",
-      "ไล่บัคด้วยการโยน Error ให้ Claude แทนการนั่งงมเอง",
-      "วางระบบ Auto-Deploy ที่รันเองหลังกด Push",
-    ],
-    bonuses: [
-      "The Boilerplate Prompt Repo — System Prompt ขั้นเทพแยกตามภาษา",
-      "Tech Stack Cheat Sheet — แผนผังเชื่อมระบบสไตล์พิมพ์เขียว",
-    ],
-  },
-  {
-    id: "c-aesthetic",
-    slug: "claude-code-aesthetic-frontend",
-    title: "Claude Code · Aesthetic Front-End",
-    edition: "Awwwards Grade",
-    subtitle: "AI สร้างเว็บได้ใน 1 นาที แต่เว็บที่ ‘เท่และโคตรแพง’ ต้องใช้ชั้นเชิงการสั่งการระดับ Art Director",
-    description: "ก้าวข้ามเว็บหน้าตา Template สี่เหลี่ยมแข็งๆ สอนวิธีบรีฟ Claude Code ให้เข้าใจรสนิยมทางศิลปะ และสั่งเขียนโค้ด Web Animation ระดับสูง (GSAP, Framer Motion, Three.js) สร้างเว็บที่พร้อมส่งประกวดเวที Awwwards",
-    syllabus: [
-      {
-        day: "DAY 1 — BREAKING THE GRID",
-        items: [
-          "The Designer's Prompt: เซต System Prompt ให้ Claude เข้าใจ Visual Hierarchy และ Whitespace",
-          "Typography & Micro-Interactions: Custom Cursor, Magnetic Buttons, Hover ที่เหนือความคาดหมาย",
-          "Glassmorphism & Brutalism Code: สั่ง CSS สร้าง Frosted Glass และสไตล์ดิบโดยไม่พึ่งรูปภาพ",
-        ],
-      },
-      {
-        day: "DAY 2 — THE MOTION & MAGIC",
-        items: [
-          "Master of Scroll: สั่ง GSAP ScrollTrigger ทำ Parallax, Text Reveal, Pinned Section ลื่น 60fps",
-          "3D WebGL Gateway: ร่างโครงสร้าง Three.js / R3F ดึงโมเดล 3D มาโต้ตอบกับเมาส์",
-          "Awwwards Capstone: สร้าง Landing Page สาย Creative แล้ว Deploy จริงก่อนออกจากคลาส",
-        ],
-      },
-    ],
-    duration: "2 วันเต็ม",
-    level: "เหมาะกับ Designer / Front-End ที่อยากยกระดับงานภาพ",
-    instructor: {
-      name: "มนัสวี เจริญศิลป์",
-      title: "Creative Developer & Motion Director",
-      bio: "นักออกแบบสาย Creative Dev ที่ผสานงานอาร์ตเข้ากับโค้ด ผลงานติดเวที Awwwards และ FWA เชื่อว่าความแพงซ่อนอยู่ในดีเทลของ motion",
-      photoUrl: "https://images.pexels.com/photos/36593089/pexels-photo-36593089.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
-    price: 13900,
-    seatsTotal: 18,
-    seatsAvailable: 18,
-    schedule: "รอประกาศรอบเปิดเรียน",
-    status: "coming_soon",
-    statusLabel: "จองสิทธิ์รอบแรก",
-    waitlistCount: 63,
-    proofMode: "waitlist",
-    category: "Creative & Front-End",
-    tags: ["GSAP", "Framer Motion", "Three.js", "Awwwards", "Typography"],
-    coverImage: "https://images.pexels.com/photos/326514/pexels-photo-326514.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    accent: "neutral",
-    businessType: "b2c",
-    outcomes: [
-      "บรีฟ AI ให้เขียนเว็บที่ไม่เหมือน Template สำเร็จรูป",
-      "สั่งเขียน Scroll Animation ระดับ Awwwards ภายในไม่กี่ prompt",
-      "ประกอบ Landing Page สาย Creative แล้ว Deploy จริง",
-    ],
-    bonuses: [
-      "The Aesthetic Component Library — Navbar/Preloader อาร์ตๆ ก๊อปวางได้เลย",
-      "Creative Prompt Framework — สูตร Prompt สั่ง Animation เฉพาะทาง",
+      "Final Project: AI Business Workspace — Master Context + Core System Prompt",
+      "Prompt Library อย่างน้อย 5 ชุด + AI SOP 3 กระบวนการ",
+      "AI Operating Manual สำหรับตัวเองหรือทีม",
     ],
   },
   {
     id: "c-coworker",
     slug: "claude-co-worker",
     title: "Claude Co-Worker",
-    edition: "The Master Delegator",
-    subtitle: "ศิลปะการโยนงานให้ AI: บริหารระบบให้รันเอง 100% แล้วเอาเวลาไปทำเรื่องไร้สาระ",
-    description: "ไม่ได้สอนให้คุณทำงานได้มากขึ้น แต่สอนให้คุณ ‘ทำน้อยลง’ ด้วยการเซตอัป Claude ให้เป็นเลขาและผู้ช่วยส่วนตัวที่ไม่มีวันลาพักร้อน — สำหรับผู้บริหารและเจ้าของธุรกิจที่บ้างานจนไม่มีเวลาใช้ชีวิต",
+    edition: "Build Your Second Brain",
+    subtitle:
+      "ปัญหาของคุณไม่ใช่ทำงานไม่เป็น แต่คืองานมากเกินไป — เซต Claude เป็นเลขา นักวิเคราะห์ และคู่คิดที่ลดภาระในหัวทุกวัน",
+    description:
+      "สำหรับผู้บริหารและเจ้าของธุรกิจที่งานตามตัวตลอดเวลา สอนแยกให้ออกว่างานไหนทำเอง งานไหนโยนให้ AI งานไหนควรเป็นระบบ แล้วสร้าง Second Brain ที่เตรียมประชุม สรุป และติดตามการตัดสินใจแทนคุณ",
     syllabus: [
       {
-        day: "DAY 1 — ONBOARDING THE AI EMPLOYEE",
+        day: "MODULE 01 — PERSONAL OPERATING SYSTEM",
         items: [
-          "The AI Job Description: ใช้ Claude Projects บรีฟงานให้พนักงานใหม่เข้าใจคู่มือองค์กร",
-          "The Daily Operation: โยนอีเมลยาว สรุปประชุม ร่างสัญญา ให้ Claude จบใน 3 วินาที",
-          "The Transaction Reader: ให้ Claude อ่านสลิป/ใบแจ้งหนี้ จัดฟอร์แมตส่งเข้าโปรแกรมบัญชี",
+          "Personal Workflow Audit และ Cognitive Load",
+          "Task vs Project vs Decision",
+          "ออกแบบจุดรับข้อมูลและลด Tool Overload",
         ],
       },
       {
-        day: "DAY 2 — THE AUTOMATED MANAGER",
+        day: "MODULE 02 — BUILD YOUR AI ASSISTANT",
         items: [
-          "The Task Router: ย่อยโปรเจกต์เป็น Task เล็ก ยิงเข้ากระดานงานทีมบน ClickUp อัตโนมัติ",
-          "The BI Robot: เชื่อม n8n ดึงข่าว/เทรนด์ตลาด ให้ Claude วิเคราะห์เป็นรายงานทุกเช้า",
-          "Capstone — The Do-Nothing Workflow: เชื่อม Flow ทั้งหมดให้แทรกแซงระบบน้อยที่สุด",
+          "กำหนดบทบาท: EA, Research, Meeting, Decision Analyst",
+          "นิยามหน้าที่ ขอบเขต น้ำเสียง และรูปแบบรายงาน",
+          "กำหนดเรื่องที่ AI ต้องถามก่อนทำ",
+        ],
+      },
+      {
+        day: "MODULE 03 — SECOND BRAIN ARCHITECTURE",
+        items: [
+          "Projects, Areas, Resources, Archives",
+          "Meeting Notes, Decision Logs, People Notes",
+          "File Naming และ Metadata",
+        ],
+      },
+      {
+        day: "MODULE 04 — MEETING INTELLIGENCE",
+        items: [
+          "Pre-meeting Brief, Agenda, Background Research",
+          "Meeting Summary, Decision Extraction, Action Items",
+          "Owner, Deadline และ Follow-up Draft",
+        ],
+      },
+      {
+        day: "MODULE 05 — EXECUTIVE COMMUNICATION",
+        items: [
+          "Email Drafting และ Tone Adjustment",
+          "Executive Summary, Proposal Review, Document Editing",
+          "Stakeholder Update และ Message Templates",
+        ],
+      },
+      {
+        day: "MODULE 06 — DECISION SUPPORT",
+        items: [
+          "Decision Context, Options, Pros and Cons, Risks",
+          "Reversible vs Irreversible Decisions",
+          "Recommendation, Confidence Level, Post-decision Review",
+        ],
+      },
+      {
+        day: "MODULE 07 — WEEKLY CONTROL SYSTEM",
+        items: [
+          "Weekly Review, Project Status, Open Decisions",
+          "Risk List, Priority Setting, Calendar Prep",
+          "Delegation List และ Personal Reflection",
         ],
       },
     ],
     duration: "2 วันเต็ม",
-    level: "เหมาะกับผู้บริหาร PM แอดมิน เจ้าของธุรกิจ",
-    instructor: {
-      name: "ธนกร วรรธนะกุล",
-      title: "Founder & Lead Operator, DeCODE",
-      bio: "ผู้วางระบบ AI automation ให้ธุรกิจ SME เชื่อว่าเป็นหัวหน้าไม่จำเป็นต้องเหนื่อยที่สุด",
-      photoUrl: "https://images.pexels.com/photos/28446973/pexels-photo-28446973.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
+    level: "Foundation–Intermediate — ไม่จำเป็นต้องเขียนโค้ด",
+    instructor: THANAKORN,
     price: 12900,
     seatsTotal: 24,
     seatsAvailable: 24,
@@ -254,54 +232,92 @@ export const courses: Course[] = [
     statusLabel: "จองสิทธิ์รอบแรก",
     waitlistCount: 128,
     proofMode: "waitlist",
-    category: "บริหาร & ระบบอัตโนมัติ",
-    tags: ["Claude Projects", "n8n", "ClickUp", "Delegation", "SMEMOVE"],
-    coverImage: "https://images.pexels.com/photos/3582392/pexels-photo-3582392.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    category: "02 · DELEGATE",
+    tags: ["Personal AI", "Second Brain", "Meeting Intelligence", "Notion", "Granola"],
+    coverImage: PEXELS(3582392),
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
-      "เซต Claude เป็นเลขาที่ไม่มีวันลาพักร้อน",
-      "วางระบบแจกจ่ายงานทีมแบบอัตโนมัติ",
-      "รับรายงาน BI สรุปสั้นๆ ทุกเช้าโดยไม่ต้องลงมือ",
+      "ออกแบบ Personal AI Assistant ที่เข้าใจวิธีทำงานของคุณ",
+      "สร้าง Second Brain รวบข้อมูลกระจัดกระจายให้ดึงกลับมาใช้ได้",
+      "สร้างระบบเตรียม–สรุปประชุมและติดตามการตัดสินใจ",
     ],
     bonuses: [
-      "The Lazy Boss Prompt Library — คำสั่งสรุปแชท ร่างอีเมล คิด Agenda",
-      "Workflow Blueprint — แผนผัง n8n & ClickUp พร้อมอิมพอร์ต",
+      "Final Project: Personal AI Operating System",
+      "Executive System Prompt + Meeting & Decision Workflow",
+      "Weekly Review System พร้อม Communication Library",
     ],
   },
   {
     id: "c-godmode",
-    slug: "claude-godmode-creative-director",
+    slug: "claude-godmode",
     title: "Claude Godmode",
-    edition: "The Creative Director",
-    subtitle: "ปลดล็อกพลังพระเจ้า สั่ง Claude ขยี้ไอเดีย เปลี่ยนนามธรรมทางศิลปะให้เป็นชิ้นงานระดับมาสเตอร์พีซ",
-    description: "ไม่ใช่คอร์สสอนเจนรูป แต่สอนวิธีคิดและวิธีสั่ง — แปลงสัมผัสทางอาร์ตให้เป็นโครงสร้างตรรกะที่ Claude เข้าใจและทำงานต่อได้จริง สำหรับ Creative Director, Art Director และเจ้าของเอเจนซี่",
+    edition: "Creative Intelligence",
+    subtitle:
+      "ไม่ใช่คอร์สกดสร้างภาพ แต่คือการเปลี่ยนรสนิยมที่อธิบายยาก ให้เป็นระบบกำกับงานสร้างสรรค์ที่ AI ทำต่อได้",
+    description:
+      "AI สร้างงานได้เร็ว แต่ยังต้องการคนที่มีวิจารณญาณกำหนดว่าอะไรควรถูกสร้าง สอน Creative Director และ Art Director ให้คิด Concept นิยามรสนิยม และกำกับหลายเครื่องมือให้ไปในทิศทางเดียวกัน",
     syllabus: [
       {
-        day: "DAY 1 — THE VISIONARY MIND",
+        day: "MODULE 01 — CREATIVE INTELLIGENCE",
         items: [
-          "The Aesthetic Code: ใช้ XML Tags สั่ง Claude เข้าใจ Color Theory, Mood & Tone",
-          "Reverse Engineering: โยน Reference ให้ Claude สกัดเป็นสูตรคำสั่งคุมทิศทางอาร์ต",
-          "The Multi-Sensory Pitch: สร้างโครงสร้าง Pitching ครบประสาทสัมผัส ต่อยอด Gamma / Suno",
+          "Taste vs Output, Idea vs Execution",
+          "Direction vs Generation และ Human Judgement",
+          "Originality in the AI Era, Reference Literacy",
         ],
       },
       {
-        day: "DAY 2 — THE COMMAND CENTER",
+        day: "MODULE 02 — CONCEPT BEFORE PROMPT",
         items: [
-          "The Bulletproof Brief: แตก Big Idea เป็น Actionable Brief ที่สเปกเป๊ะจนลูกน้องเถียงไม่ได้",
-          "The Automated Agency: เปลี่ยนบรีฟให้วิ่งเข้าสร้าง Task ใน ClickUp ผ่าน n8n",
-          "Godmode Capstone: จำลองรับบรีฟแบรนด์ใหญ่ รันระบบตั้งแต่แกนไอเดียยันบรีฟส่งทีม",
+          "Framework: Human Truth, Tension, Point of View",
+          "Big Idea, Visual Metaphor, Narrative",
+          "Workshop: เปลี่ยนโจทย์ธุรกิจเป็น Creative Platform",
+        ],
+      },
+      {
+        day: "MODULE 03 — TRANSLATING TASTE",
+        items: [
+          "Era, Art Movement, Composition, Colour, Lighting",
+          "Texture, Material, Lens, Movement, Emotion",
+          "Imperfection และ Degree of Realism",
+        ],
+      },
+      {
+        day: "MODULE 04 — VISUAL PROMPT ARCHITECTURE",
+        items: [
+          "Subject, World, Context, Style, Composition",
+          "Camera, Lighting, Material, Colour, Emotion",
+          "Negative Direction และ Consistency Reference",
+        ],
+      },
+      {
+        day: "MODULE 05 — BRAND WORLD BUILDING",
+        items: [
+          "Visual DNA, Recurring Motif, Character",
+          "Environment, Object Language, Image Treatment",
+          "Motion Behaviour และ Sound Personality",
+        ],
+      },
+      {
+        day: "MODULE 06 — AI CREATIVE PIPELINE",
+        items: [
+          "Concept → Visual Direction → ภาพต้นแบบ",
+          "ปรับ Style/Consistency → Motion → Voice & Sound",
+          "ตัดต่อเป็น Campaign Asset หลายช่องทาง",
+        ],
+      },
+      {
+        day: "MODULE 07 — CREATIVE REVIEW",
+        items: [
+          "Conceptual Clarity, Brand Relevance, Consistency",
+          "Emotional Impact, Cultural Fit, Craft",
+          "Distinctiveness และ Ethical/Legal Risk",
         ],
       },
     ],
-    duration: "2 วันเต็ม",
-    level: "เหมาะกับสาย Creative / Agency",
-    instructor: {
-      name: "มนัสวี เจริญศิลป์",
-      title: "Creative Director & Aesthetic Architect",
-      bio: "ผู้กำกับงานสร้างสรรค์ที่ใช้ AI เป็นสมองซีกขวา แปลงบรีฟนามธรรมให้เป็นระบบสั่งงานที่ทีมโปรดักชันทำต่อได้ทันที",
-      photoUrl: "https://images.pexels.com/photos/36593089/pexels-photo-36593089.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
+    duration: "2–3 วัน (Intensive Lab)",
+    level: "Intermediate — ไม่จำเป็นต้องวาดรูปหรือเขียนโค้ด",
+    instructor: MANASWEE,
     price: 14900,
     seatsTotal: 18,
     seatsAvailable: 18,
@@ -310,55 +326,195 @@ export const courses: Course[] = [
     statusLabel: "จองสิทธิ์รอบแรก",
     waitlistCount: 41,
     proofMode: "waitlist",
-    category: "Creative Direction",
-    tags: ["Art Direction", "XML Prompt", "Gamma", "Pitching", "Agency Workflow"],
-    coverImage: "https://images.pexels.com/photos/29506609/pexels-photo-29506609.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    category: "03 · CREATE",
+    tags: ["Art Direction", "Midjourney", "Runway", "ElevenLabs", "Creative Pipeline"],
+    coverImage: PEXELS(29506609),
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
-      "แปลงความรู้สึกทางอาร์ตให้เป็นคำสั่งที่ AI ทำงานต่อได้",
-      "ร่าง Moodboard และ Art Direction ระดับ Global Agency",
-      "แตกบรีฟกันกระสุนส่งทีมโปรดักชันได้ใน 5 นาที",
+      "เปลี่ยน Abstract Idea ให้เป็น Creative Framework",
+      "สร้าง Visual Language และคุม Consistency ข้ามเครื่องมือ",
+      "กำกับ Image, Video, Voice, Sound ให้อยู่ในโลกเดียวกัน",
     ],
     bonuses: [
-      "The Master Prompt Library — คำสั่งคุมโทนสี/สคริปต์วิดีโอ/บรีฟ Motion",
-      "Agency System Blueprint — Flowchart ระบบรับบรีฟ > Claude > ทีม",
+      "Final Project: AI Creative Direction System",
+      "Visual World + Moodboard + Key Visual Series",
+      "Creative Review Checklist + Production Pipeline",
     ],
   },
   {
-    id: "c-architect",
-    slug: "claude-code-one-man-startup",
-    title: "Claude Code · One-Man Startup",
-    edition: "From Prompt to Production",
-    subtitle: "เลิกง้อโปรแกรมเมอร์ ประกอบร่าง Tech Startup ของคุณเอง ด้วยโค้ดที่ AI เขียนตั้งแต่บรรทัดแรกจนถึง Deploy",
-    description: "เปลี่ยนสาย Business / Marketing ให้กลายเป็น System Architect ที่สร้าง Web App เชื่อม Database และวางระบบชำระเงินได้ด้วยตัวเอง — From Prompt to Production",
+    id: "c-aesthetic",
+    slug: "claude-code-aesthetic-frontend",
+    title: "Claude Code · The Aesthetic Front-End",
+    edition: "Design-First Development",
+    subtitle:
+      "AI สร้างเว็บได้ใน 1 นาที แต่เว็บที่มีรสนิยมและ Character ต้องใช้ชั้นเชิงการกำกับระดับ Art Director",
+    description:
+      "อยู่ระหว่าง Design, Creative Direction และ Front-End สอนกำกับ Claude Code ให้สร้างเว็บที่มี Art Direction, Typography, Motion และ Interaction โดยไม่ตกลงไปในรูปแบบ Template ที่เหมือนกันทุกเว็บ — ไม่ต้องเป็น Developer",
     syllabus: [
       {
-        day: "DAY 1 — THE FRONT-END HACKER",
+        day: "MODULE 01 — ART DIRECTION FOR DIGITAL",
         items: [
-          "The Developer's System Prompt: เซต Claude ให้เข้าใจ Tech Stack และ Coding Standard",
-          "Rapid Prototyping: โยน Wireframe ให้ Claude เขียนโครงหน้าเว็บที่พร้อมใช้ทันที",
-          "The Debugging Matrix: โยน Error Log ให้ Claude patch โค้ดให้บรรทัดต่อบรรทัด",
+          "Brand to Interface และ Digital Personality",
+          "Visual Hierarchy และ Editorial Composition",
+          "Motion Personality และการเลี่ยง Template Aesthetics",
         ],
       },
       {
-        day: "DAY 2 — THE FULL-STACK DEPLOYMENT",
+        day: "MODULE 02 — DESIGN SYSTEM FOR AI",
         items: [
-          "The Backend Brain: ให้ Claude เขียน Schema และเชื่อม Supabase (Auth + Data)",
-          "The CI/CD Pipeline: สั่ง GitHub Actions รันเทสต์และ Deploy ขึ้น Cloud อัตโนมัติ",
-          "The Monetization API: เชื่อม Stripe ตัดบัตร + Webhook และ Capstone ปล่อยของขึ้น Production",
+          "Colour Tokens, Typography Scale, Spacing, Grid",
+          "Radius, Surface, States, Motion Tokens",
+          "Component Rules และ Image Direction",
+        ],
+      },
+      {
+        day: "MODULE 03 — PROMPTING CLAUDE CODE",
+        items: [
+          "Project Brief, Technical & Design Context",
+          "Acceptance Criteria และ Asking for Plan First",
+          "Incremental Building และ Preventing Regression",
+        ],
+      },
+      {
+        day: "MODULE 04 — EDITORIAL LAYOUT",
+        items: [
+          "Grid, Asymmetry, Scale, Whitespace",
+          "Crop, Overlap, Sticky, Scroll Narrative",
+          "Thai และ English Typography",
+        ],
+      },
+      {
+        day: "MODULE 05 — MOTION SYSTEM",
+        items: [
+          "Entrance, Scroll, Hover, Page Transition",
+          "Mask Reveal, Parallax, Text Animation",
+          "Framer Motion, GSAP, Reduced Motion",
+        ],
+      },
+      {
+        day: "MODULE 06 — CREATIVE FRONT-END",
+        items: [
+          "SVG, Canvas, WebGL, Three.js",
+          "Shader, Mouse Interaction, Fluid Gradient",
+          "Generative Pattern และ Performance Budget",
+        ],
+      },
+      {
+        day: "MODULE 07 — RESPONSIVE & PRODUCTION",
+        items: [
+          "Mobile-first Review และ Image Optimisation",
+          "Font Loading, Accessibility, SEO, Open Graph",
+          "Performance, Deployment, Error Monitoring",
         ],
       },
     ],
-    duration: "2 วันเต็ม",
-    level: "เหมาะกับคนอยากทำ SaaS แม้ไม่เคยเขียนโค้ด",
-    instructor: {
-      name: "ปวริศ อินทรโชติ",
-      title: "Full-Stack Architect & SaaS Builder",
-      bio: "ผู้สร้างและ ship SaaS เดี่ยวหลายตัว เชี่ยวชาญการวาง Infrastructure หลังบ้านด้วย AI ตั้งแต่ Database ยันระบบตัดบัตร",
-      photoUrl: "https://images.pexels.com/photos/33261955/pexels-photo-33261955.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
+    duration: "3 วัน / 4 สัปดาห์ (Lab)",
+    level: "Intermediate — พร้อมอ่านโครงสร้างโค้ด (ไม่ต้องเขียนคล่อง)",
+    instructor: MANASWEE,
     price: 15900,
+    seatsTotal: 18,
+    seatsAvailable: 18,
+    schedule: "รอประกาศรอบเปิดเรียน",
+    status: "coming_soon",
+    statusLabel: "จองสิทธิ์รอบแรก",
+    waitlistCount: 63,
+    proofMode: "waitlist",
+    category: "04 · DESIGN",
+    tags: ["Claude Code", "Next.js", "Framer Motion", "GSAP", "Three.js"],
+    coverImage: PEXELS(326514),
+    accent: "neutral",
+    businessType: "b2c",
+    outcomes: [
+      "แปล Brand Strategy เป็น Digital Art Direction",
+      "สั่ง Claude Code สร้าง Design System และ Motion ที่ไม่เหมือน Template",
+      "สร้าง Responsive Experience แล้ว Deploy จริง",
+    ],
+    bonuses: [
+      "Final Project: Deployed Digital Experience",
+      "Design Tokens + Responsive Component Library",
+      "Hero + Motion Section, Deploy บนโดเมนจริง",
+    ],
+  },
+  {
+    id: "c-startup",
+    slug: "claude-code-one-man-startup",
+    title: "Claude Code · The One-Man Startup",
+    edition: "From Prompt to Production",
+    subtitle:
+      "เปลี่ยนไอเดียธุรกิจให้เป็น Web App ที่มีผู้ใช้ ระบบข้อมูล และการชำระเงินจริง โดยกำกับ AI ในฐานะ Product Builder",
+    description:
+      "ลดระยะห่างระหว่างไอเดียกับ Product ที่ผู้ใช้ทดลองได้จริง สอนสาย Business/Marketing/Creative ให้สร้าง Prototype และ MVP รุ่นแรกได้เร็วพอที่จะทดสอบตลาดก่อนลงทุนใหญ่",
+    syllabus: [
+      {
+        day: "MODULE 01 — PRODUCT BEFORE CODE",
+        items: [
+          "User, Problem, Value Proposition, Core Action",
+          "MVP: Must-have vs Nice-to-have",
+          "Workshop: One-page Product Brief",
+        ],
+      },
+      {
+        day: "MODULE 02 — USER FLOW & SCOPE",
+        items: [
+          "User Journey, Entry Point, Registration",
+          "Empty State, Error State, Confirmation",
+          "Admin Workflow และ Permission",
+        ],
+      },
+      {
+        day: "MODULE 03 — SYSTEM ARCHITECTURE",
+        items: [
+          "Front-end, Back-end, Database, API",
+          "Authentication, Storage, Email, Payment",
+          "Analytics, Hosting, Environment Variables",
+        ],
+      },
+      {
+        day: "MODULE 04 — DATABASE & AUTHENTICATION",
+        items: [
+          "Table, Field, Relationship, CRUD",
+          "Role, Permission, Authentication, Authorisation",
+          "Data Validation และ Security Basics",
+        ],
+      },
+      {
+        day: "MODULE 05 — BUILDING WITH CLAUDE CODE",
+        items: [
+          "Repository Setup, Architecture Plan, Milestone",
+          "Feature Branch, Component Build, API Integration",
+          "Error Review, Testing, Refactoring",
+        ],
+      },
+      {
+        day: "MODULE 06 — BUSINESS FUNCTIONS",
+        items: [
+          "Booking, Membership, Payment, Subscription",
+          "Dashboard, Email Confirmation, File Upload",
+          "Search, Filter, Admin Management",
+        ],
+      },
+      {
+        day: "MODULE 07 — TESTING & DEPLOYMENT",
+        items: [
+          "Functional & User Testing, Edge Cases",
+          "Production Environment, Domain, Deployment",
+          "Rollback และ Release Checklist",
+        ],
+      },
+      {
+        day: "MODULE 08 — MEASURE & ITERATE",
+        items: [
+          "Activation, Conversion, Retention, Drop-off",
+          "Event Tracking และ Feedback Collection",
+          "Product Backlog และ Version Roadmap",
+        ],
+      },
+    ],
+    duration: "4–6 สัปดาห์ (Lab) / 4 วัน Intensive",
+    level: "Intermediate–Advanced — ไม่ต้องเป็น Developer แต่พร้อมเรียน Technical Concept",
+    instructor: PAWARIS,
+    price: 18900,
     seatsTotal: 16,
     seatsAvailable: 16,
     schedule: "รอประกาศรอบเปิดเรียน",
@@ -366,76 +522,351 @@ export const courses: Course[] = [
     statusLabel: "ใกล้เปิดจอง",
     launchDate: "2026-08-30",
     proofMode: "countdown",
-    category: "Full-Stack & SaaS",
-    tags: ["Supabase", "Stripe", "GitHub Actions", "Railway", "SaaS"],
-    coverImage: "https://images.pexels.com/photos/3747115/pexels-photo-3747115.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    category: "05 · BUILD",
+    tags: ["Claude Code", "Supabase", "Stripe", "Next.js", "Vercel"],
+    coverImage: PEXELS(3747115),
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
-      "สร้าง Web App ตั้งแต่หน้าบ้านยันหลังบ้านด้วยตัวคนเดียว",
-      "เชื่อม Database และระบบ Auth ด้วยคำสั่งภาษาคน",
-      "ต่อระบบตัดบัตร Stripe และ Deploy ขึ้นโดเมนจริง",
+      "เปลี่ยน Business Idea เป็น Product Scope และ User Flow",
+      "สร้าง Front-end, Database, Auth และ Payment ด้วย AI",
+      "Deploy MVP ที่พร้อมให้ผู้ใช้จริงทดลอง",
     ],
     bonuses: [
-      "The Boilerplate Vault — Starter Kit มีระบบล็อกอิน + Stripe พร้อมใช้",
-      "Architecture Diagram Cheatsheet — โปสเตอร์ Blueprint การเชื่อมระบบ",
+      "Final Project: MVP พร้อมผู้ใช้จริง",
+      "Front-end + Database + Auth + Core Feature",
+      "Payment/Booking + Analytics + Deploy + V2 Roadmap",
+    ],
+  },
+  {
+    id: "c-automation",
+    slug: "ai-automation-architect",
+    title: "AI Automation Architect",
+    edition: "Build Your Digital Workforce",
+    subtitle:
+      "เปลี่ยนงานทำซ้ำที่กระจัดกระจาย ให้เป็น Workflow ที่รับข้อมูล ตัดสินใจ สร้างงาน และส่งต่อระบบได้เอง",
+    description:
+      "ก้าวจากการใช้ AI แบบแชท สู่การสร้างระบบที่ทำงานได้แม้ไม่มีคนเปิดหน้าต่างแชท — วิเคราะห์ Workflow ออกแบบ Logic คุมความเสี่ยง จัดการ Error และกำหนดจุดที่มนุษย์ต้องอนุมัติ",
+    syllabus: [
+      {
+        day: "MODULE 01 — AUTOMATION OPPORTUNITY MAPPING",
+        items: [
+          "เกณฑ์: Frequency, Time, Error Rate, Rule Clarity",
+          "Business Value, Risk, Human Judgement Required",
+          "Workshop: Automation Opportunity Matrix",
+        ],
+      },
+      {
+        day: "MODULE 02 — WORKFLOW ARCHITECTURE",
+        items: [
+          "Trigger, Input, Transformation, Condition",
+          "Decision, AI Step, Human Approval, Output",
+          "Notification, Logging, Error Path",
+        ],
+      },
+      {
+        day: "MODULE 03 — DATA & INTEGRATION",
+        items: [
+          "API, Webhook, JSON, Authentication",
+          "Header, Query Parameter, Data Mapping",
+          "Database, Validation, Rate Limit",
+        ],
+      },
+      {
+        day: "MODULE 04 — AI INSIDE WORKFLOWS",
+        items: [
+          "Classification, Extraction, Summarisation",
+          "Lead Qualification, Draft Generation, Routing",
+          "Recommendation และ Structured Output",
+        ],
+      },
+      {
+        day: "MODULE 05 — HUMAN-IN-THE-LOOP",
+        items: [
+          "Approval Gate และ Confidence Threshold",
+          "Escalation, Exception, Sensitive Actions",
+          "Audit Trail และ Override",
+        ],
+      },
+      {
+        day: "MODULE 06 — ERROR HANDLING",
+        items: [
+          "Retry, Timeout, Duplicate Prevention",
+          "Missing Data, Failed API, Alternate Path",
+          "Notification, Logs, Monitoring",
+        ],
+      },
+      {
+        day: "MODULE 07 — BUSINESS AUTOMATION PATTERNS",
+        items: [
+          "Lead Capture, Proposal Generator, Sales Follow-up",
+          "Content Pipeline, Support Triage, Invoice Workflow",
+          "Weekly Report และ Meeting-to-Task",
+        ],
+      },
+      {
+        day: "MODULE 08 — DOCUMENTATION & HANDOVER",
+        items: [
+          "Workflow Diagram, Tool List, Credential Map",
+          "Data Dictionary, Error Guide, SOP",
+          "Owner, Maintenance Schedule, Change Log",
+        ],
+      },
+    ],
+    duration: "3 วัน / 4 สัปดาห์ (Lab)",
+    level: "Intermediate — พร้อมเรียนรู้ API และ Data Structure เบื้องต้น",
+    instructor: THANAKORN,
+    price: 15900,
+    seatsTotal: 20,
+    seatsAvailable: 20,
+    schedule: "รอประกาศรอบเปิดเรียน",
+    status: "coming_soon",
+    statusLabel: "จองสิทธิ์รอบแรก",
+    waitlistCount: 89,
+    proofMode: "waitlist",
+    category: "06 · AUTOMATE",
+    tags: ["n8n", "Make", "Claude API", "Webhooks", "MCP"],
+    coverImage: PEXELS(256502),
+    accent: "neutral",
+    businessType: "b2c",
+    outcomes: [
+      "วิเคราะห์ Workflow และออกแบบ Logic การตัดสินใจ",
+      "เชื่อม API, Webhook และเรียก AI ใน Workflow",
+      "วางระบบอนุมัติ, Error Handling และ Log ที่ทีมดูแลต่อได้",
+    ],
+    bonuses: [
+      "Final Project: One Working Business Automation",
+      "Workflow Map + Human Approval + Error Handling",
+      "SOP + Maintenance Guide ที่ส่งต่อทีมได้",
+    ],
+  },
+  {
+    id: "c-business-os",
+    slug: "ai-business-os",
+    title: "AI Business OS",
+    edition: "Build an AI-Native Company",
+    subtitle:
+      "เปลี่ยนจากการทดลอง AI แบบกระจัดกระจาย ไปสู่ Transformation Roadmap ที่มีลำดับความสำคัญทั้งองค์กร",
+    description:
+      "สำหรับผู้นำที่ต้องตอบว่า ควรใช้ AI ตรงไหนก่อน Workflow ใดคุ้มที่สุด ต้องเตรียมข้อมูลอะไร และจะทำให้คนในองค์กรใช้งานจริงได้อย่างไร — ออกแบบระบบปฏิบัติการใหม่ที่คน ข้อมูล กระบวนการ และ AI ทำงานร่วมกัน",
+    syllabus: [
+      {
+        day: "MODULE 01 — AI-NATIVE BUSINESS",
+        items: [
+          "Business using AI vs AI-enabled vs AI-native",
+          "ผลต่อ Cost, Speed, Capacity, Customer Experience",
+          "Decision Making และ Competitive Advantage",
+        ],
+      },
+      {
+        day: "MODULE 02 — AI READINESS ASSESSMENT",
+        items: [
+          "ประเมิน 6 ด้าน: Strategy, People, Process",
+          "Data, Technology, Governance",
+          "เห็นจุดติดขัดขององค์กรก่อนเริ่มลงทุน",
+        ],
+      },
+      {
+        day: "MODULE 03 — OPPORTUNITY MAPPING",
+        items: [
+          "ประเมิน Revenue, Cost, Speed, Quality, CX, Risk",
+          "AI Opportunity Matrix ตาม Impact & Feasibility",
+          "Data Readiness, Risk, Time to Value",
+        ],
+      },
+      {
+        day: "MODULE 04 — AI WORKFLOW REDESIGN",
+        items: [
+          "Remove, Simplify, Automate, Assist",
+          "Escalate, Redesign, Measure",
+          "ตั้งคำถามว่า Workflow ควรถูกออกแบบใหม่หรือไม่",
+        ],
+      },
+      {
+        day: "MODULE 05 — INTERNAL KNOWLEDGE SYSTEM",
+        items: [
+          "Source of Truth และ Knowledge Ownership",
+          "Taxonomy, Permissions, Update Process",
+          "Search, Retrieval, Knowledge Quality",
+        ],
+      },
+      {
+        day: "MODULE 06 — PEOPLE & ADOPTION",
+        items: [
+          "AI Literacy, Role Redesign, Skill Gap",
+          "Champion Network, Training Plan, Incentive",
+          "Resistance, Communication, Adoption Metrics",
+        ],
+      },
+      {
+        day: "MODULE 07 — GOVERNANCE & POLICY",
+        items: [
+          "Approved Tools, Sensitive Data, Human Review",
+          "Customer Disclosure, Copyright, Bias",
+          "Audit, Access Control, Incident Reporting",
+        ],
+      },
+      {
+        day: "MODULE 08 — MEASUREMENT",
+        items: [
+          "Hours Saved, Cycle Time, Error Reduction",
+          "Adoption Rate, AI-assisted Revenue, CSAT",
+          "Quality Score และ Risk Incident",
+        ],
+      },
+      {
+        day: "MODULE 09 — 90-DAY TRANSFORMATION ROADMAP",
+        items: [
+          "0–30: Audit, Select Use Cases, Policy, Train",
+          "31–60: Pilot, Measure, Document SOP",
+          "61–90: Expand, Integrate, Standardise, Report",
+        ],
+      },
+    ],
+    duration: "2 วัน Workshop + 30-Day Follow-up",
+    level: "Executive / Strategic — ไม่จำเป็นต้องมีพื้นฐานเทคนิค",
+    instructor: THANAKORN,
+    price: 39900,
+    seatsTotal: 20,
+    seatsAvailable: 20,
+    schedule: "รอประกาศรอบเปิดเรียน · เหมาะกับเรียนเป็นทีมจากองค์กรเดียวกัน",
+    status: "coming_soon",
+    statusLabel: "เปิดรับองค์กรที่สนใจ",
+    waitlistCount: 22,
+    proofMode: "waitlist",
+    category: "07 · TRANSFORM",
+    tags: ["AI Governance", "Readiness", "Roadmap", "Adoption", "KPI"],
+    coverImage: PEXELS(3184465),
+    accent: "neutral",
+    businessType: "b2b",
+    outcomes: [
+      "ประเมิน AI Readiness และจัดลำดับ Use Case",
+      "ออกแบบ AI Governance และ Internal Knowledge System",
+      "สร้าง 90-Day Transformation Roadmap",
+    ],
+    bonuses: [
+      "Final Project: AI Transformation Blueprint",
+      "Opportunity Map + Prioritised Use Cases + Governance Model",
+      "90-Day Implementation Roadmap + KPI Framework",
     ],
   },
   {
     id: "c-performance",
-    slug: "claude-performance-deep-core",
-    title: "Performance Claude · Deep Core",
-    edition: "Power User Deep Dive",
-    subtitle: "ปลดล็อกศักยภาพขั้นสุด เข้าถึง Deep Function ของ Claude ที่คน 99% ไม่เคยรู้ว่าทำได้",
-    description: "คอร์สสำหรับ Power User ที่ต้องการรีดประสิทธิภาพของ Claude ออกมาให้ถึงขีดสุด เจาะลึกเทคนิคการใช้งาน Context Window ให้คุ้มค่า, การเขียน System Prompts ระดับวิศวกรรม, การรีด Logical Reasoning ขั้นสูง และเทคนิคลับเพื่อปลดล็อกขีดจำกัดเดิมๆ",
+    slug: "performance-claude-deep-core",
+    title: "Performance Claude · The Deep Core",
+    edition: "Master the Machine",
+    subtitle:
+      "สำหรับ Power User ที่ชนกำแพง: Context เต็ม AI ลืมของสำคัญ Agent วนลูป — เจาะลึกกลไกใต้ Interface ของ Claude",
+    description:
+      "หลักสูตรขั้นสูงเรื่อง Context Architecture, System Prompt, Tool Use, MCP, Agent Workflow และ Evaluation สอนออกแบบ ทดสอบ และปรับปรุง AI System ที่มีโครงสร้าง เชื่อถือได้ และพร้อมสำหรับ Production",
     syllabus: [
       {
-        day: "DAY 1 — THE CONTEXT MASTER",
+        day: "MODULE 01 — HOW CLAUDE USES CONTEXT",
         items: [
-          "Context Window Architecture: เข้าใจวิธีที่ Claude จำและลืมข้อมูล เพื่อยัดเอกสาร 100 หน้าโดยที่ AI ไม่หลอน",
-          "Advanced Prompt Engineering: ใช้ XML, Chain of Thought และ Few-Shot Prompting อย่างมีกลยุทธ์",
-          "Hallucination Control: เทคนิคบังคับ Claude ให้อ้างอิงบรรทัดต่อบรรทัด และยอมรับว่า 'ไม่รู้' แทนการมั่ว",
+          "Context Window, Instruction Priority, Recency",
+          "Relevance, Noise, Positioning, Context Dilution",
+          "Lost-in-the-middle และ Token Economics",
         ],
       },
       {
-        day: "DAY 2 — THE LOGIC & INTEGRATION",
+        day: "MODULE 02 — CONTEXT ARCHITECTURE",
         items: [
-          "Logical Reasoning Hacks: ท่าไม้ตายรีดความสามารถในการคิดเชิงตรรกะและคณิตศาสตร์",
-          "Tool Use & API Deep Dive:เจาะลึกการให้ Claude เรียกใช้เครื่องมือภายนอก (Function Calling)",
-          "Performance Capstone: ออกแบบ AI Agent ที่ทำงานซับซ้อนหลายขั้นตอนด้วยความแม่นยำ 99%",
+          "การจัดชั้น Global / Role / Business / Task Context",
+          "Reference, Memory, Tool Result, Output Schema",
+          "อะไรควรใส่ถาวร เรียกเฉพาะงาน สรุป หรือตัดออก",
+        ],
+      },
+      {
+        day: "MODULE 03 — SYSTEM PROMPT ENGINEERING",
+        items: [
+          "Modular Prompt, Policy, Persona, Objective",
+          "Workflow, Constraint, Output Contract",
+          "Tool Policy, Escalation, Prompt Versioning",
+        ],
+      },
+      {
+        day: "MODULE 04 — STRUCTURED PROMPTING",
+        items: [
+          "XML Structure, Delimiters, Few-shot, Rubric",
+          "Chain of Verification และ Self-review",
+          "Multi-pass Workflow และ JSON Schema",
+        ],
+      },
+      {
+        day: "MODULE 05 — MEMORY DESIGN",
+        items: [
+          "User Preference, Business Fact, Project State",
+          "Conversation Summary, Working Memory",
+          "Write Policy, Retrieval, Conflict, Expiration",
+        ],
+      },
+      {
+        day: "MODULE 06 — TOOL USE & MCP",
+        items: [
+          "Tool Definition, Input Schema, Selection",
+          "Permissions, Error Response, Retry, Validation",
+          "MCP Architecture, Security Boundary, Logging",
+        ],
+      },
+      {
+        day: "MODULE 07 — AGENT WORKFLOW",
+        items: [
+          "Planner–Executor, Router, Reviewer",
+          "Multi-agent, Supervisor, Human Approval",
+          "State Machine และ Termination Condition",
+        ],
+      },
+      {
+        day: "MODULE 08 — RAG & KNOWLEDGE RETRIEVAL",
+        items: [
+          "Chunking, Metadata, Embedding",
+          "Vector & Hybrid Search, Reranking",
+          "Citation, Freshness, Permission-aware Retrieval",
+        ],
+      },
+      {
+        day: "MODULE 09 — EVALUATION",
+        items: [
+          "Evaluation Dataset, Expected Output, Rubric",
+          "Accuracy, Completeness, Consistency, Safety",
+          "Human & Model-based Eval, Regression Test",
+        ],
+      },
+      {
+        day: "MODULE 10 — PERFORMANCE OPTIMISATION",
+        items: [
+          "Prompt Simplification และ Context Compression",
+          "Caching, Model Routing, Batch Processing",
+          "Latency, Token Cost, Observability, Fallback",
         ],
       },
     ],
-    duration: "2 วันเต็ม (Deep Dive)",
-    level: "สำหรับผู้ที่ใช้ Claude เป็นประจำและต้องการทะลุขีดจำกัด",
-    instructor: {
-      name: "ปวริศ อินทรโชติ",
-      title: "AI Researcher & Prompt Engineer",
-      bio: "ผู้คลุกคลีกับโมเดลภาษาขนาดใหญ่ รีดศักยภาพ AI ด้วยเทคนิควิศวกรรม Prompt ขั้นสูง",
-      photoUrl: "https://images.pexels.com/photos/33261955/pexels-photo-33261955.jpeg?auto=compress&cs=tinysrgb&w=400",
-    },
-    price: 13900,
-    priceCompareAt: 16900,
+    duration: "3 วัน Intensive / 4–6 สัปดาห์ (Lab)",
+    level: "Advanced — ใช้ Claude เป็นประจำ อ่าน JSON และโครงสร้างเทคนิคได้",
+    instructor: PAWARIS,
+    price: 16900,
+    priceCompareAt: 19900,
     seatsTotal: 20,
     seatsAvailable: 20,
     schedule: "รอประกาศรอบเปิดเรียน",
     status: "coming_soon",
     statusLabel: "กำลังเปิดรับความสนใจ",
-    waitlistCount: 89,
+    waitlistCount: 57,
     proofMode: "waitlist",
-    category: "AI Deep Tech",
-    tags: ["Prompt Engineering", "Context Window", "API", "Function Calling"],
-    coverImage: "https://images.pexels.com/photos/12060425/pexels-photo-12060425.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    category: "08 · MASTER",
+    tags: ["Context Architecture", "MCP", "Agent Workflow", "Evaluation", "RAG"],
+    coverImage: PEXELS(12060425),
     accent: "neutral",
     businessType: "b2c",
     outcomes: [
-      "คุม Context Window ได้อยู่หมัด ยัดข้อมูลเยอะแค่ไหนก็ไม่หลอน",
-      "เขียน Prompt เชิงวิศวกรรมที่ให้ผลลัพธ์แม่นยำระดับ 99%",
-      "สร้าง AI Agent ที่เชื่อมต่อกับ API และเครื่องมือภายนอกได้",
+      "ออกแบบ Context Architecture และ Memory",
+      "สร้าง Tool Use, MCP และ Agent Workflow ที่คุมได้",
+      "สร้าง Evaluation Set และลด Token/Latency สู่ Production",
     ],
     bonuses: [
-      "The Master Prompt Architecture — โครงสร้าง Prompt ระดับพระเจ้า",
-      "Token Optimization Guide — คู่มือลดค่าใช้จ่าย API",
+      "Final Project: Advanced AI System",
+      "Context Architecture + Memory + Agent Workflow",
+      "Evaluation Dataset + Performance Benchmark",
     ],
   },
 ];

@@ -9,7 +9,7 @@ import { CtaSection } from "@/components/sections/CtaSection";
 export const metadata: Metadata = {
   title: "คอร์สเรียน",
   description:
-    "คอร์ส AI แบบ onsite ของ DeCODE — Claude Operator, 10X Engineer, Aesthetic Front-End, Co-Worker, Godmode และ One-Man Startup",
+    "THE CORE 8 — หลักสูตร AI ของ DeCODE: Operate, Delegate, Create, Design, Build, Automate, Transform, Master ตั้งแต่ระดับบุคคลจนถึงองค์กร",
 };
 
 export default function CoursesPage() {
