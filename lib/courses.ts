@@ -871,6 +871,68 @@ export const courses: Course[] = [
   },
 ];
 
+export interface LearningPath {
+  id: string;
+  name: string;
+  persona: string;
+  slugs: string[];
+}
+
+// เลือกเส้นทางตามบทบาท — ไม่ต้องเรียนครบทั้ง 8
+export const learningPaths: LearningPath[] = [
+  {
+    id: "business-owner",
+    name: "Business Owner",
+    persona: "เจ้าของธุรกิจที่อยากให้ AI ช่วยรันทั้งบริษัท",
+    slugs: ["claude-operator", "claude-co-worker", "ai-automation-architect", "ai-business-os"],
+  },
+  {
+    id: "creative-leader",
+    name: "Creative Leader",
+    persona: "Creative / Art Director ที่อยากกำกับ AI ให้มีรสนิยม",
+    slugs: [
+      "claude-operator",
+      "claude-godmode",
+      "claude-code-aesthetic-frontend",
+      "performance-claude-deep-core",
+    ],
+  },
+  {
+    id: "product-builder",
+    name: "Product Builder",
+    persona: "คนอยากสร้าง Product ตั้งแต่ไอเดียจนถึงผู้ใช้จริง",
+    slugs: [
+      "claude-operator",
+      "claude-code-aesthetic-frontend",
+      "claude-code-one-man-startup",
+      "ai-automation-architect",
+      "performance-claude-deep-core",
+    ],
+  },
+  {
+    id: "executive",
+    name: "Executive",
+    persona: "ผู้บริหารที่ต้องวางทิศทาง AI ให้ทั้งองค์กร",
+    slugs: ["claude-operator", "claude-co-worker", "ai-business-os"],
+  },
+  {
+    id: "ai-power-user",
+    name: "AI Power User",
+    persona: "คนที่ใช้ AI หนักและอยากทะลุขีดจำกัดเดิม",
+    slugs: [
+      "claude-operator",
+      "ai-automation-architect",
+      "claude-code-one-man-startup",
+      "performance-claude-deep-core",
+    ],
+  },
+];
+
+// สิ่งที่ได้กลับบ้าน — ดึงจาก Final Project ของแต่ละคอร์ส
+export function courseDeliverable(course: Course): string {
+  return (course.bonuses[0] ?? "").replace(/^Final Project:\s*/, "").split(" — ")[0];
+}
+
 export function getCourse(slug: string): Course | undefined {
   return courses.find((c) => c.slug === slug);
 }

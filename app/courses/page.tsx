@@ -4,6 +4,9 @@ import { FeaturedCourse } from "@/components/FeaturedCourse";
 import { CourseCard } from "@/components/CourseCard";
 import { GradientField } from "@/components/ui/GradientField";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
+import { LearningPaths } from "@/components/sections/LearningPaths";
+import { CourseComparison } from "@/components/sections/CourseComparison";
+import { CoursePhilosophy } from "@/components/sections/CoursePhilosophy";
 import { CtaSection } from "@/components/sections/CtaSection";
 
 export const metadata: Metadata = {
@@ -54,6 +57,10 @@ export default function CoursesPage() {
           ))}
         </RevealGroup>
       </section>
+
+      <LearningPaths />
+      <CourseComparison />
+      <CoursePhilosophy />
 
       <CtaSection />
     </>
