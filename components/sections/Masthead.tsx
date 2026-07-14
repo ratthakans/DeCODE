@@ -1,12 +1,8 @@
-import Image from "next/image";
 import { site } from "@/lib/site";
 import { Button, ArrowIcon, LineIcon } from "../ui/Button";
 import { lineLink } from "@/lib/line";
 
 const VIDEO_ID = "rKV5JcALQoQ";
-const AVATARS = [28446973, 36593089, 33261955, 31869537].map(
-  (id) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=120`
-);
 
 /**
  * Hero — a muted, looping YouTube video dimmed hard to black, with an aurora
@@ -62,21 +58,9 @@ export function Masthead() {
           </Button>
         </div>
 
-        <div className="mt-12 flex items-center justify-center gap-3 text-sm text-white/55">
-          <span className="flex">
-            {AVATARS.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt=""
-                width={28}
-                height={28}
-                className="-ml-2 h-7 w-7 rounded-full border-2 border-black object-cover first:ml-0"
-              />
-            ))}
-          </span>
-          ผู้เรียนกว่า 500+ คน · รีวิว 4.9/5
-        </div>
+        <p className="mt-12 font-grotesk text-xs uppercase tracking-[0.16em] text-white/45">
+          Structure the chaos · DeCODE the possible
+        </p>
       </div>
     </section>
   );

@@ -1,13 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { Course } from "@/lib/courses";
 import { Countdown } from "./Countdown";
 
 /**
- * ONE social-proof weapon per card, chosen by proofMode — never both.
- * countdown → time-left is its own urgency (near launch)
- * waitlist  → a rising number gives momentum (launch still far)
+ * Urgency for a coming-soon course — honest signals only.
+ * countdown → real time-left until a scheduled launch date
+ * otherwise → a neutral "opening soon" status (no fabricated counts)
  */
 export function CourseProof({
   course,
@@ -28,36 +25,12 @@ export function CourseProof({
     );
   }
 
-  // waitlist
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      <div className="flex -space-x-2">
-        {[0, 1, 2].map((i) => (
-          <span
-            key={i}
-            className="h-6 w-6 rounded-full border border-ink"
-            style={{
-              background:
-                i === 0
-                  ? "linear-gradient(135deg,#2DD4BF,#0C3B36)"
-                  : i === 1
-                  ? "linear-gradient(135deg,#38bdf8,#0e7490)"
-                  : "linear-gradient(135deg,#34d399,#0f766e)",
-            }}
-          />
-        ))}
-      </div>
-      <div>
-        <motion.p
-          initial={{ opacity: 0, y: 6 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-display text-sm font-semibold text-aurora-100"
-        >
-          จองสิทธิ์แล้ว {course.waitlistCount} คน
-        </motion.p>
-        <p className="font-mono text-[0.65rem] text-white/40">รอรอบเปิดจอง</p>
-      </div>
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      <span className="h-1.5 w-1.5 rounded-full bg-aurora-200 shadow-[0_0_8px_2px_rgba(45,212,191,0.5)]" />
+      <p className="font-grotesk text-xs uppercase tracking-[0.14em] text-white/60">
+        {course.statusLabel}
+      </p>
     </div>
   );
 }

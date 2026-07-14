@@ -2,7 +2,6 @@ import { Masthead } from "@/components/sections/Masthead";
 import { Concept } from "@/components/sections/Concept";
 import { FeaturedCourse } from "@/components/FeaturedCourse";
 import { HomeCourses } from "@/components/sections/HomeCourses";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { BrandManifesto } from "@/components/sections/BrandManifesto";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Reveal } from "@/components/ui/Reveal";
@@ -68,13 +67,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 6. Testimonials */}
-      <Testimonials />
-
-      {/* 7. Brand manifesto */}
+      {/* 6. Brand manifesto */}
       <BrandManifesto />
 
-      {/* 8. CTA */}
+      {/* 7. CTA */}
       <CtaSection />
     </>
   );
