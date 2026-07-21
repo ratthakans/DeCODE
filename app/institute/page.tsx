@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { FluidField } from "../components/FluidField";
-import { MockBadge } from "../components/MockBadge";
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
-import { institutePhotos, instructors } from "../data/institute";
+import { institutePhotos } from "../data/institute";
 import { pageMetadata } from "../lib/page-metadata";
 
 export const metadata: Metadata = pageMetadata("The Institute — DeCODE", "รู้จักแนวคิด วิธีเรียน และบทบาทของ DeCODE Business AI Institute", "/institute");
@@ -57,19 +56,12 @@ export default function InstitutePage() {
         </ol>
       </section>
 
-      <section className="faculty-section page-shell">
-        <div className="section-heading split-heading"><div><span className="section-label mono">04 / FACULTY CONCEPT</span><h2 className="thai-heading" lang="th"><span className="headline-line">คนที่สอนต้องเข้าใจ</span><span className="headline-line">ทั้งงานและระบบ</span></h2></div><MockBadge /></div>
-        <div className="faculty-grid" data-reveal="stagger">
-          {instructors.map((person) => <article key={person.id}><a href={person.source} target="_blank" rel="noreferrer"><Image src={person.image} alt={`ภาพอ้างอิงโปรไฟล์ ${person.name}`} fill sizes="(max-width: 820px) 100vw, 33vw" unoptimized /></a><span className="mono">MOCK INSTRUCTOR PROFILE</span><h3>{person.name}</h3><strong>{person.role}</strong><p>{person.bio}</p></article>)}
-        </div>
-      </section>
-
       <section className="studio-section">
-        {institutePhotos.map((photo) => <a href={photo.source} target="_blank" rel="noreferrer" key={photo.src} data-reveal="image" data-parallax="14"><Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 820px) 100vw, 33vw" unoptimized /><span>{photo.caption}</span></a>)}
+        {institutePhotos.map((photo) => <div key={photo.src} data-reveal="image" data-parallax="14"><Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 820px) 100vw, 33vw" unoptimized /><span>{photo.caption}</span></div>)}
       </section>
 
       <section className="faq-section page-shell">
-        <span className="section-label mono">05 / COMMON QUESTIONS</span>
+        <span className="section-label mono">04 / COMMON QUESTIONS</span>
         <div className="faq-list">
           <details><summary>ต้องเขียนโค้ดเป็นก่อนหรือไม่</summary><p>ไม่จำเป็นสำหรับหลายโปรแกรม แต่คอร์ส Builder และ Deep Core ต้องพร้อมเรียนรู้ Logic และอ่านโครงสร้างทางเทคนิคบางส่วน</p></details>
           <details><summary>DeCODE สอนเฉพาะ Claude หรือไม่</summary><p>Claude เป็น Core Engine สำคัญ แต่สิ่งที่สอนคือหลักคิด Context, Workflow และ System ที่ประยุกต์กับ Modern AI Stack ได้</p></details>

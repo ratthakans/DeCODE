@@ -29,7 +29,6 @@ export default function InstituteHome() {
         <FluidField className="hero-fluid" variant="ambient" intensity="low" />
         <div className="academy-hero-media" data-reveal="image">
           <Image src="/media/institute-studio.jpg" alt="บรรยากาศการเรียนรู้และเวิร์กช็อปในสตูดิโอ" fill priority sizes="(max-width: 820px) 100vw, 1200px" unoptimized />
-          <a className="academy-image-credit mono" href="https://www.pexels.com/photo/presentation-during-course-18999561/" target="_blank" rel="noreferrer">REFERENCE IMAGE · PEXELS ↗</a>
         </div>
         <div className="academy-hero-title" data-reveal="line">
           <span className="mono">BUSINESS AI INSTITUTE · BANGKOK</span>
@@ -137,13 +136,12 @@ export default function InstituteHome() {
         <blockquote lang="en" data-reveal="line">“Don’t leave with slides.<br /><em>Leave with a system.</em>”</blockquote>
       </section>
 
-      <section className="institute-photo-story" aria-label="ภาพบรรยากาศอ้างอิงของสถาบัน">
+      <section className="institute-photo-story" aria-label="ภาพบรรยากาศของสถาบัน">
         {institutePhotos.map((photo) => (
-          <a href={photo.source} target="_blank" rel="noreferrer" key={photo.src} data-reveal="image" data-parallax="16">
+          <div key={photo.src} data-reveal="image" data-parallax="16">
             <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 820px) 100vw, 50vw" unoptimized />
             <span>{photo.caption}</span>
-            <small className="mono">REFERENCE IMAGE · PEXELS ↗</small>
-          </a>
+          </div>
         ))}
       </section>
 

@@ -311,7 +311,9 @@ button { color: inherit; }
 .program-tool-grid { margin-top: 42px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .program-tool-grid div { min-height: 105px; padding: 14px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .program-tool-grid img, .tool-fallback { width: 25px; height: 25px; object-fit: contain; }
-.tool-fallback { display: grid; place-items: center; border: 1px solid var(--line); font-size: 7px; }
+/* Neutral marker for tools with no brand asset — never fake initials. */
+.tool-fallback { display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; }
+.tool-fallback::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--line); }
 .program-tool-grid strong { font: 400 10px/1.3 var(--sans); }
 .faculty-testimonial { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; padding: 0; background: var(--line); }
 .program-instructor, .faculty-testimonial blockquote { margin: 0; padding: 48px; background: var(--black); }
