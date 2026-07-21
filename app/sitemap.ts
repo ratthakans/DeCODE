@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { courses } from "./data/courses";
+import { isPublishable } from "./data/organization";
 import { absoluteUrl } from "./lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/institute", priority: 0.8 },
     { path: "/organizations", priority: 0.8 },
     { path: "/contact", priority: 0.7 },
+    // Only listed once there is a lawful notice to serve.
+    ...(isPublishable ? [{ path: "/privacy", priority: 0.3 }] : []),
   ];
 
   return [

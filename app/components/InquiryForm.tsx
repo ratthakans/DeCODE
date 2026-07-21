@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { courses } from "../data/courses";
+import { isPublishable } from "../data/organization";
 
 type FormErrors = Record<string, string>;
 
@@ -48,7 +49,7 @@ export function InquiryForm({ initialIntent = "program", initialProgram = "" }: 
       <label className="form-full"><span>ต้องการเริ่มเมื่อไร *</span><select name="timeline" defaultValue=""><option value="" disabled>เลือกช่วงเวลา</option><option value="now">เร็วที่สุด</option><option value="1-3m">ภายใน 1–3 เดือน</option><option value="3-6m">ภายใน 3–6 เดือน</option><option value="research">กำลังศึกษาข้อมูล</option></select>{errors.timeline && <small>{errors.timeline}</small>}</label>
       <label className="honeypot" aria-hidden="true"><span>Website</span><input name="website" tabIndex={-1} autoComplete="off" /></label>
     </div>
-    <label className="consent"><input name="consent" type="checkbox" /><span>ยินยอมให้ DeCODE ติดต่อกลับเกี่ยวกับโปรแกรมและข้อมูลที่ส่งมา</span></label>{errors.consent && <small className="consent-error">{errors.consent}</small>}
+    <label className="consent"><input name="consent" type="checkbox" /><span>ยินยอมให้ DeCODE เก็บและใช้ข้อมูลที่ส่งมาเพื่อติดต่อกลับและให้คำแนะนำเกี่ยวกับโปรแกรม{isPublishable && <> ตาม<Link href="/privacy">นโยบายความเป็นส่วนตัว</Link></>}</span></label>{errors.consent && <small className="consent-error">{errors.consent}</small>}
     <button className="button-primary" type="submit" disabled={status === "sending"}>{status === "sending" ? "กำลังส่งข้อมูล…" : "ส่งคำขอรับคำแนะนำ"}<span aria-hidden="true">↗</span></button>
   </form>;
 }

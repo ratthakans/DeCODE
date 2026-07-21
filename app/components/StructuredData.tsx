@@ -1,4 +1,5 @@
 import type { Course } from "../data/courses";
+import { ORG, contactEmail } from "../data/organization";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, absoluteUrl } from "../lib/site";
 
 function JsonLd({ data }: { data: Record<string, unknown> }) {
@@ -19,7 +20,16 @@ export function OrganizationSchema() {
         image: absoluteUrl("/og-fluid-v2.png"),
         slogan: "Structure the chaos.",
         areaServed: "TH",
-        address: { "@type": "PostalAddress", addressLocality: "Bangkok", addressCountry: "TH" },
+        // Only emit facts that have been verified — never a guessed address or number.
+        ...(ORG.legalName ? { legalName: ORG.legalName } : {}),
+        ...(contactEmail ? { email: contactEmail } : {}),
+        ...(ORG.phone ? { telephone: ORG.phone } : {}),
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Bangkok",
+          addressCountry: "TH",
+          ...(ORG.address ? { streetAddress: ORG.address } : {}),
+        },
       }}
     />
   );
