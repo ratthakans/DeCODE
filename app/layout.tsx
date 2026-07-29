@@ -20,7 +20,14 @@ export const metadata: Metadata = {
     images: [{ url: "/og-fluid-v2.png", width: 1672, height: 941, alt: "DeCODE Business AI Institute — Liquid glass identity." }],
   },
   twitter: { card: "summary_large_image", title: "DeCODE — Business AI Institute", description: "Close the gap. Build beyond human capacity.", images: ["/og-fluid-v2.png"] },
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
